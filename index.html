@@ -584,6 +584,8 @@
 <p><strong>Versioning caching kinda-proxy for decoupling external HTTP resources</strong></p>
 <p>Maintainer: Tim Bleimehl</p>
 <p>status: alpha  (WIP - <strong>do not use productive yet</strong>)</p>
+<p>Source: https://git.connect.dzd-ev.de/dzdpythonmodules/buffy</p>
+<p>Docs: https://dzd-ev.github.io/buffy-docs.github.io/</p>
 <ul>
 <li><a href="#buffy">Buffy</a></li>
 <li><a href="#what-is-this">What is this?</a></li>
@@ -640,7 +642,7 @@ At the moment there is only a Python client but also a REST API for language agn
 </code></pre></div>
 <p>This is all it takes to request a file. Next time the webserver at <code>ftp.ncbi.nlm.nih.go</code>  should be down the buffy client will just serve you the cached answer.
 Should your Buffy server be down, the client will fall back to direct downloading the request from the source.</p>
-<p>See the <a href="BuffyPyClient-examples">documenation</a> for more detailed examples on how to use the client</p>
+<p>See the <a href="https://dzd-ev.github.io/buffy-docs.github.io/BuffyPyClient-examples/">documenation</a> for more detailed examples on how to use the client</p>
 <h2 id="quick-start-server">Quick Start Server<a class="headerlink" href="#quick-start-server" title="Permanent link">&para;</a></h2>
 <h3 id="requirements">Requirements<a class="headerlink" href="#requirements" title="Permanent link">&para;</a></h3>
 <ul>
@@ -666,7 +668,7 @@ Should your Buffy server be down, the client will fall back to direct downloadin
 <a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="c1"># connect to buffy server</span>
 <a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="n">c</span> <span class="o">=</span> <span class="n">BuffyPyClient</span><span class="p">(</span><span class="n">host</span><span class="o">=</span><span class="s2">&quot;localhost&quot;</span><span class="p">,</span> <span class="n">port</span><span class="o">=</span><span class="mi">8008</span><span class="p">,</span> <span class="n">ssl</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 </code></pre></div>
-<p>See the <a href="BuffyPyClient-examples">documenation</a> for more detailed examples on how to use the client</p>
+<p>See the <a href="[BuffyPyClient-examples](https://dzd-ev.github.io/buffy-docs.github.io/BuffyPyClient-examples/)">documenation</a> for more detailed examples on how to use the client</p>
 
 
 
