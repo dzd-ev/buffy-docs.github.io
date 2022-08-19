@@ -200,6 +200,26 @@
     Quick Start Client
   </a>
   
+    <nav class="md-nav" aria-label="Quick Start Client">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#install-buffy" class="md-nav__link">
+    Install Buffy
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example" class="md-nav__link">
+    Example
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -489,6 +509,26 @@
     Quick Start Client
   </a>
   
+    <nav class="md-nav" aria-label="Quick Start Client">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#install-buffy" class="md-nav__link">
+    Install Buffy
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example" class="md-nav__link">
+    Example
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -548,7 +588,11 @@
 <li><a href="#buffy">Buffy</a></li>
 <li><a href="#what-is-this">What is this?</a></li>
 <li><a href="#features">Features</a></li>
-<li><a href="#quick-start-client">Quick Start Client</a></li>
+<li><a href="#quick-start-client">Quick Start Client</a><ul>
+<li><a href="#install-buffy">Install Buffy</a></li>
+<li><a href="#example">Example</a></li>
+</ul>
+</li>
 <li><a href="#quick-start-server">Quick Start Server</a><ul>
 <li><a href="#requirements">Requirements</a></li>
 <li><a href="#server-start">Server start</a></li>
@@ -576,18 +620,23 @@ At the moment there is only a Python client but also a REST API for language agn
 <p>At the moment there is only a python client library. But the server has a <a href="./docs/openapi.json">REST API</a> that can be consumed from any coding language. You are welcome to write a client in your language.</p>
 <h2 id="quick-start-client">Quick Start Client<a class="headerlink" href="#quick-start-client" title="Permanent link">&para;</a></h2>
 <p>Lets have a small example how your Buffy client code could look like.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="kn">from</span> <span class="nn">buffy.buffypyclient</span> <span class="kn">import</span> <span class="n">BuffyPyClient</span>
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>
-<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="c1"># connect to buffy server</span>
-<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="n">c</span> <span class="o">=</span> <span class="n">BuffyPyClient</span><span class="p">(</span><span class="n">ssl</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
-<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>
-<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="c1"># create a request</span>
-<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="n">req</span> <span class="o">=</span> <span class="n">c</span><span class="o">.</span><span class="n">create_request</span><span class="p">(</span>
-<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>    <span class="n">url</span><span class="o">=</span><span class="s2">&quot;https://ftp.ncbi.nlm.nih.gov/pubmed/baseline/pubmed22n0003.xml.gz&quot;</span>
-<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="p">)</span>
-<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>
-<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="c1"># save requested file</span>
-<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="n">req</span><span class="o">.</span><span class="n">download_response_content_to</span><span class="p">(</span><span class="nb">dir</span><span class="o">=</span><span class="s2">&quot;/tmp&quot;</span><span class="p">)</span>
+<h3 id="install-buffy">Install Buffy<a class="headerlink" href="#install-buffy" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>pip install DZDBuffy
+</code></pre></div>
+<h3 id="example">Example<a class="headerlink" href="#example" title="Permanent link">&para;</a></h3>
+<p>Lets write some code using the Buffy client</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="kn">from</span> <span class="nn">buffy.buffypyclient</span> <span class="kn">import</span> <span class="n">BuffyPyClient</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="c1"># connect to buffy server</span>
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="n">c</span> <span class="o">=</span> <span class="n">BuffyPyClient</span><span class="p">(</span><span class="n">ssl</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="c1"># create a request</span>
+<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="n">req</span> <span class="o">=</span> <span class="n">c</span><span class="o">.</span><span class="n">create_request</span><span class="p">(</span>
+<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>    <span class="n">url</span><span class="o">=</span><span class="s2">&quot;https://ftp.ncbi.nlm.nih.gov/pubmed/baseline/pubmed22n0003.xml.gz&quot;</span>
+<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="p">)</span>
+<a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a>
+<a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a><span class="c1"># save requested file</span>
+<a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a><span class="n">req</span><span class="o">.</span><span class="n">download_response_content_to</span><span class="p">(</span><span class="nb">dir</span><span class="o">=</span><span class="s2">&quot;/tmp&quot;</span><span class="p">)</span>
 </code></pre></div>
 <p>This is all it takes to request a file. Next time the webserver at <code>ftp.ncbi.nlm.nih.go</code>  should be down the buffy client will just serve you the cached answer.
 Should your Buffy server be down, the client will fall back to direct downloading the request from the source.</p>
@@ -602,20 +651,20 @@ Should your Buffy server be down, the client will fall back to direct downloadin
 <ul>
 <li>Download the buffy docker-compose file </li>
 </ul>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>wget -O docker-compose.yaml https://git.connect.dzd-ev.de/dzdpythonmodules/buffy/-/raw/main/docker-compose.yaml?inline<span class="o">=</span><span class="nb">false</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>wget -O docker-compose.yaml https://git.connect.dzd-ev.de/dzdpythonmodules/buffy/-/raw/main/docker-compose.yaml?inline<span class="o">=</span><span class="nb">false</span>
 </code></pre></div>
 <ul>
 <li>Start the Buffy server with docker compose</li>
 </ul>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>docker-compose up -d
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>docker-compose up -d
 </code></pre></div>
 <h3 id="connecting-the-buffypyclient">Connecting the BuffyPyClient<a class="headerlink" href="#connecting-the-buffypyclient" title="Permanent link">&para;</a></h3>
 <p>Create a python script. </p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="c1"># connect to buffy server</span>
-<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="kn">from</span> <span class="nn">buffy.buffypyclient</span> <span class="kn">import</span> <span class="n">BuffyPyClient</span>
-<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>
-<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="c1"># connect to buffy server</span>
-<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="n">c</span> <span class="o">=</span> <span class="n">BuffyPyClient</span><span class="p">(</span><span class="n">host</span><span class="o">=</span><span class="s2">&quot;localhost&quot;</span><span class="p">,</span> <span class="n">port</span><span class="o">=</span><span class="mi">8008</span><span class="p">,</span> <span class="n">ssl</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="c1"># connect to buffy server</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="kn">from</span> <span class="nn">buffy.buffypyclient</span> <span class="kn">import</span> <span class="n">BuffyPyClient</span>
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="c1"># connect to buffy server</span>
+<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="n">c</span> <span class="o">=</span> <span class="n">BuffyPyClient</span><span class="p">(</span><span class="n">host</span><span class="o">=</span><span class="s2">&quot;localhost&quot;</span><span class="p">,</span> <span class="n">port</span><span class="o">=</span><span class="mi">8008</span><span class="p">,</span> <span class="n">ssl</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 </code></pre></div>
 <p>See the <a href="BuffyPyClient-examples">documenation</a> for more detailed examples on how to use the client</p>
 
