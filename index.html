@@ -464,6 +464,54 @@
   
 
     
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_5">
+          Advanced Docs
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Advanced Docs" data-md-level="1">
+        <label class="md-nav__title" for="__nav_5">
+          <span class="md-nav__icon md-icon"></span>
+          Advanced Docs
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="dev-architecture/" class="md-nav__link">
+        Buffy Architecture
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
   </ul>
 </nav>
                   </div>
@@ -583,9 +631,9 @@
 <h1 id="buffy">Buffy<a class="headerlink" href="#buffy" title="Permanent link">&para;</a></h1>
 <p><strong>Versioning caching kinda-proxy for decoupling external HTTP resources</strong></p>
 <p>Maintainer: Tim Bleimehl</p>
-<p>status: alpha  (WIP - <strong>do not use productive yet</strong>)</p>
-<p>Source: https://git.connect.dzd-ev.de/dzdpythonmodules/buffy</p>
-<p>Docs: https://dzd-ev.github.io/buffy-docs.github.io/</p>
+<p>Status: alpha  (WIP - <strong>do not use productive yet</strong>)</p>
+<p>Source: <a href="https://git.connect.dzd-ev.de/dzdpythonmodules/buffy">https://git.connect.dzd-ev.de/dzdpythonmodules/buffy</a></p>
+<p>User documentation: <a href="https://dzd-ev.github.io/buffy-docs.github.io/">https://dzd-ev.github.io/buffy-docs.github.io/</a></p>
 <ul>
 <li><a href="#buffy">Buffy</a></li>
 <li><a href="#what-is-this">What is this?</a></li>
@@ -606,8 +654,7 @@
 <p>Buffy is a server/client framework to buffer/cache your http requests.<br />
 Buffy decouples your dependency on external webservers that are not under your control.<br />
 Buffy manages HTTP downloads in the background. 
-You can ignore any issues with external webservers and just focus on your application.<br />
-At the moment there is only a Python client but also a REST API for language agnostic use.</p>
+You can ignore any issues with external webservers and just focus on your application.  </p>
 <h2 id="features">Features<a class="headerlink" href="#features" title="Permanent link">&para;</a></h2>
 <ul>
 <li>Versioning of changing downloads</li>
@@ -619,7 +666,7 @@ At the moment there is only a Python client but also a REST API for language agn
 </ul>
 </li>
 </ul>
-<p>At the moment there is only a python client library. But the server has a <a href="./docs/openapi.json">REST API</a> that can be consumed from any coding language. You are welcome to write a client in your language.</p>
+<p>At the moment there is only a python client library. But the server has a <a href="https://dzd-ev.github.io/buffy-docs.github.io/buffyserver-api/">REST API</a> that can be consumed from any coding language. You are welcome to write a client in your language.</p>
 <h2 id="quick-start-client">Quick Start Client<a class="headerlink" href="#quick-start-client" title="Permanent link">&para;</a></h2>
 <p>Lets have a small example how your Buffy client code could look like.</p>
 <h3 id="install-buffy">Install Buffy<a class="headerlink" href="#install-buffy" title="Permanent link">&para;</a></h3>
@@ -668,7 +715,7 @@ Should your Buffy server be down, the client will fall back to direct downloadin
 <a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="c1"># connect to buffy server</span>
 <a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="n">c</span> <span class="o">=</span> <span class="n">BuffyPyClient</span><span class="p">(</span><span class="n">host</span><span class="o">=</span><span class="s2">&quot;localhost&quot;</span><span class="p">,</span> <span class="n">port</span><span class="o">=</span><span class="mi">8008</span><span class="p">,</span> <span class="n">ssl</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 </code></pre></div>
-<p>See the <a href="[BuffyPyClient-examples](https://dzd-ev.github.io/buffy-docs.github.io/BuffyPyClient-examples/)">documenation</a> for more detailed examples on how to use the client</p>
+<p>See the <a href="https://dzd-ev.github.io/buffy-docs.github.io/BuffyPyClient-examples/">documentation</a> for more detailed examples on how to use the client</p>
 
 
 
