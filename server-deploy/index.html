@@ -749,6 +749,7 @@
 
 <p>There are multiple options to start your own Buffy server:</p>
 <h2 id="via-docker-compose">Via Docker-compose<a class="headerlink" href="#via-docker-compose" title="Permanent link">&para;</a></h2>
+<hr />
 <h3 id="requirements">Requirements<a class="headerlink" href="#requirements" title="Permanent link">&para;</a></h3>
 <ul>
 <li><a href="https://docs.docker.com/engine/install/">Docker</a></li>
@@ -768,6 +769,7 @@
 <h3 id="usage">Usage<a class="headerlink" href="#usage" title="Permanent link">&para;</a></h3>
 <p>Now your Buffy server is available at <code>http://localhost:8008</code></p>
 <h2 id="via-docker-image">Via Docker image<a class="headerlink" href="#via-docker-image" title="Permanent link">&para;</a></h2>
+<hr />
 <h3 id="requirements_1">Requirements<a class="headerlink" href="#requirements_1" title="Permanent link">&para;</a></h3>
 <ul>
 <li><a href="https://docs.docker.com/engine/install/">Docker</a></li>
@@ -787,6 +789,7 @@
 <div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>docker run -p <span class="m">8008</span>:8008 -v <span class="si">${</span><span class="nv">PWD</span><span class="si">}</span>/buffy-server-cache:/data buffy -r redis://my-redis-server
 </code></pre></div>
 <h2 id="via-terminal">Via Terminal<a class="headerlink" href="#via-terminal" title="Permanent link">&para;</a></h2>
+<hr />
 <h3 id="requirements_2">Requirements<a class="headerlink" href="#requirements_2" title="Permanent link">&para;</a></h3>
 <ul>
 <li>Python &gt;= 3.8</li>
@@ -816,11 +819,13 @@
 <div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>buffy-server
 </code></pre></div>
 <h3 id="buffy-server-command-parameters"><code>buffy-server</code> Command Parameters<a class="headerlink" href="#buffy-server-command-parameters" title="Permanent link">&para;</a></h3>
+<hr />
 <h4 id="-debug"><code>--debug</code><a class="headerlink" href="#-debug" title="Permanent link">&para;</a></h4>
 <p>Changes python logging from <code>INFO</code> to <code>DEBUG</code></p>
 <p>example:<br />
 <div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>buffy-server --debug
 </code></pre></div></p>
+<hr />
 <h4 id="-redis-url"><code>--redis-url</code><a class="headerlink" href="#-redis-url" title="Permanent link">&para;</a></h4>
 <p>Url to a running Redis database. e.g. 'redis://localhost:6379/0'.<br />
 For details on the format see https://redis.readthedocs.io/en/latest/connections.html#redis.Redis.from_url</p>
@@ -830,6 +835,7 @@ For details on the format see https://redis.readthedocs.io/en/latest/connections
 </code></pre></div>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a>buffy-server --r rediss://redis-server.mydomain.org:6379/0
 </code></pre></div></p>
+<hr />
 <h4 id="-storage-location"><code>--storage-location</code><a class="headerlink" href="#-storage-location" title="Permanent link">&para;</a></h4>
 <p>Local storage location for cached requests</p>
 <p>short form: <code>-s</code></p>
