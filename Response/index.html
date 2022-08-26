@@ -416,6 +416,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#buffy.buffyserver.api.v1.models.Response.pinned_until_utc" class="md-nav__link">
+    pinned_until_utc
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#buffy.buffyserver.api.v1.models.Response.previous_version" class="md-nav__link">
     previous_version
   </a>
@@ -439,13 +446,6 @@
           <li class="md-nav__item">
   <a href="#buffy.buffyserver.api.v1.models.Response.tags" class="md-nav__link">
     tags
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#buffy.buffyserver.api.v1.models.Response.valid" class="md-nav__link">
-    valid
   </a>
   
 </li>
@@ -621,6 +621,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#buffy.buffyserver.api.v1.models.Response.pinned_until_utc" class="md-nav__link">
+    pinned_until_utc
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#buffy.buffyserver.api.v1.models.Response.previous_version" class="md-nav__link">
     previous_version
   </a>
@@ -644,13 +651,6 @@
           <li class="md-nav__item">
   <a href="#buffy.buffyserver.api.v1.models.Response.tags" class="md-nav__link">
     tags
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#buffy.buffyserver.api.v1.models.Response.valid" class="md-nav__link">
-    valid
   </a>
   
 </li>
@@ -705,8 +705,7 @@
 
         <details class="quote">
           <summary>Source code in <code>buffy/buffyserver/api/v1/models.py</code></summary>
-          <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-144">144</a></span>
-<span class="normal"><a href="#__codelineno-0-145">145</a></span>
+          <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-145">145</a></span>
 <span class="normal"><a href="#__codelineno-0-146">146</a></span>
 <span class="normal"><a href="#__codelineno-0-147">147</a></span>
 <span class="normal"><a href="#__codelineno-0-148">148</a></span>
@@ -739,41 +738,52 @@
 <span class="normal"><a href="#__codelineno-0-175">175</a></span>
 <span class="normal"><a href="#__codelineno-0-176">176</a></span>
 <span class="normal"><a href="#__codelineno-0-177">177</a></span>
-<span class="normal"><a href="#__codelineno-0-178">178</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-144" name="__codelineno-0-144"></a><span class="k">class</span> <span class="nc">Response</span><span class="p">(</span><span class="n">BaseModel</span><span class="p">):</span>
-<a id="__codelineno-0-145" name="__codelineno-0-145"></a>    <span class="sd">&quot;&quot;&quot;Metadata object for a request response.</span>
-<a id="__codelineno-0-146" name="__codelineno-0-146"></a>
-<a id="__codelineno-0-147" name="__codelineno-0-147"></a><span class="sd">    **HINT**: This is pydantic model. Every `class-attribute` is also a `parameter`</span>
-<a id="__codelineno-0-148" name="__codelineno-0-148"></a><span class="sd">    &quot;&quot;&quot;</span>
-<a id="__codelineno-0-149" name="__codelineno-0-149"></a>
-<a id="__codelineno-0-150" name="__codelineno-0-150"></a>    <span class="nb">id</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="kc">None</span>
-<a id="__codelineno-0-151" name="__codelineno-0-151"></a>    <span class="n">request_id</span><span class="p">:</span> <span class="nb">str</span>
-<a id="__codelineno-0-152" name="__codelineno-0-152"></a>    <span class="n">version</span><span class="p">:</span> <span class="nb">str</span>
-<a id="__codelineno-0-153" name="__codelineno-0-153"></a>    <span class="sd">&quot;&quot;&quot;A compact date string, declarating the versions name&quot;&quot;&quot;</span>
-<a id="__codelineno-0-154" name="__codelineno-0-154"></a>    <span class="n">previous_version</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
-<a id="__codelineno-0-155" name="__codelineno-0-155"></a>    <span class="sd">&quot;&quot;&quot;If there is a predating version, you can find the version name here&quot;&quot;&quot;</span>
-<a id="__codelineno-0-156" name="__codelineno-0-156"></a>    <span class="n">next_version</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
-<a id="__codelineno-0-157" name="__codelineno-0-157"></a>    <span class="sd">&quot;&quot;&quot;If there is a newer version, you can find the version name here&quot;&quot;&quot;</span>
-<a id="__codelineno-0-158" name="__codelineno-0-158"></a>    <span class="n">status</span><span class="p">:</span> <span class="n">Literal</span><span class="p">[</span><span class="s2">&quot;wait&quot;</span><span class="p">,</span> <span class="s2">&quot;in_progress&quot;</span><span class="p">,</span> <span class="s2">&quot;ready&quot;</span><span class="p">,</span> <span class="s2">&quot;failed&quot;</span><span class="p">]</span>
-<a id="__codelineno-0-159" name="__codelineno-0-159"></a>    <span class="sd">&quot;&quot;&quot;State of the reponses download on Buffy server side&quot;&quot;&quot;</span>
-<a id="__codelineno-0-160" name="__codelineno-0-160"></a>    <span class="n">content_download_path</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
-<a id="__codelineno-0-161" name="__codelineno-0-161"></a>    <span class="sd">&quot;&quot;&quot;Path to downlaod the responses content from the Buffy server API. No base domain included!&quot;&quot;&quot;</span>
-<a id="__codelineno-0-162" name="__codelineno-0-162"></a>    <span class="n">cached_datetime_utc</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
-<a id="__codelineno-0-163" name="__codelineno-0-163"></a>    <span class="sd">&quot;&quot;&quot;Moment when Buffy server finished the download&quot;&quot;&quot;</span>
-<a id="__codelineno-0-164" name="__codelineno-0-164"></a>    <span class="n">request_datetime_utc</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
-<a id="__codelineno-0-165" name="__codelineno-0-165"></a>    <span class="sd">&quot;&quot;&quot;Moment when a client requested the file. This is not appliable to all strategies.&quot;&quot;&quot;</span>
-<a id="__codelineno-0-166" name="__codelineno-0-166"></a>    <span class="c1"># https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Disposition</span>
-<a id="__codelineno-0-167" name="__codelineno-0-167"></a>    <span class="n">pinned</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">bool</span><span class="p">]</span> <span class="o">=</span> <span class="kc">False</span>
-<a id="__codelineno-0-168" name="__codelineno-0-168"></a>    <span class="sd">&quot;&quot;&quot;!WIP!: A pinned response will not be deleted by the garbage collector if `Request.cache_configuration.max_cached_versions` is reached.&quot;&quot;&quot;</span>
-<a id="__codelineno-0-169" name="__codelineno-0-169"></a>    <span class="n">tags</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">]]</span> <span class="o">=</span> <span class="kc">None</span>
-<a id="__codelineno-0-170" name="__codelineno-0-170"></a>    <span class="sd">&quot;&quot;&quot;!EXPERIMENTAL!: Clients can add tags to a reponse to manage multiple versions&quot;&quot;&quot;</span>
-<a id="__codelineno-0-171" name="__codelineno-0-171"></a>    <span class="n">valid</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">bool</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
-<a id="__codelineno-0-172" name="__codelineno-0-172"></a>    <span class="sd">&quot;&quot;&quot;!OBSOLETE!: Will be replaced by `tags`&quot;&quot;&quot;</span>
-<a id="__codelineno-0-173" name="__codelineno-0-173"></a>    <span class="n">download_stats</span><span class="p">:</span> <span class="n">ResponseDownloadStats</span> <span class="o">=</span> <span class="kc">None</span>
-<a id="__codelineno-0-174" name="__codelineno-0-174"></a>    <span class="sd">&quot;&quot;&quot;Statistics about the downlaod by Buffy server&quot;&quot;&quot;</span>
-<a id="__codelineno-0-175" name="__codelineno-0-175"></a>    <span class="n">content_attributes</span><span class="p">:</span> <span class="n">ResponseContentAttributes</span> <span class="o">=</span> <span class="kc">None</span>
-<a id="__codelineno-0-176" name="__codelineno-0-176"></a>    <span class="sd">&quot;&quot;&quot;Attributes the download could gather about the content. mostly based on HTTP headers&quot;&quot;&quot;</span>
-<a id="__codelineno-0-177" name="__codelineno-0-177"></a>    <span class="n">content_hash_hex</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="kc">None</span>
-<a id="__codelineno-0-178" name="__codelineno-0-178"></a>    <span class="sd">&quot;&quot;&quot;A hex hash of the response content. The hash alg is defined in `Request.validation_hash_type`&quot;&quot;&quot;</span>
+<span class="normal"><a href="#__codelineno-0-178">178</a></span>
+<span class="normal"><a href="#__codelineno-0-179">179</a></span>
+<span class="normal"><a href="#__codelineno-0-180">180</a></span>
+<span class="normal"><a href="#__codelineno-0-181">181</a></span>
+<span class="normal"><a href="#__codelineno-0-182">182</a></span>
+<span class="normal"><a href="#__codelineno-0-183">183</a></span>
+<span class="normal"><a href="#__codelineno-0-184">184</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-145" name="__codelineno-0-145"></a><span class="k">class</span> <span class="nc">Response</span><span class="p">(</span><span class="n">BaseModel</span><span class="p">):</span>
+<a id="__codelineno-0-146" name="__codelineno-0-146"></a>    <span class="sd">&quot;&quot;&quot;Metadata object for a request response.</span>
+<a id="__codelineno-0-147" name="__codelineno-0-147"></a>
+<a id="__codelineno-0-148" name="__codelineno-0-148"></a><span class="sd">    **HINT**: This is pydantic model. Every `class-attribute` is also a `parameter`</span>
+<a id="__codelineno-0-149" name="__codelineno-0-149"></a><span class="sd">    &quot;&quot;&quot;</span>
+<a id="__codelineno-0-150" name="__codelineno-0-150"></a>
+<a id="__codelineno-0-151" name="__codelineno-0-151"></a>    <span class="nb">id</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="kc">None</span>
+<a id="__codelineno-0-152" name="__codelineno-0-152"></a>    <span class="n">request_id</span><span class="p">:</span> <span class="nb">str</span>
+<a id="__codelineno-0-153" name="__codelineno-0-153"></a>    <span class="n">version</span><span class="p">:</span> <span class="nb">str</span>
+<a id="__codelineno-0-154" name="__codelineno-0-154"></a>    <span class="sd">&quot;&quot;&quot;A compact date string, declarating the versions name&quot;&quot;&quot;</span>
+<a id="__codelineno-0-155" name="__codelineno-0-155"></a>    <span class="n">previous_version</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
+<a id="__codelineno-0-156" name="__codelineno-0-156"></a>    <span class="sd">&quot;&quot;&quot;If there is a predating version, you can find the version name here&quot;&quot;&quot;</span>
+<a id="__codelineno-0-157" name="__codelineno-0-157"></a>    <span class="n">next_version</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
+<a id="__codelineno-0-158" name="__codelineno-0-158"></a>    <span class="sd">&quot;&quot;&quot;If there is a newer version, you can find the version name here&quot;&quot;&quot;</span>
+<a id="__codelineno-0-159" name="__codelineno-0-159"></a>    <span class="n">status</span><span class="p">:</span> <span class="n">Literal</span><span class="p">[</span><span class="s2">&quot;wait&quot;</span><span class="p">,</span> <span class="s2">&quot;in_progress&quot;</span><span class="p">,</span> <span class="s2">&quot;ready&quot;</span><span class="p">,</span> <span class="s2">&quot;duplicate&quot;</span><span class="p">,</span> <span class="s2">&quot;failed&quot;</span><span class="p">]</span>
+<a id="__codelineno-0-160" name="__codelineno-0-160"></a>    <span class="sd">&quot;&quot;&quot;State of the reponses download on Buffy server side. </span>
+<a id="__codelineno-0-161" name="__codelineno-0-161"></a><span class="sd">    &#39;wait&#39;: The request is registered by the backend, but no actions have been initiated  </span>
+<a id="__codelineno-0-162" name="__codelineno-0-162"></a><span class="sd">    &#39;in_progress&#39;: The backend is running the download of the response  </span>
+<a id="__codelineno-0-163" name="__codelineno-0-163"></a><span class="sd">    &#39;ready&#39;: The response is cached and can be picked up by a client  </span>
+<a id="__codelineno-0-164" name="__codelineno-0-164"></a><span class="sd">    &#39;duplicate&#39;: The response is cached but equal to the previous cached response. It will be deleted and should not be used by a client  </span>
+<a id="__codelineno-0-165" name="__codelineno-0-165"></a><span class="sd">    &#39;failed: The response download failed. The the &#39;Response.download_stats.error&#39; field for more details.&quot;&quot;&quot;</span>
+<a id="__codelineno-0-166" name="__codelineno-0-166"></a>    <span class="n">content_download_path</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
+<a id="__codelineno-0-167" name="__codelineno-0-167"></a>    <span class="sd">&quot;&quot;&quot;Path to downlaod the responses content from the Buffy server API. No base domain included!&quot;&quot;&quot;</span>
+<a id="__codelineno-0-168" name="__codelineno-0-168"></a>    <span class="n">cached_datetime_utc</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
+<a id="__codelineno-0-169" name="__codelineno-0-169"></a>    <span class="sd">&quot;&quot;&quot;Moment when Buffy server finished the download&quot;&quot;&quot;</span>
+<a id="__codelineno-0-170" name="__codelineno-0-170"></a>    <span class="n">request_datetime_utc</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
+<a id="__codelineno-0-171" name="__codelineno-0-171"></a>    <span class="sd">&quot;&quot;&quot;Moment when a client requested the file. This is not appliable to all strategies.&quot;&quot;&quot;</span>
+<a id="__codelineno-0-172" name="__codelineno-0-172"></a>    <span class="c1"># https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Disposition</span>
+<a id="__codelineno-0-173" name="__codelineno-0-173"></a>    <span class="n">pinned</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">bool</span><span class="p">]</span> <span class="o">=</span> <span class="kc">False</span>
+<a id="__codelineno-0-174" name="__codelineno-0-174"></a>    <span class="sd">&quot;&quot;&quot;!WIP!: A pinned response will not be deleted by the garbage collector if `Request.cache_configuration.max_cached_versions` is reached.&quot;&quot;&quot;</span>
+<a id="__codelineno-0-175" name="__codelineno-0-175"></a>    <span class="n">tags</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span>
+<a id="__codelineno-0-176" name="__codelineno-0-176"></a>    <span class="sd">&quot;&quot;&quot;!EXPERIMENTAL!: Clients can add tags to a reponse to manage multiple versions&quot;&quot;&quot;</span>
+<a id="__codelineno-0-177" name="__codelineno-0-177"></a>    <span class="n">download_stats</span><span class="p">:</span> <span class="n">ResponseDownloadStats</span> <span class="o">=</span> <span class="kc">None</span>
+<a id="__codelineno-0-178" name="__codelineno-0-178"></a>    <span class="sd">&quot;&quot;&quot;Statistics about the downlaod by Buffy server&quot;&quot;&quot;</span>
+<a id="__codelineno-0-179" name="__codelineno-0-179"></a>    <span class="n">content_attributes</span><span class="p">:</span> <span class="n">ResponseContentAttributes</span> <span class="o">=</span> <span class="kc">None</span>
+<a id="__codelineno-0-180" name="__codelineno-0-180"></a>    <span class="sd">&quot;&quot;&quot;Attributes the download could gather about the content. mostly based on HTTP headers&quot;&quot;&quot;</span>
+<a id="__codelineno-0-181" name="__codelineno-0-181"></a>    <span class="n">content_hash_hex</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="kc">None</span>
+<a id="__codelineno-0-182" name="__codelineno-0-182"></a>    <span class="sd">&quot;&quot;&quot;A hex hash of the response content. The hash alg is defined in `Request.validation_hash_type`&quot;&quot;&quot;</span>
+<a id="__codelineno-0-183" name="__codelineno-0-183"></a>    <span class="n">pinned_until_utc</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
+<a id="__codelineno-0-184" name="__codelineno-0-184"></a>    <span class="sd">&quot;&quot;&quot;While handling a certain response we can prevent the server from accidantly garbage collect the reponse by providing a temporary lock to it&quot;&quot;&quot;</span>
 </code></pre></div></td></tr></table></div>
         </details>
 
@@ -938,6 +948,27 @@
 
 
 
+<h3 id="buffy.buffyserver.api.v1.models.Response.pinned_until_utc" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">pinned_until_utc</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span></code>
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-class-attribute"><code>class-attribute</code></small>
+  </span>
+
+<a href="#buffy.buffyserver.api.v1.models.Response.pinned_until_utc" class="headerlink" title="Permanent link">&para;</a></h3>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>While handling a certain response we can prevent the server from accidantly garbage collect the reponse by providing a temporary lock to it</p>
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-attribute">
+
+
+
 <h3 id="buffy.buffyserver.api.v1.models.Response.previous_version" class="doc doc-heading">
 <code class="highlight language-python"><span class="n">previous_version</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span></code>
   
@@ -981,7 +1012,7 @@
 
 
 <h3 id="buffy.buffyserver.api.v1.models.Response.status" class="doc doc-heading">
-<code class="highlight language-python"><span class="n">status</span><span class="p">:</span> <span class="n">Literal</span><span class="p">[</span><span class="s1">&#39;wait&#39;</span><span class="p">,</span> <span class="s1">&#39;in_progress&#39;</span><span class="p">,</span> <span class="s1">&#39;ready&#39;</span><span class="p">,</span> <span class="s1">&#39;failed&#39;</span><span class="p">]</span></code>
+<code class="highlight language-python"><span class="n">status</span><span class="p">:</span> <span class="n">Literal</span><span class="p">[</span><span class="s1">&#39;wait&#39;</span><span class="p">,</span> <span class="s1">&#39;in_progress&#39;</span><span class="p">,</span> <span class="s1">&#39;ready&#39;</span><span class="p">,</span> <span class="s1">&#39;duplicate&#39;</span><span class="p">,</span> <span class="s1">&#39;failed&#39;</span><span class="p">]</span></code>
   
   <span class="doc doc-labels">
       <small class="doc doc-label doc-label-class-attribute"><code>class-attribute</code></small>
@@ -992,7 +1023,12 @@
 
   <div class="doc doc-contents ">
   
-      <p>State of the reponses download on Buffy server side</p>
+      <p>State of the reponses download on Buffy server side. 
+'wait': The request is registered by the backend, but no actions have been initiated<br />
+'in_progress': The backend is running the download of the response<br />
+'ready': The response is cached and can be picked up by a client<br />
+'duplicate': The response is cached but equal to the previous cached response. It will be deleted and should not be used by a client<br />
+'failed: The response download failed. The the 'Response.download_stats.error' field for more details.</p>
   </div>
 
 </div>
@@ -1002,7 +1038,7 @@
 
 
 <h3 id="buffy.buffyserver.api.v1.models.Response.tags" class="doc doc-heading">
-<code class="highlight language-python"><span class="n">tags</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">]]</span> <span class="o">=</span> <span class="kc">None</span></code>
+<code class="highlight language-python"><span class="n">tags</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span></code>
   
   <span class="doc doc-labels">
       <small class="doc doc-label doc-label-class-attribute"><code>class-attribute</code></small>
@@ -1014,27 +1050,6 @@
   <div class="doc doc-contents ">
   
       <p>!EXPERIMENTAL!: Clients can add tags to a reponse to manage multiple versions</p>
-  </div>
-
-</div>
-
-<div class="doc doc-object doc-attribute">
-
-
-
-<h3 id="buffy.buffyserver.api.v1.models.Response.valid" class="doc doc-heading">
-<code class="highlight language-python"><span class="n">valid</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">bool</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span></code>
-  
-  <span class="doc doc-labels">
-      <small class="doc doc-label doc-label-class-attribute"><code>class-attribute</code></small>
-  </span>
-
-<a href="#buffy.buffyserver.api.v1.models.Response.valid" class="headerlink" title="Permanent link">&para;</a></h3>
-
-
-  <div class="doc doc-contents ">
-  
-      <p>!OBSOLETE!: Will be replaced by <code>tags</code></p>
   </div>
 
 </div>

@@ -384,6 +384,26 @@
     when_remote_changed
   </a>
   
+    <nav class="md-nav" aria-label="when_remote_changed">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#buffy.buffyserver.api.v1.models_recaching_strategies.ReCachingStrategy.when_remote_changed.check_interval_sec" class="md-nav__link">
+    check_interval_sec
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#buffy.buffyserver.api.v1.models_recaching_strategies.ReCachingStrategy.when_remote_changed.fallback_max_age_sec" class="md-nav__link">
+    fallback_max_age_sec
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -554,6 +574,26 @@
   <a href="#buffy.buffyserver.api.v1.models_recaching_strategies.ReCachingStrategy.when_remote_changed" class="md-nav__link">
     when_remote_changed
   </a>
+  
+    <nav class="md-nav" aria-label="when_remote_changed">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#buffy.buffyserver.api.v1.models_recaching_strategies.ReCachingStrategy.when_remote_changed.check_interval_sec" class="md-nav__link">
+    check_interval_sec
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#buffy.buffyserver.api.v1.models_recaching_strategies.ReCachingStrategy.when_remote_changed.fallback_max_age_sec" class="md-nav__link">
+    fallback_max_age_sec
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -822,7 +862,25 @@ A ReCachingStrategy defines how an when a remote resource should be updated</p>
 <span class="normal"><a href="#__codelineno-0-251">251</a></span>
 <span class="normal"><a href="#__codelineno-0-252">252</a></span>
 <span class="normal"><a href="#__codelineno-0-253">253</a></span>
-<span class="normal"><a href="#__codelineno-0-254">254</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-35" name="__codelineno-0-35"></a><span class="k">class</span> <span class="nc">ReCachingStrategy</span><span class="p">:</span>
+<span class="normal"><a href="#__codelineno-0-254">254</a></span>
+<span class="normal"><a href="#__codelineno-0-255">255</a></span>
+<span class="normal"><a href="#__codelineno-0-256">256</a></span>
+<span class="normal"><a href="#__codelineno-0-257">257</a></span>
+<span class="normal"><a href="#__codelineno-0-258">258</a></span>
+<span class="normal"><a href="#__codelineno-0-259">259</a></span>
+<span class="normal"><a href="#__codelineno-0-260">260</a></span>
+<span class="normal"><a href="#__codelineno-0-261">261</a></span>
+<span class="normal"><a href="#__codelineno-0-262">262</a></span>
+<span class="normal"><a href="#__codelineno-0-263">263</a></span>
+<span class="normal"><a href="#__codelineno-0-264">264</a></span>
+<span class="normal"><a href="#__codelineno-0-265">265</a></span>
+<span class="normal"><a href="#__codelineno-0-266">266</a></span>
+<span class="normal"><a href="#__codelineno-0-267">267</a></span>
+<span class="normal"><a href="#__codelineno-0-268">268</a></span>
+<span class="normal"><a href="#__codelineno-0-269">269</a></span>
+<span class="normal"><a href="#__codelineno-0-270">270</a></span>
+<span class="normal"><a href="#__codelineno-0-271">271</a></span>
+<span class="normal"><a href="#__codelineno-0-272">272</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-35" name="__codelineno-0-35"></a><span class="k">class</span> <span class="nc">ReCachingStrategy</span><span class="p">:</span>
 <a id="__codelineno-0-36" name="__codelineno-0-36"></a>    <span class="sd">&quot;&quot;&quot;</span>
 <a id="__codelineno-0-37" name="__codelineno-0-37"></a><span class="sd">    Wrapper class to contain all possible ReCachingStrategies.</span>
 <a id="__codelineno-0-38" name="__codelineno-0-38"></a><span class="sd">    A ReCachingStrategy defines how an when a remote resource should be updated</span>
@@ -945,103 +1003,121 @@ A ReCachingStrategy defines how an when a remote resource should be updated</p>
 <a id="__codelineno-0-155" name="__codelineno-0-155"></a>
 <a id="__codelineno-0-156" name="__codelineno-0-156"></a>    <span class="k">class</span> <span class="nc">when_requested</span><span class="p">(</span><span class="n">BaseReCachingStrategy</span><span class="p">):</span>
 <a id="__codelineno-0-157" name="__codelineno-0-157"></a>        <span class="sd">&quot;&quot;&quot;when_requested  - Strategy</span>
-<a id="__codelineno-0-158" name="__codelineno-0-158"></a><span class="sd">        Default Strategy!</span>
-<a id="__codelineno-0-159" name="__codelineno-0-159"></a><span class="sd">        Buffy will redownload the resource when the client requests the resource.</span>
-<a id="__codelineno-0-160" name="__codelineno-0-160"></a><span class="sd">        This is the most simple scenario which is closest to a classic just-download case but with a fallback safeguard;</span>
-<a id="__codelineno-0-161" name="__codelineno-0-161"></a><span class="sd">        If the remote resource fails to download, buffy can fallback to an older cached version of the resource, if available.</span>
-<a id="__codelineno-0-162" name="__codelineno-0-162"></a>
-<a id="__codelineno-0-163" name="__codelineno-0-163"></a><span class="sd">        **HINT**: Multiple request during one server tick (default 0.3s), will be bundled and share one response. \</span>
-<a id="__codelineno-0-164" name="__codelineno-0-164"></a><span class="sd">            Example: If you simultaneously request 5 numbers from a REST API that generates random numbers, you will most likely just get same number for every request.</span>
-<a id="__codelineno-0-165" name="__codelineno-0-165"></a><span class="sd">            In cases like this you maybe better off, bypassing a caching middleware like Buffy.</span>
-<a id="__codelineno-0-166" name="__codelineno-0-166"></a><span class="sd">        &quot;&quot;&quot;</span>
-<a id="__codelineno-0-167" name="__codelineno-0-167"></a>
-<a id="__codelineno-0-168" name="__codelineno-0-168"></a>        <span class="n">strategy_name</span><span class="p">:</span> <span class="n">Literal</span><span class="p">[</span><span class="s2">&quot;when_requested&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">Field</span><span class="p">(</span>
-<a id="__codelineno-0-169" name="__codelineno-0-169"></a>            <span class="n">default</span><span class="o">=</span><span class="s2">&quot;when_requested&quot;</span><span class="p">,</span> <span class="n">const</span><span class="o">=</span><span class="kc">True</span>
-<a id="__codelineno-0-170" name="__codelineno-0-170"></a>        <span class="p">)</span>
-<a id="__codelineno-0-171" name="__codelineno-0-171"></a>
-<a id="__codelineno-0-172" name="__codelineno-0-172"></a>        <span class="k">def</span> <span class="nf">request_needs_recache</span><span class="p">(</span>
-<a id="__codelineno-0-173" name="__codelineno-0-173"></a>            <span class="bp">self</span><span class="p">,</span>
-<a id="__codelineno-0-174" name="__codelineno-0-174"></a>            <span class="n">request</span><span class="p">:</span> <span class="s2">&quot;Request&quot;</span><span class="p">,</span>
-<a id="__codelineno-0-175" name="__codelineno-0-175"></a>            <span class="n">latest_response</span><span class="p">:</span> <span class="s2">&quot;Response&quot;</span><span class="p">,</span>
-<a id="__codelineno-0-176" name="__codelineno-0-176"></a>            <span class="n">strategy_state</span><span class="p">:</span> <span class="nb">dict</span><span class="p">,</span>
-<a id="__codelineno-0-177" name="__codelineno-0-177"></a>            <span class="n">storage</span><span class="p">:</span> <span class="s2">&quot;StorageInterface&quot;</span><span class="p">,</span>
-<a id="__codelineno-0-178" name="__codelineno-0-178"></a>        <span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
-<a id="__codelineno-0-179" name="__codelineno-0-179"></a>            <span class="k">if</span> <span class="n">request</span><span class="o">.</span><span class="n">latest_requests</span><span class="p">:</span>
-<a id="__codelineno-0-180" name="__codelineno-0-180"></a>                <span class="k">return</span> <span class="kc">True</span>
-<a id="__codelineno-0-181" name="__codelineno-0-181"></a>            <span class="k">return</span> <span class="kc">False</span>
-<a id="__codelineno-0-182" name="__codelineno-0-182"></a>
-<a id="__codelineno-0-183" name="__codelineno-0-183"></a>    <span class="k">class</span> <span class="nc">when_remote_changed</span><span class="p">(</span><span class="n">BaseReCachingStrategy</span><span class="p">):</span>
-<a id="__codelineno-0-184" name="__codelineno-0-184"></a>        <span class="sd">&quot;&quot;&quot;when_remote_changed  - Strategy</span>
-<a id="__codelineno-0-185" name="__codelineno-0-185"></a><span class="sd">        Buffy will ask the webserver of the remote resource about the state of the resource.</span>
-<a id="__codelineno-0-186" name="__codelineno-0-186"></a><span class="sd">        Via &quot;etag&quot;, &quot;last_modified_datetime&quot; or &quot;size_in_bytes&quot; Buffy can determine if the resource changed.</span>
-<a id="__codelineno-0-187" name="__codelineno-0-187"></a><span class="sd">        If it has changed Buffy will download and cache the newer version.</span>
-<a id="__codelineno-0-188" name="__codelineno-0-188"></a><span class="sd">        This is usefull for scenarios where the client need to have the newest version instant and reliable available.</span>
-<a id="__codelineno-0-189" name="__codelineno-0-189"></a>
-<a id="__codelineno-0-190" name="__codelineno-0-190"></a><span class="sd">        params:</span>
-<a id="__codelineno-0-191" name="__codelineno-0-191"></a><span class="sd">            check_interval_sec</span>
-<a id="__codelineno-0-192" name="__codelineno-0-192"></a><span class="sd">        &quot;&quot;&quot;</span>
-<a id="__codelineno-0-193" name="__codelineno-0-193"></a>
-<a id="__codelineno-0-194" name="__codelineno-0-194"></a>        <span class="n">strategy_name</span><span class="p">:</span> <span class="n">Literal</span><span class="p">[</span><span class="s2">&quot;when_remote_changed&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">Field</span><span class="p">(</span>
-<a id="__codelineno-0-195" name="__codelineno-0-195"></a>            <span class="n">default</span><span class="o">=</span><span class="s2">&quot;when_remote_changed&quot;</span><span class="p">,</span> <span class="n">const</span><span class="o">=</span><span class="kc">True</span>
-<a id="__codelineno-0-196" name="__codelineno-0-196"></a>        <span class="p">)</span>
-<a id="__codelineno-0-197" name="__codelineno-0-197"></a>        <span class="n">check_interval_sec</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">43200</span>
-<a id="__codelineno-0-198" name="__codelineno-0-198"></a>
-<a id="__codelineno-0-199" name="__codelineno-0-199"></a>        <span class="k">def</span> <span class="nf">request_needs_recache</span><span class="p">(</span>
-<a id="__codelineno-0-200" name="__codelineno-0-200"></a>            <span class="bp">self</span><span class="p">,</span>
-<a id="__codelineno-0-201" name="__codelineno-0-201"></a>            <span class="n">request</span><span class="p">:</span> <span class="s2">&quot;Request&quot;</span><span class="p">,</span>
-<a id="__codelineno-0-202" name="__codelineno-0-202"></a>            <span class="n">latest_response</span><span class="p">:</span> <span class="s2">&quot;Response&quot;</span><span class="p">,</span>
-<a id="__codelineno-0-203" name="__codelineno-0-203"></a>            <span class="n">strategy_state</span><span class="p">:</span> <span class="nb">dict</span><span class="p">,</span>
-<a id="__codelineno-0-204" name="__codelineno-0-204"></a>            <span class="n">storage</span><span class="p">:</span> <span class="s2">&quot;StorageInterface&quot;</span><span class="p">,</span>
-<a id="__codelineno-0-205" name="__codelineno-0-205"></a>        <span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
-<a id="__codelineno-0-206" name="__codelineno-0-206"></a>            <span class="k">if</span> <span class="n">TYPE_CHECKING</span><span class="p">:</span>
-<a id="__codelineno-0-207" name="__codelineno-0-207"></a>                <span class="n">request</span><span class="o">.</span><span class="n">cache_configuration</span><span class="o">.</span><span class="n">recaching_strategy</span><span class="p">:</span> <span class="n">ReCachingStrategy</span><span class="o">.</span><span class="n">when_remote_changed</span> <span class="o">=</span> <span class="p">(</span>
-<a id="__codelineno-0-208" name="__codelineno-0-208"></a>                    <span class="n">request</span><span class="o">.</span><span class="n">cache_configuration</span><span class="o">.</span><span class="n">recaching_strategy</span>
-<a id="__codelineno-0-209" name="__codelineno-0-209"></a>                <span class="p">)</span>
-<a id="__codelineno-0-210" name="__codelineno-0-210"></a>            <span class="kn">from</span> <span class="nn">buffy.tools.stuborn_downloader</span> <span class="kn">import</span> <span class="n">StubornDownloader</span>
-<a id="__codelineno-0-211" name="__codelineno-0-211"></a>
-<a id="__codelineno-0-212" name="__codelineno-0-212"></a>            <span class="k">if</span> <span class="ow">not</span> <span class="n">request</span><span class="o">.</span><span class="n">id</span> <span class="ow">in</span> <span class="n">strategy_state</span><span class="p">:</span>
-<a id="__codelineno-0-213" name="__codelineno-0-213"></a>                <span class="n">strategy_state</span><span class="p">[</span><span class="n">request</span><span class="o">.</span><span class="n">id</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
-<a id="__codelineno-0-214" name="__codelineno-0-214"></a>            <span class="n">remote_file_change_last_check_time_unix_epoch</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="n">strategy_state</span><span class="p">[</span>
-<a id="__codelineno-0-215" name="__codelineno-0-215"></a>                <span class="n">request</span><span class="o">.</span><span class="n">id</span>
-<a id="__codelineno-0-216" name="__codelineno-0-216"></a>            <span class="p">]</span>
-<a id="__codelineno-0-217" name="__codelineno-0-217"></a>            <span class="k">if</span> <span class="p">(</span>
-<a id="__codelineno-0-218" name="__codelineno-0-218"></a>                <span class="n">remote_file_change_last_check_time_unix_epoch</span>
-<a id="__codelineno-0-219" name="__codelineno-0-219"></a>                <span class="o">+</span> <span class="n">request</span><span class="o">.</span><span class="n">cache_configuration</span><span class="o">.</span><span class="n">recaching_strategy</span><span class="o">.</span><span class="n">check_interval_sec</span>
-<a id="__codelineno-0-220" name="__codelineno-0-220"></a>                <span class="o">&gt;</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
-<a id="__codelineno-0-221" name="__codelineno-0-221"></a>            <span class="p">):</span>
-<a id="__codelineno-0-222" name="__codelineno-0-222"></a>                <span class="k">return</span> <span class="kc">False</span>
-<a id="__codelineno-0-223" name="__codelineno-0-223"></a>            <span class="n">remote_file_change_last_check_time_unix_epoch</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
-<a id="__codelineno-0-224" name="__codelineno-0-224"></a>            <span class="n">strategy_state</span><span class="p">[</span><span class="n">request</span><span class="o">.</span><span class="n">id</span><span class="p">]</span> <span class="o">=</span> <span class="n">remote_file_change_last_check_time_unix_epoch</span>
-<a id="__codelineno-0-225" name="__codelineno-0-225"></a>            <span class="n">potential_next_response_header</span> <span class="o">=</span> <span class="n">StubornDownloader</span><span class="p">(</span>
-<a id="__codelineno-0-226" name="__codelineno-0-226"></a>                <span class="n">request</span><span class="o">=</span><span class="n">request</span>
-<a id="__codelineno-0-227" name="__codelineno-0-227"></a>            <span class="p">)</span><span class="o">.</span><span class="n">get_response_content_attrs</span><span class="p">()</span>
-<a id="__codelineno-0-228" name="__codelineno-0-228"></a>            <span class="k">if</span> <span class="p">(</span>
-<a id="__codelineno-0-229" name="__codelineno-0-229"></a>                <span class="ow">not</span> <span class="n">potential_next_response_header</span>
-<a id="__codelineno-0-230" name="__codelineno-0-230"></a>                <span class="ow">and</span> <span class="ow">not</span> <span class="n">potential_next_response_header</span><span class="o">.</span><span class="n">etag</span>
-<a id="__codelineno-0-231" name="__codelineno-0-231"></a>                <span class="ow">and</span> <span class="ow">not</span> <span class="n">potential_next_response_header</span><span class="o">.</span><span class="n">last_modified_datetime_utc</span>
-<a id="__codelineno-0-232" name="__codelineno-0-232"></a>                <span class="ow">and</span> <span class="ow">not</span> <span class="n">potential_next_response_header</span><span class="o">.</span><span class="n">size_in_bytes</span>
-<a id="__codelineno-0-233" name="__codelineno-0-233"></a>            <span class="p">):</span>
-<a id="__codelineno-0-234" name="__codelineno-0-234"></a>                <span class="n">err_msg</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;The file can not be recached with strategy &#39;ReCachingStrategy.</span><span class="si">{</span><span class="n">ReCachingStrategy</span><span class="o">.</span><span class="n">when_remote_changed</span><span class="o">.</span><span class="vm">__name__</span><span class="si">}</span><span class="s2">&#39;! Can not determine if target file of request (id:&#39;</span><span class="si">{</span><span class="n">request</span><span class="o">.</span><span class="n">id</span><span class="si">}</span><span class="s2">&#39;,url:&#39;</span><span class="si">{</span><span class="n">request</span><span class="o">.</span><span class="n">url</span><span class="si">}</span><span class="s2">&#39; changed. The server at &#39;</span><span class="si">{</span><span class="n">request</span><span class="o">.</span><span class="n">url</span><span class="si">}</span><span class="s2">&#39; does not provide any informations. Please use another caching strategy than </span><span class="si">{</span><span class="n">ReCachingStrategy</span><span class="o">.</span><span class="n">when_remote_changed</span><span class="si">}</span><span class="s2">.&quot;</span>
-<a id="__codelineno-0-235" name="__codelineno-0-235"></a>                <span class="n">log</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="n">err_msg</span><span class="p">)</span>
-<a id="__codelineno-0-236" name="__codelineno-0-236"></a>                <span class="n">latest_response</span><span class="o">.</span><span class="n">download_stats</span><span class="o">.</span><span class="n">error</span> <span class="o">=</span> <span class="n">err_msg</span>
-<a id="__codelineno-0-237" name="__codelineno-0-237"></a>                <span class="n">storage</span><span class="o">.</span><span class="n">update_response</span><span class="p">(</span><span class="n">latest_response</span><span class="p">)</span>
-<a id="__codelineno-0-238" name="__codelineno-0-238"></a>                <span class="k">return</span> <span class="kc">False</span>
-<a id="__codelineno-0-239" name="__codelineno-0-239"></a>
-<a id="__codelineno-0-240" name="__codelineno-0-240"></a>            <span class="n">attr_comparison_sequence</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span>
-<a id="__codelineno-0-241" name="__codelineno-0-241"></a>                <span class="s2">&quot;etag&quot;</span><span class="p">,</span>
-<a id="__codelineno-0-242" name="__codelineno-0-242"></a>                <span class="s2">&quot;last_modified_datetime&quot;</span><span class="p">,</span>
-<a id="__codelineno-0-243" name="__codelineno-0-243"></a>                <span class="s2">&quot;size_in_bytes&quot;</span><span class="p">,</span>
-<a id="__codelineno-0-244" name="__codelineno-0-244"></a>            <span class="p">]</span>
-<a id="__codelineno-0-245" name="__codelineno-0-245"></a>            <span class="k">for</span> <span class="n">attr</span> <span class="ow">in</span> <span class="n">attr_comparison_sequence</span><span class="p">:</span>
-<a id="__codelineno-0-246" name="__codelineno-0-246"></a>                <span class="k">if</span> <span class="p">(</span>
-<a id="__codelineno-0-247" name="__codelineno-0-247"></a>                    <span class="nb">hasattr</span><span class="p">(</span><span class="n">potential_next_response_header</span><span class="p">,</span> <span class="n">attr</span><span class="p">)</span>
-<a id="__codelineno-0-248" name="__codelineno-0-248"></a>                    <span class="ow">and</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">latest_response</span><span class="p">,</span> <span class="n">attr</span><span class="p">)</span>
-<a id="__codelineno-0-249" name="__codelineno-0-249"></a>                <span class="p">)</span> <span class="ow">and</span> <span class="p">(</span>
-<a id="__codelineno-0-250" name="__codelineno-0-250"></a>                    <span class="nb">getattr</span><span class="p">(</span><span class="n">potential_next_response_header</span><span class="p">,</span> <span class="n">attr</span><span class="p">)</span>
-<a id="__codelineno-0-251" name="__codelineno-0-251"></a>                    <span class="o">!=</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">latest_response</span><span class="p">,</span> <span class="n">attr</span><span class="p">)</span>
-<a id="__codelineno-0-252" name="__codelineno-0-252"></a>                <span class="p">):</span>
-<a id="__codelineno-0-253" name="__codelineno-0-253"></a>                    <span class="k">return</span> <span class="kc">True</span>
-<a id="__codelineno-0-254" name="__codelineno-0-254"></a>            <span class="k">return</span> <span class="kc">False</span>
+<a id="__codelineno-0-158" name="__codelineno-0-158"></a><span class="sd">        Buffy will redownload the resource when the client requests the resource.</span>
+<a id="__codelineno-0-159" name="__codelineno-0-159"></a><span class="sd">        This is the most simple scenario which is closest to a classic just-download case but with a fallback safeguard;</span>
+<a id="__codelineno-0-160" name="__codelineno-0-160"></a><span class="sd">        If the remote resource fails to download, buffy can fallback to an older cached version of the resource, if available.</span>
+<a id="__codelineno-0-161" name="__codelineno-0-161"></a>
+<a id="__codelineno-0-162" name="__codelineno-0-162"></a><span class="sd">        **HINT**: Multiple request during one server tick (default 0.3s), will be bundled and share one response. \</span>
+<a id="__codelineno-0-163" name="__codelineno-0-163"></a><span class="sd">            Example: If you simultaneously request 5 numbers from a REST API that generates random numbers, you will most likely just get same number for every request.</span>
+<a id="__codelineno-0-164" name="__codelineno-0-164"></a><span class="sd">            In cases like this you maybe better off, bypassing a caching middleware like Buffy.</span>
+<a id="__codelineno-0-165" name="__codelineno-0-165"></a><span class="sd">        &quot;&quot;&quot;</span>
+<a id="__codelineno-0-166" name="__codelineno-0-166"></a>
+<a id="__codelineno-0-167" name="__codelineno-0-167"></a>        <span class="n">strategy_name</span><span class="p">:</span> <span class="n">Literal</span><span class="p">[</span><span class="s2">&quot;when_requested&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">Field</span><span class="p">(</span>
+<a id="__codelineno-0-168" name="__codelineno-0-168"></a>            <span class="n">default</span><span class="o">=</span><span class="s2">&quot;when_requested&quot;</span><span class="p">,</span> <span class="n">const</span><span class="o">=</span><span class="kc">True</span>
+<a id="__codelineno-0-169" name="__codelineno-0-169"></a>        <span class="p">)</span>
+<a id="__codelineno-0-170" name="__codelineno-0-170"></a>
+<a id="__codelineno-0-171" name="__codelineno-0-171"></a>        <span class="k">def</span> <span class="nf">request_needs_recache</span><span class="p">(</span>
+<a id="__codelineno-0-172" name="__codelineno-0-172"></a>            <span class="bp">self</span><span class="p">,</span>
+<a id="__codelineno-0-173" name="__codelineno-0-173"></a>            <span class="n">request</span><span class="p">:</span> <span class="s2">&quot;Request&quot;</span><span class="p">,</span>
+<a id="__codelineno-0-174" name="__codelineno-0-174"></a>            <span class="n">latest_response</span><span class="p">:</span> <span class="s2">&quot;Response&quot;</span><span class="p">,</span>
+<a id="__codelineno-0-175" name="__codelineno-0-175"></a>            <span class="n">strategy_state</span><span class="p">:</span> <span class="nb">dict</span><span class="p">,</span>
+<a id="__codelineno-0-176" name="__codelineno-0-176"></a>            <span class="n">storage</span><span class="p">:</span> <span class="s2">&quot;StorageInterface&quot;</span><span class="p">,</span>
+<a id="__codelineno-0-177" name="__codelineno-0-177"></a>        <span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+<a id="__codelineno-0-178" name="__codelineno-0-178"></a>            <span class="k">if</span> <span class="n">request</span><span class="o">.</span><span class="n">latest_requests</span><span class="p">:</span>
+<a id="__codelineno-0-179" name="__codelineno-0-179"></a>                <span class="k">return</span> <span class="kc">True</span>
+<a id="__codelineno-0-180" name="__codelineno-0-180"></a>            <span class="k">return</span> <span class="kc">False</span>
+<a id="__codelineno-0-181" name="__codelineno-0-181"></a>
+<a id="__codelineno-0-182" name="__codelineno-0-182"></a>    <span class="k">class</span> <span class="nc">when_remote_changed</span><span class="p">(</span><span class="n">BaseReCachingStrategy</span><span class="p">):</span>
+<a id="__codelineno-0-183" name="__codelineno-0-183"></a>        <span class="sd">&quot;&quot;&quot;</span>
+<a id="__codelineno-0-184" name="__codelineno-0-184"></a><span class="sd">        Buffy will ask the webserver of the remote resource about the state of the resource.</span>
+<a id="__codelineno-0-185" name="__codelineno-0-185"></a><span class="sd">        Via &quot;etag&quot;, &quot;last_modified_datetime&quot; or &quot;size_in_bytes&quot; Buffy can determine if the resource changed.</span>
+<a id="__codelineno-0-186" name="__codelineno-0-186"></a><span class="sd">        If it has changed Buffy will download and cache the newer version.</span>
+<a id="__codelineno-0-187" name="__codelineno-0-187"></a><span class="sd">        This is usefull resources changing in random intervals.</span>
+<a id="__codelineno-0-188" name="__codelineno-0-188"></a>
+<a id="__codelineno-0-189" name="__codelineno-0-189"></a><span class="sd">        Args:</span>
+<a id="__codelineno-0-190" name="__codelineno-0-190"></a><span class="sd">            check_interval_sec (int): \</span>
+<a id="__codelineno-0-191" name="__codelineno-0-191"></a><span class="sd">                default:3600 - The duration a resource will be cached until it gets a redownload from the source</span>
+<a id="__codelineno-0-192" name="__codelineno-0-192"></a><span class="sd">            fallback_max_age_sec (int): \</span>
+<a id="__codelineno-0-193" name="__codelineno-0-193"></a><span class="sd">                default:3600 - The duration a resource will be cached until it gets a redownload from the source</span>
+<a id="__codelineno-0-194" name="__codelineno-0-194"></a><span class="sd">        &quot;&quot;&quot;</span>
+<a id="__codelineno-0-195" name="__codelineno-0-195"></a>
+<a id="__codelineno-0-196" name="__codelineno-0-196"></a>        <span class="n">strategy_name</span><span class="p">:</span> <span class="n">Literal</span><span class="p">[</span><span class="s2">&quot;when_remote_changed&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">Field</span><span class="p">(</span>
+<a id="__codelineno-0-197" name="__codelineno-0-197"></a>            <span class="n">default</span><span class="o">=</span><span class="s2">&quot;when_remote_changed&quot;</span><span class="p">,</span> <span class="n">const</span><span class="o">=</span><span class="kc">True</span>
+<a id="__codelineno-0-198" name="__codelineno-0-198"></a>        <span class="p">)</span>
+<a id="__codelineno-0-199" name="__codelineno-0-199"></a>        <span class="n">check_interval_sec</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">60</span> <span class="o">*</span> <span class="mi">60</span> <span class="o">*</span> <span class="mi">6</span>
+<a id="__codelineno-0-200" name="__codelineno-0-200"></a>        <span class="sd">&quot;&quot;&quot;Check if remote resource changed every n seconds&quot;&quot;&quot;</span>
+<a id="__codelineno-0-201" name="__codelineno-0-201"></a>        <span class="n">fallback_max_age_sec</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">60</span> <span class="o">*</span> <span class="mi">60</span> <span class="o">*</span> <span class="mi">24</span>
+<a id="__codelineno-0-202" name="__codelineno-0-202"></a>        <span class="sd">&quot;&quot;&quot;If the server will not provide informations about the state of the resource, Buffy will just redownload the resource every n seconds. \</span>
+<a id="__codelineno-0-203" name="__codelineno-0-203"></a><span class="sd">            This is a equal behaviour to `ReCachingStrateg.Age` strategy&quot;&quot;&quot;</span>
+<a id="__codelineno-0-204" name="__codelineno-0-204"></a>
+<a id="__codelineno-0-205" name="__codelineno-0-205"></a>        <span class="k">def</span> <span class="nf">request_needs_recache</span><span class="p">(</span>
+<a id="__codelineno-0-206" name="__codelineno-0-206"></a>            <span class="bp">self</span><span class="p">,</span>
+<a id="__codelineno-0-207" name="__codelineno-0-207"></a>            <span class="n">request</span><span class="p">:</span> <span class="s2">&quot;Request&quot;</span><span class="p">,</span>
+<a id="__codelineno-0-208" name="__codelineno-0-208"></a>            <span class="n">latest_response</span><span class="p">:</span> <span class="s2">&quot;Response&quot;</span><span class="p">,</span>
+<a id="__codelineno-0-209" name="__codelineno-0-209"></a>            <span class="n">strategy_state</span><span class="p">:</span> <span class="nb">dict</span><span class="p">,</span>
+<a id="__codelineno-0-210" name="__codelineno-0-210"></a>            <span class="n">storage</span><span class="p">:</span> <span class="s2">&quot;StorageInterface&quot;</span><span class="p">,</span>
+<a id="__codelineno-0-211" name="__codelineno-0-211"></a>        <span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+<a id="__codelineno-0-212" name="__codelineno-0-212"></a>            <span class="k">if</span> <span class="n">TYPE_CHECKING</span><span class="p">:</span>
+<a id="__codelineno-0-213" name="__codelineno-0-213"></a>                <span class="n">request</span><span class="o">.</span><span class="n">cache_configuration</span><span class="o">.</span><span class="n">recaching_strategy</span><span class="p">:</span> <span class="n">ReCachingStrategy</span><span class="o">.</span><span class="n">when_remote_changed</span> <span class="o">=</span> <span class="p">(</span>
+<a id="__codelineno-0-214" name="__codelineno-0-214"></a>                    <span class="n">request</span><span class="o">.</span><span class="n">cache_configuration</span><span class="o">.</span><span class="n">recaching_strategy</span>
+<a id="__codelineno-0-215" name="__codelineno-0-215"></a>                <span class="p">)</span>
+<a id="__codelineno-0-216" name="__codelineno-0-216"></a>            <span class="kn">from</span> <span class="nn">buffy.tools.stuborn_downloader</span> <span class="kn">import</span> <span class="n">StubornDownloader</span>
+<a id="__codelineno-0-217" name="__codelineno-0-217"></a>
+<a id="__codelineno-0-218" name="__codelineno-0-218"></a>            <span class="k">if</span> <span class="ow">not</span> <span class="n">request</span><span class="o">.</span><span class="n">id</span> <span class="ow">in</span> <span class="n">strategy_state</span><span class="p">:</span>
+<a id="__codelineno-0-219" name="__codelineno-0-219"></a>                <span class="n">strategy_state</span><span class="p">[</span><span class="n">request</span><span class="o">.</span><span class="n">id</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
+<a id="__codelineno-0-220" name="__codelineno-0-220"></a>            <span class="n">remote_file_change_last_check_time_unix_epoch</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="n">strategy_state</span><span class="p">[</span>
+<a id="__codelineno-0-221" name="__codelineno-0-221"></a>                <span class="n">request</span><span class="o">.</span><span class="n">id</span>
+<a id="__codelineno-0-222" name="__codelineno-0-222"></a>            <span class="p">]</span>
+<a id="__codelineno-0-223" name="__codelineno-0-223"></a>            <span class="k">if</span> <span class="p">(</span>
+<a id="__codelineno-0-224" name="__codelineno-0-224"></a>                <span class="n">remote_file_change_last_check_time_unix_epoch</span>
+<a id="__codelineno-0-225" name="__codelineno-0-225"></a>                <span class="o">+</span> <span class="n">request</span><span class="o">.</span><span class="n">cache_configuration</span><span class="o">.</span><span class="n">recaching_strategy</span><span class="o">.</span><span class="n">check_interval_sec</span>
+<a id="__codelineno-0-226" name="__codelineno-0-226"></a>                <span class="o">&gt;</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+<a id="__codelineno-0-227" name="__codelineno-0-227"></a>            <span class="p">):</span>
+<a id="__codelineno-0-228" name="__codelineno-0-228"></a>                <span class="k">return</span> <span class="kc">False</span>
+<a id="__codelineno-0-229" name="__codelineno-0-229"></a>            <span class="n">remote_file_change_last_check_time_unix_epoch</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+<a id="__codelineno-0-230" name="__codelineno-0-230"></a>            <span class="n">strategy_state</span><span class="p">[</span><span class="n">request</span><span class="o">.</span><span class="n">id</span><span class="p">]</span> <span class="o">=</span> <span class="n">remote_file_change_last_check_time_unix_epoch</span>
+<a id="__codelineno-0-231" name="__codelineno-0-231"></a>            <span class="n">potential_next_response_header</span> <span class="o">=</span> <span class="n">StubornDownloader</span><span class="p">(</span>
+<a id="__codelineno-0-232" name="__codelineno-0-232"></a>                <span class="n">request</span><span class="o">=</span><span class="n">request</span>
+<a id="__codelineno-0-233" name="__codelineno-0-233"></a>            <span class="p">)</span><span class="o">.</span><span class="n">get_response_content_attrs</span><span class="p">()</span>
+<a id="__codelineno-0-234" name="__codelineno-0-234"></a>            <span class="k">if</span> <span class="p">(</span>
+<a id="__codelineno-0-235" name="__codelineno-0-235"></a>                <span class="ow">not</span> <span class="n">potential_next_response_header</span>
+<a id="__codelineno-0-236" name="__codelineno-0-236"></a>                <span class="ow">and</span> <span class="ow">not</span> <span class="n">potential_next_response_header</span><span class="o">.</span><span class="n">etag</span>
+<a id="__codelineno-0-237" name="__codelineno-0-237"></a>                <span class="ow">and</span> <span class="ow">not</span> <span class="n">potential_next_response_header</span><span class="o">.</span><span class="n">last_modified_datetime_utc</span>
+<a id="__codelineno-0-238" name="__codelineno-0-238"></a>                <span class="ow">and</span> <span class="ow">not</span> <span class="n">potential_next_response_header</span><span class="o">.</span><span class="n">size_in_bytes</span>
+<a id="__codelineno-0-239" name="__codelineno-0-239"></a>            <span class="p">):</span>
+<a id="__codelineno-0-240" name="__codelineno-0-240"></a>                <span class="n">err_msg</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;The file can not be recached with strategy &#39;ReCachingStrategy.</span><span class="si">{</span><span class="n">ReCachingStrategy</span><span class="o">.</span><span class="n">when_remote_changed</span><span class="o">.</span><span class="vm">__name__</span><span class="si">}</span><span class="s2">&#39;! </span><span class="se">\</span>
+<a id="__codelineno-0-241" name="__codelineno-0-241"></a><span class="s2">                    Buffy can not determine if target file of request (id:&#39;</span><span class="si">{</span><span class="n">request</span><span class="o">.</span><span class="n">id</span><span class="si">}</span><span class="s2">&#39;,url:&#39;</span><span class="si">{</span><span class="n">request</span><span class="o">.</span><span class="n">url</span><span class="si">}</span><span class="s2">&#39; changed. </span><span class="se">\</span>
+<a id="__codelineno-0-242" name="__codelineno-0-242"></a><span class="s2">                    The server at &#39;</span><span class="si">{</span><span class="n">request</span><span class="o">.</span><span class="n">url</span><span class="si">}</span><span class="s2">&#39; does not provide any informations.  </span><span class="se">\</span>
+<a id="__codelineno-0-243" name="__codelineno-0-243"></a><span class="s2">                    Try to use another caching strategy than &#39;ReCachingStrategy.</span><span class="si">{</span><span class="n">ReCachingStrategy</span><span class="o">.</span><span class="n">when_remote_changed</span><span class="o">.</span><span class="vm">__name__</span><span class="si">}</span><span class="s2">. </span><span class="se">\</span>
+<a id="__codelineno-0-244" name="__codelineno-0-244"></a><span class="s2">                    Buffy will use the fallback and re-cache the file by age (</span><span class="si">{</span><span class="n">request</span><span class="o">.</span><span class="n">cache_configuration</span><span class="o">.</span><span class="n">recaching_strategy</span><span class="o">.</span><span class="n">fallback_max_age_sec</span><span class="si">}</span><span class="s2"> seconds)&quot;</span>
+<a id="__codelineno-0-245" name="__codelineno-0-245"></a>                <span class="n">log</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span><span class="n">err_msg</span><span class="p">)</span>
+<a id="__codelineno-0-246" name="__codelineno-0-246"></a>                <span class="n">latest_response</span><span class="o">.</span><span class="n">download_stats</span><span class="o">.</span><span class="n">error</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;WARNING: </span><span class="si">{</span><span class="n">err_msg</span><span class="si">}</span><span class="s2">&quot;</span>
+<a id="__codelineno-0-247" name="__codelineno-0-247"></a>                <span class="n">storage</span><span class="o">.</span><span class="n">update_response</span><span class="p">(</span><span class="n">latest_response</span><span class="p">)</span>
+<a id="__codelineno-0-248" name="__codelineno-0-248"></a>                <span class="c1"># Fallback to age strategy</span>
+<a id="__codelineno-0-249" name="__codelineno-0-249"></a>                <span class="k">return</span> <span class="n">ReCachingStrategy</span><span class="o">.</span><span class="n">age</span><span class="p">(</span>
+<a id="__codelineno-0-250" name="__codelineno-0-250"></a>                    <span class="n">seconds</span><span class="o">=</span><span class="n">request</span><span class="o">.</span><span class="n">cache_configuration</span><span class="o">.</span><span class="n">recaching_strategy</span><span class="o">.</span><span class="n">fallback_max_age_sec</span>
+<a id="__codelineno-0-251" name="__codelineno-0-251"></a>                <span class="p">)</span><span class="o">.</span><span class="n">request_needs_recache</span><span class="p">(</span>
+<a id="__codelineno-0-252" name="__codelineno-0-252"></a>                    <span class="n">request</span><span class="o">=</span><span class="n">request</span><span class="p">,</span>
+<a id="__codelineno-0-253" name="__codelineno-0-253"></a>                    <span class="n">latest_response</span><span class="o">=</span><span class="n">latest_response</span><span class="p">,</span>
+<a id="__codelineno-0-254" name="__codelineno-0-254"></a>                    <span class="n">strategy_state</span><span class="o">=</span><span class="n">strategy_state</span><span class="p">,</span>
+<a id="__codelineno-0-255" name="__codelineno-0-255"></a>                    <span class="n">storage</span><span class="o">=</span><span class="n">storage</span><span class="p">,</span>
+<a id="__codelineno-0-256" name="__codelineno-0-256"></a>                <span class="p">)</span>
+<a id="__codelineno-0-257" name="__codelineno-0-257"></a>
+<a id="__codelineno-0-258" name="__codelineno-0-258"></a>            <span class="n">attr_comparison_sequence</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span>
+<a id="__codelineno-0-259" name="__codelineno-0-259"></a>                <span class="s2">&quot;etag&quot;</span><span class="p">,</span>
+<a id="__codelineno-0-260" name="__codelineno-0-260"></a>                <span class="s2">&quot;last_modified_datetime&quot;</span><span class="p">,</span>
+<a id="__codelineno-0-261" name="__codelineno-0-261"></a>                <span class="s2">&quot;size_in_bytes&quot;</span><span class="p">,</span>
+<a id="__codelineno-0-262" name="__codelineno-0-262"></a>            <span class="p">]</span>
+<a id="__codelineno-0-263" name="__codelineno-0-263"></a>            <span class="k">for</span> <span class="n">attr</span> <span class="ow">in</span> <span class="n">attr_comparison_sequence</span><span class="p">:</span>
+<a id="__codelineno-0-264" name="__codelineno-0-264"></a>                <span class="k">if</span> <span class="p">(</span>
+<a id="__codelineno-0-265" name="__codelineno-0-265"></a>                    <span class="nb">hasattr</span><span class="p">(</span><span class="n">potential_next_response_header</span><span class="p">,</span> <span class="n">attr</span><span class="p">)</span>
+<a id="__codelineno-0-266" name="__codelineno-0-266"></a>                    <span class="ow">and</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">latest_response</span><span class="p">,</span> <span class="n">attr</span><span class="p">)</span>
+<a id="__codelineno-0-267" name="__codelineno-0-267"></a>                <span class="p">)</span> <span class="ow">and</span> <span class="p">(</span>
+<a id="__codelineno-0-268" name="__codelineno-0-268"></a>                    <span class="nb">getattr</span><span class="p">(</span><span class="n">potential_next_response_header</span><span class="p">,</span> <span class="n">attr</span><span class="p">)</span>
+<a id="__codelineno-0-269" name="__codelineno-0-269"></a>                    <span class="o">!=</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">latest_response</span><span class="p">,</span> <span class="n">attr</span><span class="p">)</span>
+<a id="__codelineno-0-270" name="__codelineno-0-270"></a>                <span class="p">):</span>
+<a id="__codelineno-0-271" name="__codelineno-0-271"></a>                    <span class="k">return</span> <span class="kc">True</span>
+<a id="__codelineno-0-272" name="__codelineno-0-272"></a>            <span class="k">return</span> <span class="kc">False</span>
 </code></pre></div></td></tr></table></div>
         </details>
 
@@ -1463,16 +1539,50 @@ This is usefull for files that will be 100% static.</p>
         Bases: <code><span title="buffy.buffyserver.api.v1.models_recaching_strategies.BaseReCachingStrategy">BaseReCachingStrategy</span></code></p>
 
   
-      <p>when_remote_changed  - Strategy
-Buffy will ask the webserver of the remote resource about the state of the resource.
+      <p>Buffy will ask the webserver of the remote resource about the state of the resource.
 Via "etag", "last_modified_datetime" or "size_in_bytes" Buffy can determine if the resource changed.
 If it has changed Buffy will download and cache the newer version.
-This is usefull for scenarios where the client need to have the newest version instant and reliable available.</p>
+This is usefull resources changing in random intervals.</p>
+
+  <p><strong>Parameters:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Description</th>
+        <th>Default</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td><code>check_interval_sec</code></td>
+          <td>
+                <code>int</code>
+          </td>
+          <td><p>default:3600 - The duration a resource will be cached until it gets a redownload from the source</p></td>
+          <td>
+              <em>required</em>
+          </td>
+        </tr>
+        <tr>
+          <td><code>fallback_max_age_sec</code></td>
+          <td>
+                <code>int</code>
+          </td>
+          <td><p>default:3600 - The duration a resource will be cached until it gets a redownload from the source</p></td>
+          <td>
+              <em>required</em>
+          </td>
+        </tr>
+    </tbody>
+  </table>
 
 
         <details class="quote">
           <summary>Source code in <code>buffy/buffyserver/api/v1/models_recaching_strategies.py</code></summary>
-          <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-183">183</a></span>
+          <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-182">182</a></span>
+<span class="normal"><a href="#__codelineno-0-183">183</a></span>
 <span class="normal"><a href="#__codelineno-0-184">184</a></span>
 <span class="normal"><a href="#__codelineno-0-185">185</a></span>
 <span class="normal"><a href="#__codelineno-0-186">186</a></span>
@@ -1543,78 +1653,115 @@ This is usefull for scenarios where the client need to have the newest version i
 <span class="normal"><a href="#__codelineno-0-251">251</a></span>
 <span class="normal"><a href="#__codelineno-0-252">252</a></span>
 <span class="normal"><a href="#__codelineno-0-253">253</a></span>
-<span class="normal"><a href="#__codelineno-0-254">254</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-183" name="__codelineno-0-183"></a><span class="k">class</span> <span class="nc">when_remote_changed</span><span class="p">(</span><span class="n">BaseReCachingStrategy</span><span class="p">):</span>
-<a id="__codelineno-0-184" name="__codelineno-0-184"></a>    <span class="sd">&quot;&quot;&quot;when_remote_changed  - Strategy</span>
-<a id="__codelineno-0-185" name="__codelineno-0-185"></a><span class="sd">    Buffy will ask the webserver of the remote resource about the state of the resource.</span>
-<a id="__codelineno-0-186" name="__codelineno-0-186"></a><span class="sd">    Via &quot;etag&quot;, &quot;last_modified_datetime&quot; or &quot;size_in_bytes&quot; Buffy can determine if the resource changed.</span>
-<a id="__codelineno-0-187" name="__codelineno-0-187"></a><span class="sd">    If it has changed Buffy will download and cache the newer version.</span>
-<a id="__codelineno-0-188" name="__codelineno-0-188"></a><span class="sd">    This is usefull for scenarios where the client need to have the newest version instant and reliable available.</span>
-<a id="__codelineno-0-189" name="__codelineno-0-189"></a>
-<a id="__codelineno-0-190" name="__codelineno-0-190"></a><span class="sd">    params:</span>
-<a id="__codelineno-0-191" name="__codelineno-0-191"></a><span class="sd">        check_interval_sec</span>
-<a id="__codelineno-0-192" name="__codelineno-0-192"></a><span class="sd">    &quot;&quot;&quot;</span>
-<a id="__codelineno-0-193" name="__codelineno-0-193"></a>
-<a id="__codelineno-0-194" name="__codelineno-0-194"></a>    <span class="n">strategy_name</span><span class="p">:</span> <span class="n">Literal</span><span class="p">[</span><span class="s2">&quot;when_remote_changed&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">Field</span><span class="p">(</span>
-<a id="__codelineno-0-195" name="__codelineno-0-195"></a>        <span class="n">default</span><span class="o">=</span><span class="s2">&quot;when_remote_changed&quot;</span><span class="p">,</span> <span class="n">const</span><span class="o">=</span><span class="kc">True</span>
-<a id="__codelineno-0-196" name="__codelineno-0-196"></a>    <span class="p">)</span>
-<a id="__codelineno-0-197" name="__codelineno-0-197"></a>    <span class="n">check_interval_sec</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">43200</span>
-<a id="__codelineno-0-198" name="__codelineno-0-198"></a>
-<a id="__codelineno-0-199" name="__codelineno-0-199"></a>    <span class="k">def</span> <span class="nf">request_needs_recache</span><span class="p">(</span>
-<a id="__codelineno-0-200" name="__codelineno-0-200"></a>        <span class="bp">self</span><span class="p">,</span>
-<a id="__codelineno-0-201" name="__codelineno-0-201"></a>        <span class="n">request</span><span class="p">:</span> <span class="s2">&quot;Request&quot;</span><span class="p">,</span>
-<a id="__codelineno-0-202" name="__codelineno-0-202"></a>        <span class="n">latest_response</span><span class="p">:</span> <span class="s2">&quot;Response&quot;</span><span class="p">,</span>
-<a id="__codelineno-0-203" name="__codelineno-0-203"></a>        <span class="n">strategy_state</span><span class="p">:</span> <span class="nb">dict</span><span class="p">,</span>
-<a id="__codelineno-0-204" name="__codelineno-0-204"></a>        <span class="n">storage</span><span class="p">:</span> <span class="s2">&quot;StorageInterface&quot;</span><span class="p">,</span>
-<a id="__codelineno-0-205" name="__codelineno-0-205"></a>    <span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
-<a id="__codelineno-0-206" name="__codelineno-0-206"></a>        <span class="k">if</span> <span class="n">TYPE_CHECKING</span><span class="p">:</span>
-<a id="__codelineno-0-207" name="__codelineno-0-207"></a>            <span class="n">request</span><span class="o">.</span><span class="n">cache_configuration</span><span class="o">.</span><span class="n">recaching_strategy</span><span class="p">:</span> <span class="n">ReCachingStrategy</span><span class="o">.</span><span class="n">when_remote_changed</span> <span class="o">=</span> <span class="p">(</span>
-<a id="__codelineno-0-208" name="__codelineno-0-208"></a>                <span class="n">request</span><span class="o">.</span><span class="n">cache_configuration</span><span class="o">.</span><span class="n">recaching_strategy</span>
-<a id="__codelineno-0-209" name="__codelineno-0-209"></a>            <span class="p">)</span>
-<a id="__codelineno-0-210" name="__codelineno-0-210"></a>        <span class="kn">from</span> <span class="nn">buffy.tools.stuborn_downloader</span> <span class="kn">import</span> <span class="n">StubornDownloader</span>
-<a id="__codelineno-0-211" name="__codelineno-0-211"></a>
-<a id="__codelineno-0-212" name="__codelineno-0-212"></a>        <span class="k">if</span> <span class="ow">not</span> <span class="n">request</span><span class="o">.</span><span class="n">id</span> <span class="ow">in</span> <span class="n">strategy_state</span><span class="p">:</span>
-<a id="__codelineno-0-213" name="__codelineno-0-213"></a>            <span class="n">strategy_state</span><span class="p">[</span><span class="n">request</span><span class="o">.</span><span class="n">id</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
-<a id="__codelineno-0-214" name="__codelineno-0-214"></a>        <span class="n">remote_file_change_last_check_time_unix_epoch</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="n">strategy_state</span><span class="p">[</span>
-<a id="__codelineno-0-215" name="__codelineno-0-215"></a>            <span class="n">request</span><span class="o">.</span><span class="n">id</span>
-<a id="__codelineno-0-216" name="__codelineno-0-216"></a>        <span class="p">]</span>
-<a id="__codelineno-0-217" name="__codelineno-0-217"></a>        <span class="k">if</span> <span class="p">(</span>
-<a id="__codelineno-0-218" name="__codelineno-0-218"></a>            <span class="n">remote_file_change_last_check_time_unix_epoch</span>
-<a id="__codelineno-0-219" name="__codelineno-0-219"></a>            <span class="o">+</span> <span class="n">request</span><span class="o">.</span><span class="n">cache_configuration</span><span class="o">.</span><span class="n">recaching_strategy</span><span class="o">.</span><span class="n">check_interval_sec</span>
-<a id="__codelineno-0-220" name="__codelineno-0-220"></a>            <span class="o">&gt;</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
-<a id="__codelineno-0-221" name="__codelineno-0-221"></a>        <span class="p">):</span>
-<a id="__codelineno-0-222" name="__codelineno-0-222"></a>            <span class="k">return</span> <span class="kc">False</span>
-<a id="__codelineno-0-223" name="__codelineno-0-223"></a>        <span class="n">remote_file_change_last_check_time_unix_epoch</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
-<a id="__codelineno-0-224" name="__codelineno-0-224"></a>        <span class="n">strategy_state</span><span class="p">[</span><span class="n">request</span><span class="o">.</span><span class="n">id</span><span class="p">]</span> <span class="o">=</span> <span class="n">remote_file_change_last_check_time_unix_epoch</span>
-<a id="__codelineno-0-225" name="__codelineno-0-225"></a>        <span class="n">potential_next_response_header</span> <span class="o">=</span> <span class="n">StubornDownloader</span><span class="p">(</span>
-<a id="__codelineno-0-226" name="__codelineno-0-226"></a>            <span class="n">request</span><span class="o">=</span><span class="n">request</span>
-<a id="__codelineno-0-227" name="__codelineno-0-227"></a>        <span class="p">)</span><span class="o">.</span><span class="n">get_response_content_attrs</span><span class="p">()</span>
-<a id="__codelineno-0-228" name="__codelineno-0-228"></a>        <span class="k">if</span> <span class="p">(</span>
-<a id="__codelineno-0-229" name="__codelineno-0-229"></a>            <span class="ow">not</span> <span class="n">potential_next_response_header</span>
-<a id="__codelineno-0-230" name="__codelineno-0-230"></a>            <span class="ow">and</span> <span class="ow">not</span> <span class="n">potential_next_response_header</span><span class="o">.</span><span class="n">etag</span>
-<a id="__codelineno-0-231" name="__codelineno-0-231"></a>            <span class="ow">and</span> <span class="ow">not</span> <span class="n">potential_next_response_header</span><span class="o">.</span><span class="n">last_modified_datetime_utc</span>
-<a id="__codelineno-0-232" name="__codelineno-0-232"></a>            <span class="ow">and</span> <span class="ow">not</span> <span class="n">potential_next_response_header</span><span class="o">.</span><span class="n">size_in_bytes</span>
-<a id="__codelineno-0-233" name="__codelineno-0-233"></a>        <span class="p">):</span>
-<a id="__codelineno-0-234" name="__codelineno-0-234"></a>            <span class="n">err_msg</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;The file can not be recached with strategy &#39;ReCachingStrategy.</span><span class="si">{</span><span class="n">ReCachingStrategy</span><span class="o">.</span><span class="n">when_remote_changed</span><span class="o">.</span><span class="vm">__name__</span><span class="si">}</span><span class="s2">&#39;! Can not determine if target file of request (id:&#39;</span><span class="si">{</span><span class="n">request</span><span class="o">.</span><span class="n">id</span><span class="si">}</span><span class="s2">&#39;,url:&#39;</span><span class="si">{</span><span class="n">request</span><span class="o">.</span><span class="n">url</span><span class="si">}</span><span class="s2">&#39; changed. The server at &#39;</span><span class="si">{</span><span class="n">request</span><span class="o">.</span><span class="n">url</span><span class="si">}</span><span class="s2">&#39; does not provide any informations. Please use another caching strategy than </span><span class="si">{</span><span class="n">ReCachingStrategy</span><span class="o">.</span><span class="n">when_remote_changed</span><span class="si">}</span><span class="s2">.&quot;</span>
-<a id="__codelineno-0-235" name="__codelineno-0-235"></a>            <span class="n">log</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="n">err_msg</span><span class="p">)</span>
-<a id="__codelineno-0-236" name="__codelineno-0-236"></a>            <span class="n">latest_response</span><span class="o">.</span><span class="n">download_stats</span><span class="o">.</span><span class="n">error</span> <span class="o">=</span> <span class="n">err_msg</span>
-<a id="__codelineno-0-237" name="__codelineno-0-237"></a>            <span class="n">storage</span><span class="o">.</span><span class="n">update_response</span><span class="p">(</span><span class="n">latest_response</span><span class="p">)</span>
-<a id="__codelineno-0-238" name="__codelineno-0-238"></a>            <span class="k">return</span> <span class="kc">False</span>
-<a id="__codelineno-0-239" name="__codelineno-0-239"></a>
-<a id="__codelineno-0-240" name="__codelineno-0-240"></a>        <span class="n">attr_comparison_sequence</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span>
-<a id="__codelineno-0-241" name="__codelineno-0-241"></a>            <span class="s2">&quot;etag&quot;</span><span class="p">,</span>
-<a id="__codelineno-0-242" name="__codelineno-0-242"></a>            <span class="s2">&quot;last_modified_datetime&quot;</span><span class="p">,</span>
-<a id="__codelineno-0-243" name="__codelineno-0-243"></a>            <span class="s2">&quot;size_in_bytes&quot;</span><span class="p">,</span>
-<a id="__codelineno-0-244" name="__codelineno-0-244"></a>        <span class="p">]</span>
-<a id="__codelineno-0-245" name="__codelineno-0-245"></a>        <span class="k">for</span> <span class="n">attr</span> <span class="ow">in</span> <span class="n">attr_comparison_sequence</span><span class="p">:</span>
-<a id="__codelineno-0-246" name="__codelineno-0-246"></a>            <span class="k">if</span> <span class="p">(</span>
-<a id="__codelineno-0-247" name="__codelineno-0-247"></a>                <span class="nb">hasattr</span><span class="p">(</span><span class="n">potential_next_response_header</span><span class="p">,</span> <span class="n">attr</span><span class="p">)</span>
-<a id="__codelineno-0-248" name="__codelineno-0-248"></a>                <span class="ow">and</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">latest_response</span><span class="p">,</span> <span class="n">attr</span><span class="p">)</span>
-<a id="__codelineno-0-249" name="__codelineno-0-249"></a>            <span class="p">)</span> <span class="ow">and</span> <span class="p">(</span>
-<a id="__codelineno-0-250" name="__codelineno-0-250"></a>                <span class="nb">getattr</span><span class="p">(</span><span class="n">potential_next_response_header</span><span class="p">,</span> <span class="n">attr</span><span class="p">)</span>
-<a id="__codelineno-0-251" name="__codelineno-0-251"></a>                <span class="o">!=</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">latest_response</span><span class="p">,</span> <span class="n">attr</span><span class="p">)</span>
-<a id="__codelineno-0-252" name="__codelineno-0-252"></a>            <span class="p">):</span>
-<a id="__codelineno-0-253" name="__codelineno-0-253"></a>                <span class="k">return</span> <span class="kc">True</span>
-<a id="__codelineno-0-254" name="__codelineno-0-254"></a>        <span class="k">return</span> <span class="kc">False</span>
+<span class="normal"><a href="#__codelineno-0-254">254</a></span>
+<span class="normal"><a href="#__codelineno-0-255">255</a></span>
+<span class="normal"><a href="#__codelineno-0-256">256</a></span>
+<span class="normal"><a href="#__codelineno-0-257">257</a></span>
+<span class="normal"><a href="#__codelineno-0-258">258</a></span>
+<span class="normal"><a href="#__codelineno-0-259">259</a></span>
+<span class="normal"><a href="#__codelineno-0-260">260</a></span>
+<span class="normal"><a href="#__codelineno-0-261">261</a></span>
+<span class="normal"><a href="#__codelineno-0-262">262</a></span>
+<span class="normal"><a href="#__codelineno-0-263">263</a></span>
+<span class="normal"><a href="#__codelineno-0-264">264</a></span>
+<span class="normal"><a href="#__codelineno-0-265">265</a></span>
+<span class="normal"><a href="#__codelineno-0-266">266</a></span>
+<span class="normal"><a href="#__codelineno-0-267">267</a></span>
+<span class="normal"><a href="#__codelineno-0-268">268</a></span>
+<span class="normal"><a href="#__codelineno-0-269">269</a></span>
+<span class="normal"><a href="#__codelineno-0-270">270</a></span>
+<span class="normal"><a href="#__codelineno-0-271">271</a></span>
+<span class="normal"><a href="#__codelineno-0-272">272</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-182" name="__codelineno-0-182"></a><span class="k">class</span> <span class="nc">when_remote_changed</span><span class="p">(</span><span class="n">BaseReCachingStrategy</span><span class="p">):</span>
+<a id="__codelineno-0-183" name="__codelineno-0-183"></a>    <span class="sd">&quot;&quot;&quot;</span>
+<a id="__codelineno-0-184" name="__codelineno-0-184"></a><span class="sd">    Buffy will ask the webserver of the remote resource about the state of the resource.</span>
+<a id="__codelineno-0-185" name="__codelineno-0-185"></a><span class="sd">    Via &quot;etag&quot;, &quot;last_modified_datetime&quot; or &quot;size_in_bytes&quot; Buffy can determine if the resource changed.</span>
+<a id="__codelineno-0-186" name="__codelineno-0-186"></a><span class="sd">    If it has changed Buffy will download and cache the newer version.</span>
+<a id="__codelineno-0-187" name="__codelineno-0-187"></a><span class="sd">    This is usefull resources changing in random intervals.</span>
+<a id="__codelineno-0-188" name="__codelineno-0-188"></a>
+<a id="__codelineno-0-189" name="__codelineno-0-189"></a><span class="sd">    Args:</span>
+<a id="__codelineno-0-190" name="__codelineno-0-190"></a><span class="sd">        check_interval_sec (int): \</span>
+<a id="__codelineno-0-191" name="__codelineno-0-191"></a><span class="sd">            default:3600 - The duration a resource will be cached until it gets a redownload from the source</span>
+<a id="__codelineno-0-192" name="__codelineno-0-192"></a><span class="sd">        fallback_max_age_sec (int): \</span>
+<a id="__codelineno-0-193" name="__codelineno-0-193"></a><span class="sd">            default:3600 - The duration a resource will be cached until it gets a redownload from the source</span>
+<a id="__codelineno-0-194" name="__codelineno-0-194"></a><span class="sd">    &quot;&quot;&quot;</span>
+<a id="__codelineno-0-195" name="__codelineno-0-195"></a>
+<a id="__codelineno-0-196" name="__codelineno-0-196"></a>    <span class="n">strategy_name</span><span class="p">:</span> <span class="n">Literal</span><span class="p">[</span><span class="s2">&quot;when_remote_changed&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">Field</span><span class="p">(</span>
+<a id="__codelineno-0-197" name="__codelineno-0-197"></a>        <span class="n">default</span><span class="o">=</span><span class="s2">&quot;when_remote_changed&quot;</span><span class="p">,</span> <span class="n">const</span><span class="o">=</span><span class="kc">True</span>
+<a id="__codelineno-0-198" name="__codelineno-0-198"></a>    <span class="p">)</span>
+<a id="__codelineno-0-199" name="__codelineno-0-199"></a>    <span class="n">check_interval_sec</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">60</span> <span class="o">*</span> <span class="mi">60</span> <span class="o">*</span> <span class="mi">6</span>
+<a id="__codelineno-0-200" name="__codelineno-0-200"></a>    <span class="sd">&quot;&quot;&quot;Check if remote resource changed every n seconds&quot;&quot;&quot;</span>
+<a id="__codelineno-0-201" name="__codelineno-0-201"></a>    <span class="n">fallback_max_age_sec</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">60</span> <span class="o">*</span> <span class="mi">60</span> <span class="o">*</span> <span class="mi">24</span>
+<a id="__codelineno-0-202" name="__codelineno-0-202"></a>    <span class="sd">&quot;&quot;&quot;If the server will not provide informations about the state of the resource, Buffy will just redownload the resource every n seconds. \</span>
+<a id="__codelineno-0-203" name="__codelineno-0-203"></a><span class="sd">        This is a equal behaviour to `ReCachingStrateg.Age` strategy&quot;&quot;&quot;</span>
+<a id="__codelineno-0-204" name="__codelineno-0-204"></a>
+<a id="__codelineno-0-205" name="__codelineno-0-205"></a>    <span class="k">def</span> <span class="nf">request_needs_recache</span><span class="p">(</span>
+<a id="__codelineno-0-206" name="__codelineno-0-206"></a>        <span class="bp">self</span><span class="p">,</span>
+<a id="__codelineno-0-207" name="__codelineno-0-207"></a>        <span class="n">request</span><span class="p">:</span> <span class="s2">&quot;Request&quot;</span><span class="p">,</span>
+<a id="__codelineno-0-208" name="__codelineno-0-208"></a>        <span class="n">latest_response</span><span class="p">:</span> <span class="s2">&quot;Response&quot;</span><span class="p">,</span>
+<a id="__codelineno-0-209" name="__codelineno-0-209"></a>        <span class="n">strategy_state</span><span class="p">:</span> <span class="nb">dict</span><span class="p">,</span>
+<a id="__codelineno-0-210" name="__codelineno-0-210"></a>        <span class="n">storage</span><span class="p">:</span> <span class="s2">&quot;StorageInterface&quot;</span><span class="p">,</span>
+<a id="__codelineno-0-211" name="__codelineno-0-211"></a>    <span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+<a id="__codelineno-0-212" name="__codelineno-0-212"></a>        <span class="k">if</span> <span class="n">TYPE_CHECKING</span><span class="p">:</span>
+<a id="__codelineno-0-213" name="__codelineno-0-213"></a>            <span class="n">request</span><span class="o">.</span><span class="n">cache_configuration</span><span class="o">.</span><span class="n">recaching_strategy</span><span class="p">:</span> <span class="n">ReCachingStrategy</span><span class="o">.</span><span class="n">when_remote_changed</span> <span class="o">=</span> <span class="p">(</span>
+<a id="__codelineno-0-214" name="__codelineno-0-214"></a>                <span class="n">request</span><span class="o">.</span><span class="n">cache_configuration</span><span class="o">.</span><span class="n">recaching_strategy</span>
+<a id="__codelineno-0-215" name="__codelineno-0-215"></a>            <span class="p">)</span>
+<a id="__codelineno-0-216" name="__codelineno-0-216"></a>        <span class="kn">from</span> <span class="nn">buffy.tools.stuborn_downloader</span> <span class="kn">import</span> <span class="n">StubornDownloader</span>
+<a id="__codelineno-0-217" name="__codelineno-0-217"></a>
+<a id="__codelineno-0-218" name="__codelineno-0-218"></a>        <span class="k">if</span> <span class="ow">not</span> <span class="n">request</span><span class="o">.</span><span class="n">id</span> <span class="ow">in</span> <span class="n">strategy_state</span><span class="p">:</span>
+<a id="__codelineno-0-219" name="__codelineno-0-219"></a>            <span class="n">strategy_state</span><span class="p">[</span><span class="n">request</span><span class="o">.</span><span class="n">id</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
+<a id="__codelineno-0-220" name="__codelineno-0-220"></a>        <span class="n">remote_file_change_last_check_time_unix_epoch</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="n">strategy_state</span><span class="p">[</span>
+<a id="__codelineno-0-221" name="__codelineno-0-221"></a>            <span class="n">request</span><span class="o">.</span><span class="n">id</span>
+<a id="__codelineno-0-222" name="__codelineno-0-222"></a>        <span class="p">]</span>
+<a id="__codelineno-0-223" name="__codelineno-0-223"></a>        <span class="k">if</span> <span class="p">(</span>
+<a id="__codelineno-0-224" name="__codelineno-0-224"></a>            <span class="n">remote_file_change_last_check_time_unix_epoch</span>
+<a id="__codelineno-0-225" name="__codelineno-0-225"></a>            <span class="o">+</span> <span class="n">request</span><span class="o">.</span><span class="n">cache_configuration</span><span class="o">.</span><span class="n">recaching_strategy</span><span class="o">.</span><span class="n">check_interval_sec</span>
+<a id="__codelineno-0-226" name="__codelineno-0-226"></a>            <span class="o">&gt;</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+<a id="__codelineno-0-227" name="__codelineno-0-227"></a>        <span class="p">):</span>
+<a id="__codelineno-0-228" name="__codelineno-0-228"></a>            <span class="k">return</span> <span class="kc">False</span>
+<a id="__codelineno-0-229" name="__codelineno-0-229"></a>        <span class="n">remote_file_change_last_check_time_unix_epoch</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+<a id="__codelineno-0-230" name="__codelineno-0-230"></a>        <span class="n">strategy_state</span><span class="p">[</span><span class="n">request</span><span class="o">.</span><span class="n">id</span><span class="p">]</span> <span class="o">=</span> <span class="n">remote_file_change_last_check_time_unix_epoch</span>
+<a id="__codelineno-0-231" name="__codelineno-0-231"></a>        <span class="n">potential_next_response_header</span> <span class="o">=</span> <span class="n">StubornDownloader</span><span class="p">(</span>
+<a id="__codelineno-0-232" name="__codelineno-0-232"></a>            <span class="n">request</span><span class="o">=</span><span class="n">request</span>
+<a id="__codelineno-0-233" name="__codelineno-0-233"></a>        <span class="p">)</span><span class="o">.</span><span class="n">get_response_content_attrs</span><span class="p">()</span>
+<a id="__codelineno-0-234" name="__codelineno-0-234"></a>        <span class="k">if</span> <span class="p">(</span>
+<a id="__codelineno-0-235" name="__codelineno-0-235"></a>            <span class="ow">not</span> <span class="n">potential_next_response_header</span>
+<a id="__codelineno-0-236" name="__codelineno-0-236"></a>            <span class="ow">and</span> <span class="ow">not</span> <span class="n">potential_next_response_header</span><span class="o">.</span><span class="n">etag</span>
+<a id="__codelineno-0-237" name="__codelineno-0-237"></a>            <span class="ow">and</span> <span class="ow">not</span> <span class="n">potential_next_response_header</span><span class="o">.</span><span class="n">last_modified_datetime_utc</span>
+<a id="__codelineno-0-238" name="__codelineno-0-238"></a>            <span class="ow">and</span> <span class="ow">not</span> <span class="n">potential_next_response_header</span><span class="o">.</span><span class="n">size_in_bytes</span>
+<a id="__codelineno-0-239" name="__codelineno-0-239"></a>        <span class="p">):</span>
+<a id="__codelineno-0-240" name="__codelineno-0-240"></a>            <span class="n">err_msg</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;The file can not be recached with strategy &#39;ReCachingStrategy.</span><span class="si">{</span><span class="n">ReCachingStrategy</span><span class="o">.</span><span class="n">when_remote_changed</span><span class="o">.</span><span class="vm">__name__</span><span class="si">}</span><span class="s2">&#39;! </span><span class="se">\</span>
+<a id="__codelineno-0-241" name="__codelineno-0-241"></a><span class="s2">                Buffy can not determine if target file of request (id:&#39;</span><span class="si">{</span><span class="n">request</span><span class="o">.</span><span class="n">id</span><span class="si">}</span><span class="s2">&#39;,url:&#39;</span><span class="si">{</span><span class="n">request</span><span class="o">.</span><span class="n">url</span><span class="si">}</span><span class="s2">&#39; changed. </span><span class="se">\</span>
+<a id="__codelineno-0-242" name="__codelineno-0-242"></a><span class="s2">                The server at &#39;</span><span class="si">{</span><span class="n">request</span><span class="o">.</span><span class="n">url</span><span class="si">}</span><span class="s2">&#39; does not provide any informations.  </span><span class="se">\</span>
+<a id="__codelineno-0-243" name="__codelineno-0-243"></a><span class="s2">                Try to use another caching strategy than &#39;ReCachingStrategy.</span><span class="si">{</span><span class="n">ReCachingStrategy</span><span class="o">.</span><span class="n">when_remote_changed</span><span class="o">.</span><span class="vm">__name__</span><span class="si">}</span><span class="s2">. </span><span class="se">\</span>
+<a id="__codelineno-0-244" name="__codelineno-0-244"></a><span class="s2">                Buffy will use the fallback and re-cache the file by age (</span><span class="si">{</span><span class="n">request</span><span class="o">.</span><span class="n">cache_configuration</span><span class="o">.</span><span class="n">recaching_strategy</span><span class="o">.</span><span class="n">fallback_max_age_sec</span><span class="si">}</span><span class="s2"> seconds)&quot;</span>
+<a id="__codelineno-0-245" name="__codelineno-0-245"></a>            <span class="n">log</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span><span class="n">err_msg</span><span class="p">)</span>
+<a id="__codelineno-0-246" name="__codelineno-0-246"></a>            <span class="n">latest_response</span><span class="o">.</span><span class="n">download_stats</span><span class="o">.</span><span class="n">error</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;WARNING: </span><span class="si">{</span><span class="n">err_msg</span><span class="si">}</span><span class="s2">&quot;</span>
+<a id="__codelineno-0-247" name="__codelineno-0-247"></a>            <span class="n">storage</span><span class="o">.</span><span class="n">update_response</span><span class="p">(</span><span class="n">latest_response</span><span class="p">)</span>
+<a id="__codelineno-0-248" name="__codelineno-0-248"></a>            <span class="c1"># Fallback to age strategy</span>
+<a id="__codelineno-0-249" name="__codelineno-0-249"></a>            <span class="k">return</span> <span class="n">ReCachingStrategy</span><span class="o">.</span><span class="n">age</span><span class="p">(</span>
+<a id="__codelineno-0-250" name="__codelineno-0-250"></a>                <span class="n">seconds</span><span class="o">=</span><span class="n">request</span><span class="o">.</span><span class="n">cache_configuration</span><span class="o">.</span><span class="n">recaching_strategy</span><span class="o">.</span><span class="n">fallback_max_age_sec</span>
+<a id="__codelineno-0-251" name="__codelineno-0-251"></a>            <span class="p">)</span><span class="o">.</span><span class="n">request_needs_recache</span><span class="p">(</span>
+<a id="__codelineno-0-252" name="__codelineno-0-252"></a>                <span class="n">request</span><span class="o">=</span><span class="n">request</span><span class="p">,</span>
+<a id="__codelineno-0-253" name="__codelineno-0-253"></a>                <span class="n">latest_response</span><span class="o">=</span><span class="n">latest_response</span><span class="p">,</span>
+<a id="__codelineno-0-254" name="__codelineno-0-254"></a>                <span class="n">strategy_state</span><span class="o">=</span><span class="n">strategy_state</span><span class="p">,</span>
+<a id="__codelineno-0-255" name="__codelineno-0-255"></a>                <span class="n">storage</span><span class="o">=</span><span class="n">storage</span><span class="p">,</span>
+<a id="__codelineno-0-256" name="__codelineno-0-256"></a>            <span class="p">)</span>
+<a id="__codelineno-0-257" name="__codelineno-0-257"></a>
+<a id="__codelineno-0-258" name="__codelineno-0-258"></a>        <span class="n">attr_comparison_sequence</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span>
+<a id="__codelineno-0-259" name="__codelineno-0-259"></a>            <span class="s2">&quot;etag&quot;</span><span class="p">,</span>
+<a id="__codelineno-0-260" name="__codelineno-0-260"></a>            <span class="s2">&quot;last_modified_datetime&quot;</span><span class="p">,</span>
+<a id="__codelineno-0-261" name="__codelineno-0-261"></a>            <span class="s2">&quot;size_in_bytes&quot;</span><span class="p">,</span>
+<a id="__codelineno-0-262" name="__codelineno-0-262"></a>        <span class="p">]</span>
+<a id="__codelineno-0-263" name="__codelineno-0-263"></a>        <span class="k">for</span> <span class="n">attr</span> <span class="ow">in</span> <span class="n">attr_comparison_sequence</span><span class="p">:</span>
+<a id="__codelineno-0-264" name="__codelineno-0-264"></a>            <span class="k">if</span> <span class="p">(</span>
+<a id="__codelineno-0-265" name="__codelineno-0-265"></a>                <span class="nb">hasattr</span><span class="p">(</span><span class="n">potential_next_response_header</span><span class="p">,</span> <span class="n">attr</span><span class="p">)</span>
+<a id="__codelineno-0-266" name="__codelineno-0-266"></a>                <span class="ow">and</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">latest_response</span><span class="p">,</span> <span class="n">attr</span><span class="p">)</span>
+<a id="__codelineno-0-267" name="__codelineno-0-267"></a>            <span class="p">)</span> <span class="ow">and</span> <span class="p">(</span>
+<a id="__codelineno-0-268" name="__codelineno-0-268"></a>                <span class="nb">getattr</span><span class="p">(</span><span class="n">potential_next_response_header</span><span class="p">,</span> <span class="n">attr</span><span class="p">)</span>
+<a id="__codelineno-0-269" name="__codelineno-0-269"></a>                <span class="o">!=</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">latest_response</span><span class="p">,</span> <span class="n">attr</span><span class="p">)</span>
+<a id="__codelineno-0-270" name="__codelineno-0-270"></a>            <span class="p">):</span>
+<a id="__codelineno-0-271" name="__codelineno-0-271"></a>                <span class="k">return</span> <span class="kc">True</span>
+<a id="__codelineno-0-272" name="__codelineno-0-272"></a>        <span class="k">return</span> <span class="kc">False</span>
 </code></pre></div></td></tr></table></div>
         </details>
 
@@ -1627,6 +1774,48 @@ This is usefull for scenarios where the client need to have the newest version i
 
 
 
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h3 id="buffy.buffyserver.api.v1.models_recaching_strategies.ReCachingStrategy.when_remote_changed.check_interval_sec" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">check_interval_sec</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">60</span> <span class="o">*</span> <span class="mi">60</span> <span class="o">*</span> <span class="mi">6</span></code>
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-class-attribute"><code>class-attribute</code></small>
+  </span>
+
+<a href="#buffy.buffyserver.api.v1.models_recaching_strategies.ReCachingStrategy.when_remote_changed.check_interval_sec" class="headerlink" title="Permanent link">&para;</a></h3>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Check if remote resource changed every n seconds</p>
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h3 id="buffy.buffyserver.api.v1.models_recaching_strategies.ReCachingStrategy.when_remote_changed.fallback_max_age_sec" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">fallback_max_age_sec</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">60</span> <span class="o">*</span> <span class="mi">60</span> <span class="o">*</span> <span class="mi">24</span></code>
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-class-attribute"><code>class-attribute</code></small>
+  </span>
+
+<a href="#buffy.buffyserver.api.v1.models_recaching_strategies.ReCachingStrategy.when_remote_changed.fallback_max_age_sec" class="headerlink" title="Permanent link">&para;</a></h3>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>If the server will not provide informations about the state of the resource, Buffy will just redownload the resource every n seconds.             This is a equal behaviour to <code>ReCachingStrateg.Age</code> strategy</p>
+  </div>
+
+</div>
 
 
 
@@ -1655,7 +1844,6 @@ This is usefull for scenarios where the client need to have the newest version i
 
   
       <p>when_requested  - Strategy
-Default Strategy!
 Buffy will redownload the resource when the client requests the resource.
 This is the most simple scenario which is closest to a classic just-download case but with a fallback safeguard;
 If the remote resource fails to download, buffy can fallback to an older cached version of the resource, if available.</p>
@@ -1689,33 +1877,31 @@ If the remote resource fails to download, buffy can fallback to an older cached 
 <span class="normal"><a href="#__codelineno-0-177">177</a></span>
 <span class="normal"><a href="#__codelineno-0-178">178</a></span>
 <span class="normal"><a href="#__codelineno-0-179">179</a></span>
-<span class="normal"><a href="#__codelineno-0-180">180</a></span>
-<span class="normal"><a href="#__codelineno-0-181">181</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-156" name="__codelineno-0-156"></a><span class="k">class</span> <span class="nc">when_requested</span><span class="p">(</span><span class="n">BaseReCachingStrategy</span><span class="p">):</span>
+<span class="normal"><a href="#__codelineno-0-180">180</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-156" name="__codelineno-0-156"></a><span class="k">class</span> <span class="nc">when_requested</span><span class="p">(</span><span class="n">BaseReCachingStrategy</span><span class="p">):</span>
 <a id="__codelineno-0-157" name="__codelineno-0-157"></a>    <span class="sd">&quot;&quot;&quot;when_requested  - Strategy</span>
-<a id="__codelineno-0-158" name="__codelineno-0-158"></a><span class="sd">    Default Strategy!</span>
-<a id="__codelineno-0-159" name="__codelineno-0-159"></a><span class="sd">    Buffy will redownload the resource when the client requests the resource.</span>
-<a id="__codelineno-0-160" name="__codelineno-0-160"></a><span class="sd">    This is the most simple scenario which is closest to a classic just-download case but with a fallback safeguard;</span>
-<a id="__codelineno-0-161" name="__codelineno-0-161"></a><span class="sd">    If the remote resource fails to download, buffy can fallback to an older cached version of the resource, if available.</span>
-<a id="__codelineno-0-162" name="__codelineno-0-162"></a>
-<a id="__codelineno-0-163" name="__codelineno-0-163"></a><span class="sd">    **HINT**: Multiple request during one server tick (default 0.3s), will be bundled and share one response. \</span>
-<a id="__codelineno-0-164" name="__codelineno-0-164"></a><span class="sd">        Example: If you simultaneously request 5 numbers from a REST API that generates random numbers, you will most likely just get same number for every request.</span>
-<a id="__codelineno-0-165" name="__codelineno-0-165"></a><span class="sd">        In cases like this you maybe better off, bypassing a caching middleware like Buffy.</span>
-<a id="__codelineno-0-166" name="__codelineno-0-166"></a><span class="sd">    &quot;&quot;&quot;</span>
-<a id="__codelineno-0-167" name="__codelineno-0-167"></a>
-<a id="__codelineno-0-168" name="__codelineno-0-168"></a>    <span class="n">strategy_name</span><span class="p">:</span> <span class="n">Literal</span><span class="p">[</span><span class="s2">&quot;when_requested&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">Field</span><span class="p">(</span>
-<a id="__codelineno-0-169" name="__codelineno-0-169"></a>        <span class="n">default</span><span class="o">=</span><span class="s2">&quot;when_requested&quot;</span><span class="p">,</span> <span class="n">const</span><span class="o">=</span><span class="kc">True</span>
-<a id="__codelineno-0-170" name="__codelineno-0-170"></a>    <span class="p">)</span>
-<a id="__codelineno-0-171" name="__codelineno-0-171"></a>
-<a id="__codelineno-0-172" name="__codelineno-0-172"></a>    <span class="k">def</span> <span class="nf">request_needs_recache</span><span class="p">(</span>
-<a id="__codelineno-0-173" name="__codelineno-0-173"></a>        <span class="bp">self</span><span class="p">,</span>
-<a id="__codelineno-0-174" name="__codelineno-0-174"></a>        <span class="n">request</span><span class="p">:</span> <span class="s2">&quot;Request&quot;</span><span class="p">,</span>
-<a id="__codelineno-0-175" name="__codelineno-0-175"></a>        <span class="n">latest_response</span><span class="p">:</span> <span class="s2">&quot;Response&quot;</span><span class="p">,</span>
-<a id="__codelineno-0-176" name="__codelineno-0-176"></a>        <span class="n">strategy_state</span><span class="p">:</span> <span class="nb">dict</span><span class="p">,</span>
-<a id="__codelineno-0-177" name="__codelineno-0-177"></a>        <span class="n">storage</span><span class="p">:</span> <span class="s2">&quot;StorageInterface&quot;</span><span class="p">,</span>
-<a id="__codelineno-0-178" name="__codelineno-0-178"></a>    <span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
-<a id="__codelineno-0-179" name="__codelineno-0-179"></a>        <span class="k">if</span> <span class="n">request</span><span class="o">.</span><span class="n">latest_requests</span><span class="p">:</span>
-<a id="__codelineno-0-180" name="__codelineno-0-180"></a>            <span class="k">return</span> <span class="kc">True</span>
-<a id="__codelineno-0-181" name="__codelineno-0-181"></a>        <span class="k">return</span> <span class="kc">False</span>
+<a id="__codelineno-0-158" name="__codelineno-0-158"></a><span class="sd">    Buffy will redownload the resource when the client requests the resource.</span>
+<a id="__codelineno-0-159" name="__codelineno-0-159"></a><span class="sd">    This is the most simple scenario which is closest to a classic just-download case but with a fallback safeguard;</span>
+<a id="__codelineno-0-160" name="__codelineno-0-160"></a><span class="sd">    If the remote resource fails to download, buffy can fallback to an older cached version of the resource, if available.</span>
+<a id="__codelineno-0-161" name="__codelineno-0-161"></a>
+<a id="__codelineno-0-162" name="__codelineno-0-162"></a><span class="sd">    **HINT**: Multiple request during one server tick (default 0.3s), will be bundled and share one response. \</span>
+<a id="__codelineno-0-163" name="__codelineno-0-163"></a><span class="sd">        Example: If you simultaneously request 5 numbers from a REST API that generates random numbers, you will most likely just get same number for every request.</span>
+<a id="__codelineno-0-164" name="__codelineno-0-164"></a><span class="sd">        In cases like this you maybe better off, bypassing a caching middleware like Buffy.</span>
+<a id="__codelineno-0-165" name="__codelineno-0-165"></a><span class="sd">    &quot;&quot;&quot;</span>
+<a id="__codelineno-0-166" name="__codelineno-0-166"></a>
+<a id="__codelineno-0-167" name="__codelineno-0-167"></a>    <span class="n">strategy_name</span><span class="p">:</span> <span class="n">Literal</span><span class="p">[</span><span class="s2">&quot;when_requested&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">Field</span><span class="p">(</span>
+<a id="__codelineno-0-168" name="__codelineno-0-168"></a>        <span class="n">default</span><span class="o">=</span><span class="s2">&quot;when_requested&quot;</span><span class="p">,</span> <span class="n">const</span><span class="o">=</span><span class="kc">True</span>
+<a id="__codelineno-0-169" name="__codelineno-0-169"></a>    <span class="p">)</span>
+<a id="__codelineno-0-170" name="__codelineno-0-170"></a>
+<a id="__codelineno-0-171" name="__codelineno-0-171"></a>    <span class="k">def</span> <span class="nf">request_needs_recache</span><span class="p">(</span>
+<a id="__codelineno-0-172" name="__codelineno-0-172"></a>        <span class="bp">self</span><span class="p">,</span>
+<a id="__codelineno-0-173" name="__codelineno-0-173"></a>        <span class="n">request</span><span class="p">:</span> <span class="s2">&quot;Request&quot;</span><span class="p">,</span>
+<a id="__codelineno-0-174" name="__codelineno-0-174"></a>        <span class="n">latest_response</span><span class="p">:</span> <span class="s2">&quot;Response&quot;</span><span class="p">,</span>
+<a id="__codelineno-0-175" name="__codelineno-0-175"></a>        <span class="n">strategy_state</span><span class="p">:</span> <span class="nb">dict</span><span class="p">,</span>
+<a id="__codelineno-0-176" name="__codelineno-0-176"></a>        <span class="n">storage</span><span class="p">:</span> <span class="s2">&quot;StorageInterface&quot;</span><span class="p">,</span>
+<a id="__codelineno-0-177" name="__codelineno-0-177"></a>    <span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+<a id="__codelineno-0-178" name="__codelineno-0-178"></a>        <span class="k">if</span> <span class="n">request</span><span class="o">.</span><span class="n">latest_requests</span><span class="p">:</span>
+<a id="__codelineno-0-179" name="__codelineno-0-179"></a>            <span class="k">return</span> <span class="kc">True</span>
+<a id="__codelineno-0-180" name="__codelineno-0-180"></a>        <span class="k">return</span> <span class="kc">False</span>
 </code></pre></div></td></tr></table></div>
         </details>
 
