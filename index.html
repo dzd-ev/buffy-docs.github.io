@@ -196,6 +196,20 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#intended-purpose" class="md-nav__link">
+    Intended purpose
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#clients" class="md-nav__link">
+    Clients
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#quick-start-client" class="md-nav__link">
     Quick Start Client
   </a>
@@ -553,6 +567,20 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#intended-purpose" class="md-nav__link">
+    Intended purpose
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#clients" class="md-nav__link">
+    Clients
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#quick-start-client" class="md-nav__link">
     Quick Start Client
   </a>
@@ -640,6 +668,8 @@
 <li><a href="#buffy">Buffy</a></li>
 <li><a href="#what-is-this">What is this?</a></li>
 <li><a href="#features">Features</a></li>
+<li><a href="#intended-purpose">Intended purpose</a></li>
+<li><a href="#clients">Clients</a></li>
 <li><a href="#quick-start-client">Quick Start Client</a><ul>
 <li><a href="#install-buffy">Install Buffy</a></li>
 <li><a href="#example">Example</a></li>
@@ -662,16 +692,26 @@ You can ignore any issues with external webservers and just focus on your applic
 <h2 id="features">Features<a class="headerlink" href="#features" title="Permanent link">&para;</a></h2>
 <hr />
 <ul>
-<li>Versioning of changing downloads</li>
-<li>Pre-cache long running downloads before you need them</li>
-<li>Dampen load on external servers - prevent <code>429 Too Many Requests</code> errors</li>
-<li>As a "smart" Downloader<ul>
+<li>Caching of remote http resources (a.k.a. <code>files you downloaded from the web</code>)</li>
+<li>Versioning of remote http resources </li>
+<li>Managing of remote http resources with grouping, tagging and pinning</li>
+<li>Background pre-download of remote http resources</li>
+<li>"Smart"-Downloader<ul>
 <li>Resume broken downloads</li>
 <li>Retry corrupted downloads</li>
 </ul>
 </li>
 </ul>
-<p>At the moment there is only a python client library. But the server has a <a href="https://dzd-ev.github.io/buffy-docs.github.io/buffyserver-api/">REST API</a> that can be consumed from any coding language. You are welcome to write a client in your language.</p>
+<h2 id="intended-purpose">Intended purpose<a class="headerlink" href="#intended-purpose" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Make your software resiliant against changing (transformation,discontinuation,outage,...) external http resources</li>
+<li>Dampen load on external servers - prevent <code>429 Too Many Requests</code> errors</li>
+<li>Pre-cache long running downloads before you need them</li>
+</ul>
+<h2 id="clients">Clients<a class="headerlink" href="#clients" title="Permanent link">&para;</a></h2>
+<p>At the moment there is only a <a href="https://pypi.org/project/DZDBuffy/">python client library</a>.<br />
+But the Buffy-server has a <a href="https://dzd-ev.github.io/buffy-docs.github.io/buffyserver-api/">REST API</a> that can be consumed from any coding language. </p>
+<p><strong>You are very welcome to contribute a client in your language  👋😃</strong></p>
 <h2 id="quick-start-client">Quick Start Client<a class="headerlink" href="#quick-start-client" title="Permanent link">&para;</a></h2>
 <hr />
 <p>Lets have a small example how your Buffy client code could look like.</p>
