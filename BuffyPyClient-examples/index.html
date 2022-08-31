@@ -197,12 +197,66 @@
       <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
       
       
-        
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Examples and Recipes
+          <span class="md-nav__icon md-icon"></span>
+        </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
         Examples and Recipes
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#update-remote-data-every-quarter" class="md-nav__link">
+    Update remote data every quarter
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pinning-a-certain-version" class="md-nav__link">
+    Pinning a certain version
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tagging-a-certain-version" class="md-nav__link">
+    Tagging a certain version
+  </a>
+  
+    <nav class="md-nav" aria-label="Tagging a certain version">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#recall-a-tagged-version" class="md-nav__link">
+    Recall a tagged version
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -432,8 +486,48 @@
   
   
   
-    
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#update-remote-data-every-quarter" class="md-nav__link">
+    Update remote data every quarter
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pinning-a-certain-version" class="md-nav__link">
+    Pinning a certain version
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tagging-a-certain-version" class="md-nav__link">
+    Tagging a certain version
+  </a>
+  
+    <nav class="md-nav" aria-label="Tagging a certain version">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#recall-a-tagged-version" class="md-nav__link">
+    Recall a tagged version
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -447,7 +541,9 @@
                 
 
 
-<h1 id="update-remote-data-every-quarter">Update remote data every quarter<a class="headerlink" href="#update-remote-data-every-quarter" title="Permanent link">&para;</a></h1>
+  <h1>Examples and Recipes</h1>
+
+<h2 id="update-remote-data-every-quarter">Update remote data every quarter<a class="headerlink" href="#update-remote-data-every-quarter" title="Permanent link">&para;</a></h2>
 <hr />
 <p>Lets query all countries with their goverment form from wikidata.org. 
 The wikidata.org API can be - understandably - a little bit sensitive when beating their servers. 
@@ -495,7 +591,7 @@ As Countries are relatively static concepts we are happy in this scenario, if we
 </code></pre></div>
 <p>The cool thing with <code>ReCachingStrategy.age</code> that reCaching will happen in the background. <br />
 So next quarter, when running our code again, the data will allready be available. We dont have to wait for the wikidata.org server to process our query.</p>
-<h1 id="pinning-a-certain-version">Pinning a certain version<a class="headerlink" href="#pinning-a-certain-version" title="Permanent link">&para;</a></h1>
+<h2 id="pinning-a-certain-version">Pinning a certain version<a class="headerlink" href="#pinning-a-certain-version" title="Permanent link">&para;</a></h2>
 <p>The Buffy server will push out older cached version out of the cache to prevent filling oyur disk with garbage. If you want to keep a certain version you can pin it.</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="kn">import</span> <span class="nn">json</span>
 <a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="kn">from</span> <span class="nn">buffy.buffypyclient</span> <span class="kn">import</span> <span class="n">BuffyPyClient</span><span class="p">,</span><span class="n">ReCachingStrategy</span><span class="p">,</span><span class="n">RequestCacheConfiguration</span>
@@ -516,7 +612,7 @@ So next quarter, when running our code again, the data will allready be availabl
 <a id="__codelineno-1-17" name="__codelineno-1-17" href="#__codelineno-1-17"></a><span class="c1"># Lets pin the just downloaded version and in return we also get the current version name, if we want to recall it later.</span>
 <a id="__codelineno-1-18" name="__codelineno-1-18" href="#__codelineno-1-18"></a><span class="n">version_name</span><span class="p">:</span><span class="nb">str</span> <span class="o">=</span> <span class="n">req</span><span class="o">.</span><span class="n">pin</span><span class="p">()</span>
 </code></pre></div>
-<h1 id="tagging-a-certain-version">Tagging a certain version<a class="headerlink" href="#tagging-a-certain-version" title="Permanent link">&para;</a></h1>
+<h2 id="tagging-a-certain-version">Tagging a certain version<a class="headerlink" href="#tagging-a-certain-version" title="Permanent link">&para;</a></h2>
 <p>To make it easier to find certain version you can "tag" them. A tag just a short string you can attach to one or more versions and query it later to recall these versions.</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="kn">import</span> <span class="nn">json</span>
 <a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="kn">from</span> <span class="nn">buffy.buffypyclient</span> <span class="kn">import</span> <span class="n">BuffyPyClient</span><span class="p">,</span><span class="n">ReCachingStrategy</span><span class="p">,</span><span class="n">RequestCacheConfiguration</span>
@@ -537,7 +633,7 @@ So next quarter, when running our code again, the data will allready be availabl
 <a id="__codelineno-2-17" name="__codelineno-2-17" href="#__codelineno-2-17"></a><span class="c1"># Lets pin the just downloaded version and in return we also get the current version name, if we want to recall it later.</span>
 <a id="__codelineno-2-18" name="__codelineno-2-18" href="#__codelineno-2-18"></a><span class="n">version_name</span><span class="p">:</span><span class="nb">str</span> <span class="o">=</span> <span class="n">req</span><span class="o">.</span><span class="n">tag</span><span class="p">(</span><span class="s2">&quot;my-best-version&quot;</span><span class="p">)</span>
 </code></pre></div>
-<h2 id="recall-a-tagged-version">Recall a tagged version<a class="headerlink" href="#recall-a-tagged-version" title="Permanent link">&para;</a></h2>
+<h3 id="recall-a-tagged-version">Recall a tagged version<a class="headerlink" href="#recall-a-tagged-version" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="kn">import</span> <span class="nn">json</span>
 <a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="kn">from</span> <span class="nn">buffy.buffypyclient</span> <span class="kn">import</span> <span class="n">BuffyPyClient</span><span class="p">,</span><span class="n">ReCachingStrategy</span><span class="p">,</span><span class="n">RequestCacheConfiguration</span>
 <a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>
