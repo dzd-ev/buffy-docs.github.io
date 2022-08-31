@@ -13,7 +13,7 @@
     
     
       
-        <title>Examples - Buffy Docs</title>
+        <title>Examples and Recipes - Buffy Docs</title>
       
     
     
@@ -62,7 +62,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#wikidataorg-only-update-data-every-quarter" class="md-skip">
+        <a href="#update-remote-data-every-quarter" class="md-skip">
           Skip to content
         </a>
       
@@ -95,7 +95,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Examples
+              Examples and Recipes
             
           </span>
         </div>
@@ -201,7 +201,7 @@
       
       
       <a href="./" class="md-nav__link md-nav__link--active">
-        Examples
+        Examples and Recipes
       </a>
       
     </li>
@@ -447,7 +447,7 @@
                 
 
 
-<h1 id="wikidataorg-only-update-data-every-quarter">Wikidata.org - Only update data every quarter<a class="headerlink" href="#wikidataorg-only-update-data-every-quarter" title="Permanent link">&para;</a></h1>
+<h1 id="update-remote-data-every-quarter">Update remote data every quarter<a class="headerlink" href="#update-remote-data-every-quarter" title="Permanent link">&para;</a></h1>
 <hr />
 <p>Lets query all countries with their goverment form from wikidata.org. 
 The wikidata.org API can be - understandably - a little bit sensitive when beating their servers. 
@@ -457,7 +457,7 @@ As Countries are relatively static concepts we are happy in this scenario, if we
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="kn">import</span> <span class="nn">json</span>
 <a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="kn">from</span> <span class="nn">buffy.buffypyclient</span> <span class="kn">import</span> <span class="n">BuffyPyClient</span><span class="p">,</span><span class="n">ReCachingStrategy</span><span class="p">,</span><span class="n">RequestCacheConfiguration</span>
 <a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>
-<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="c1"># connect to buffy server</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="c1"># connect to Buffy-server</span>
 <a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="n">c</span> <span class="o">=</span> <span class="n">BuffyPyClient</span><span class="p">(</span><span class="n">host</span><span class="o">=</span><span class="s2">&quot;localhost&quot;</span><span class="p">,</span> <span class="n">port</span><span class="o">=</span><span class="mi">8008</span><span class="p">,</span> <span class="n">ssl</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 <a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>
 <a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="n">wikidata_query</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;</span>
@@ -496,7 +496,65 @@ As Countries are relatively static concepts we are happy in this scenario, if we
 <p>The cool thing with <code>ReCachingStrategy.age</code> that reCaching will happen in the background. <br />
 So next quarter, when running our code again, the data will allready be available. We dont have to wait for the wikidata.org server to process our query.</p>
 <h1 id="pinning-a-certain-version">Pinning a certain version<a class="headerlink" href="#pinning-a-certain-version" title="Permanent link">&para;</a></h1>
-<p>todo</p>
+<p>The Buffy server will push out older cached version out of the cache to prevent filling oyur disk with garbage. If you want to keep a certain version you can pin it.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="kn">import</span> <span class="nn">json</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="kn">from</span> <span class="nn">buffy.buffypyclient</span> <span class="kn">import</span> <span class="n">BuffyPyClient</span><span class="p">,</span><span class="n">ReCachingStrategy</span><span class="p">,</span><span class="n">RequestCacheConfiguration</span>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="c1"># connect to Buffy-server</span>
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="n">c</span> <span class="o">=</span> <span class="n">BuffyPyClient</span><span class="p">(</span><span class="n">host</span><span class="o">=</span><span class="s2">&quot;localhost&quot;</span><span class="p">,</span> <span class="n">port</span><span class="o">=</span><span class="mi">8008</span><span class="p">,</span> <span class="n">ssl</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>
+<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="n">strategy</span> <span class="o">=</span> <span class="n">ReCachingStrategy</span><span class="o">.</span><span class="n">when_remote_changed</span><span class="p">()</span>
+<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="n">config</span> <span class="o">=</span> <span class="n">RequestCacheConfiguration</span><span class="p">(</span><span class="n">recaching_strategy</span><span class="o">=</span><span class="n">strategy</span><span class="p">,</span> <span class="n">max_cached_unpinned_versions</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="c1"># create a request</span>
+<a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a><span class="n">req</span> <span class="o">=</span> <span class="n">c</span><span class="o">.</span><span class="n">create_request</span><span class="p">(</span>
+<a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a>    <span class="n">url</span><span class="o">=</span><span class="s2">&quot;https://raw.githubusercontent.com/torvalds/linux/master/.mailmap&quot;</span><span class="p">,</span>
+<a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a>    <span class="n">cache_configuration</span><span class="o">=</span><span class="n">config</span><span class="p">,</span>
+<a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a><span class="p">)</span>
+<a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a>
+<a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a><span class="n">req</span><span class="o">.</span><span class="n">download_response_content_to</span><span class="p">(</span><span class="s2">&quot;mydata/mailmap&quot;</span><span class="p">)</span>
+<a id="__codelineno-1-16" name="__codelineno-1-16" href="#__codelineno-1-16"></a>
+<a id="__codelineno-1-17" name="__codelineno-1-17" href="#__codelineno-1-17"></a><span class="c1"># Lets pin the just downloaded version and in return we also get the current version name, if we want to recall it later.</span>
+<a id="__codelineno-1-18" name="__codelineno-1-18" href="#__codelineno-1-18"></a><span class="n">version_name</span><span class="p">:</span><span class="nb">str</span> <span class="o">=</span> <span class="n">req</span><span class="o">.</span><span class="n">pin</span><span class="p">()</span>
+</code></pre></div>
+<h1 id="tagging-a-certain-version">Tagging a certain version<a class="headerlink" href="#tagging-a-certain-version" title="Permanent link">&para;</a></h1>
+<p>To make it easier to find certain version you can "tag" them. A tag just a short string you can attach to one or more versions and query it later to recall these versions.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="kn">import</span> <span class="nn">json</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="kn">from</span> <span class="nn">buffy.buffypyclient</span> <span class="kn">import</span> <span class="n">BuffyPyClient</span><span class="p">,</span><span class="n">ReCachingStrategy</span><span class="p">,</span><span class="n">RequestCacheConfiguration</span>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="c1"># connect to Buffy-server</span>
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="n">c</span> <span class="o">=</span> <span class="n">BuffyPyClient</span><span class="p">(</span><span class="n">host</span><span class="o">=</span><span class="s2">&quot;localhost&quot;</span><span class="p">,</span> <span class="n">port</span><span class="o">=</span><span class="mi">8008</span><span class="p">,</span> <span class="n">ssl</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>
+<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="n">strategy</span> <span class="o">=</span> <span class="n">ReCachingStrategy</span><span class="o">.</span><span class="n">when_remote_changed</span><span class="p">()</span>
+<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="n">config</span> <span class="o">=</span> <span class="n">RequestCacheConfiguration</span><span class="p">(</span><span class="n">recaching_strategy</span><span class="o">=</span><span class="n">strategy</span><span class="p">,</span> <span class="n">max_cached_unpinned_versions</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+<a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a><span class="c1"># create a request</span>
+<a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a><span class="n">req</span> <span class="o">=</span> <span class="n">c</span><span class="o">.</span><span class="n">create_request</span><span class="p">(</span>
+<a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a>    <span class="n">url</span><span class="o">=</span><span class="s2">&quot;https://raw.githubusercontent.com/torvalds/linux/master/.mailmap&quot;</span><span class="p">,</span>
+<a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a>    <span class="n">cache_configuration</span><span class="o">=</span><span class="n">config</span><span class="p">,</span>
+<a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a><span class="p">)</span>
+<a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a>
+<a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a><span class="n">req</span><span class="o">.</span><span class="n">download_response_content_to</span><span class="p">(</span><span class="s2">&quot;mydata/mailmap&quot;</span><span class="p">)</span>
+<a id="__codelineno-2-16" name="__codelineno-2-16" href="#__codelineno-2-16"></a>
+<a id="__codelineno-2-17" name="__codelineno-2-17" href="#__codelineno-2-17"></a><span class="c1"># Lets pin the just downloaded version and in return we also get the current version name, if we want to recall it later.</span>
+<a id="__codelineno-2-18" name="__codelineno-2-18" href="#__codelineno-2-18"></a><span class="n">version_name</span><span class="p">:</span><span class="nb">str</span> <span class="o">=</span> <span class="n">req</span><span class="o">.</span><span class="n">tag</span><span class="p">(</span><span class="s2">&quot;my-best-version&quot;</span><span class="p">)</span>
+</code></pre></div>
+<h2 id="recall-a-tagged-version">Recall a tagged version<a class="headerlink" href="#recall-a-tagged-version" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="kn">import</span> <span class="nn">json</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="kn">from</span> <span class="nn">buffy.buffypyclient</span> <span class="kn">import</span> <span class="n">BuffyPyClient</span><span class="p">,</span><span class="n">ReCachingStrategy</span><span class="p">,</span><span class="n">RequestCacheConfiguration</span>
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="c1"># connect to Buffy-server</span>
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="n">c</span> <span class="o">=</span> <span class="n">BuffyPyClient</span><span class="p">(</span><span class="n">host</span><span class="o">=</span><span class="s2">&quot;localhost&quot;</span><span class="p">,</span> <span class="n">port</span><span class="o">=</span><span class="mi">8008</span><span class="p">,</span> <span class="n">ssl</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>
+<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="c1"># create a request but prevent an immediate ordering with `hold_request_order` </span>
+<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a><span class="n">req</span> <span class="o">=</span> <span class="n">c</span><span class="o">.</span><span class="n">create_request</span><span class="p">(</span>
+<a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a>    <span class="n">url</span><span class="o">=</span><span class="s2">&quot;https://raw.githubusercontent.com/torvalds/linux/master/.mailmap&quot;</span><span class="p">,</span>
+<a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a>    <span class="n">hold_request_order</span><span class="o">=</span><span class="kc">True</span>
+<a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a><span class="p">)</span>
+<a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a><span class="c1"># We now define which tag we prefere. </span>
+<a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a><span class="c1"># alternative you can also provide the param `force_tag` which raise an error if no version with this tag can be found</span>
+<a id="__codelineno-3-14" name="__codelineno-3-14" href="#__codelineno-3-14"></a><span class="n">req</span><span class="o">.</span><span class="n">order</span><span class="p">(</span><span class="n">prefer_tag</span><span class="o">=</span><span class="s2">&quot;my-best-version&quot;</span><span class="p">)</span>
+<a id="__codelineno-3-15" name="__codelineno-3-15" href="#__codelineno-3-15"></a><span class="c1"># Lets pin the just downloaded version and in return we also get the current version name, if we want to recall it later.</span>
+<a id="__codelineno-3-16" name="__codelineno-3-16" href="#__codelineno-3-16"></a><span class="n">req</span><span class="o">.</span><span class="n">download_response_content_to</span><span class="p">(</span><span class="s2">&quot;mydata/mailmap&quot;</span><span class="p">)</span>
+</code></pre></div>
 
 
 

@@ -190,7 +190,7 @@
   
     <li class="md-nav__item">
       <a href="../BuffyPyClient-examples/" class="md-nav__link">
-        Examples
+        Examples and Recipes
       </a>
     </li>
   
@@ -768,16 +768,16 @@
 <a id="__codelineno-0-159" name="__codelineno-0-159"></a>    <span class="n">next_version</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
 <a id="__codelineno-0-160" name="__codelineno-0-160"></a>    <span class="sd">&quot;&quot;&quot;If there is a newer version, you can find the version name here&quot;&quot;&quot;</span>
 <a id="__codelineno-0-161" name="__codelineno-0-161"></a>    <span class="n">status</span><span class="p">:</span> <span class="n">Literal</span><span class="p">[</span><span class="s2">&quot;wait&quot;</span><span class="p">,</span> <span class="s2">&quot;in_progress&quot;</span><span class="p">,</span> <span class="s2">&quot;ready&quot;</span><span class="p">,</span> <span class="s2">&quot;duplicate&quot;</span><span class="p">,</span> <span class="s2">&quot;failed&quot;</span><span class="p">]</span>
-<a id="__codelineno-0-162" name="__codelineno-0-162"></a>    <span class="sd">&quot;&quot;&quot;State of the reponses download on Buffy server side. </span>
+<a id="__codelineno-0-162" name="__codelineno-0-162"></a>    <span class="sd">&quot;&quot;&quot;State of the reponses download on Buffy-server side. </span>
 <a id="__codelineno-0-163" name="__codelineno-0-163"></a><span class="sd">    &#39;wait&#39;: The request is registered by the backend, but no actions have been initiated  </span>
 <a id="__codelineno-0-164" name="__codelineno-0-164"></a><span class="sd">    &#39;in_progress&#39;: The backend is running the download of the response  </span>
 <a id="__codelineno-0-165" name="__codelineno-0-165"></a><span class="sd">    &#39;ready&#39;: The response is cached and can be picked up by a client  </span>
 <a id="__codelineno-0-166" name="__codelineno-0-166"></a><span class="sd">    &#39;duplicate&#39;: The response is cached but equal to the previous cached response. It will be deleted and should not be used by a client  </span>
 <a id="__codelineno-0-167" name="__codelineno-0-167"></a><span class="sd">    &#39;failed: The response download failed. The the &#39;Response.download_stats.error&#39; field for more details.&quot;&quot;&quot;</span>
 <a id="__codelineno-0-168" name="__codelineno-0-168"></a>    <span class="n">content_download_path</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
-<a id="__codelineno-0-169" name="__codelineno-0-169"></a>    <span class="sd">&quot;&quot;&quot;Path to downlaod the responses content from the Buffy server API. No base domain included!&quot;&quot;&quot;</span>
+<a id="__codelineno-0-169" name="__codelineno-0-169"></a>    <span class="sd">&quot;&quot;&quot;Path to downlaod the responses content from the Buffy-server API. No base domain included!&quot;&quot;&quot;</span>
 <a id="__codelineno-0-170" name="__codelineno-0-170"></a>    <span class="n">cached_datetime_utc</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
-<a id="__codelineno-0-171" name="__codelineno-0-171"></a>    <span class="sd">&quot;&quot;&quot;Moment when Buffy server finished the download&quot;&quot;&quot;</span>
+<a id="__codelineno-0-171" name="__codelineno-0-171"></a>    <span class="sd">&quot;&quot;&quot;Moment when Buffy-server finished the download&quot;&quot;&quot;</span>
 <a id="__codelineno-0-172" name="__codelineno-0-172"></a>    <span class="n">request_datetime_utc</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
 <a id="__codelineno-0-173" name="__codelineno-0-173"></a>    <span class="sd">&quot;&quot;&quot;Moment when a client requested the file. This is not appliable to all strategies.&quot;&quot;&quot;</span>
 <a id="__codelineno-0-174" name="__codelineno-0-174"></a>    <span class="c1"># https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Disposition</span>
@@ -786,7 +786,7 @@
 <a id="__codelineno-0-177" name="__codelineno-0-177"></a>    <span class="n">tags</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span>
 <a id="__codelineno-0-178" name="__codelineno-0-178"></a>    <span class="sd">&quot;&quot;&quot;!EXPERIMENTAL!: Clients can add tags to a reponse to manage multiple versions&quot;&quot;&quot;</span>
 <a id="__codelineno-0-179" name="__codelineno-0-179"></a>    <span class="n">download_stats</span><span class="p">:</span> <span class="n">ResponseDownloadStats</span> <span class="o">=</span> <span class="kc">None</span>
-<a id="__codelineno-0-180" name="__codelineno-0-180"></a>    <span class="sd">&quot;&quot;&quot;Statistics about the downlaod by Buffy server&quot;&quot;&quot;</span>
+<a id="__codelineno-0-180" name="__codelineno-0-180"></a>    <span class="sd">&quot;&quot;&quot;Statistics about the downlaod by Buffy-server&quot;&quot;&quot;</span>
 <a id="__codelineno-0-181" name="__codelineno-0-181"></a>    <span class="n">content_attributes</span><span class="p">:</span> <span class="n">ResponseContentAttributes</span> <span class="o">=</span> <span class="kc">None</span>
 <a id="__codelineno-0-182" name="__codelineno-0-182"></a>    <span class="sd">&quot;&quot;&quot;Attributes the download could gather about the content. mostly based on HTTP headers&quot;&quot;&quot;</span>
 <a id="__codelineno-0-183" name="__codelineno-0-183"></a>    <span class="n">content_hash_hex</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="kc">None</span>
@@ -831,7 +831,7 @@
 
   <div class="doc doc-contents ">
   
-      <p>Moment when Buffy server finished the download</p>
+      <p>Moment when Buffy-server finished the download</p>
   </div>
 
 </div>
@@ -873,7 +873,7 @@
 
   <div class="doc doc-contents ">
   
-      <p>Path to downlaod the responses content from the Buffy server API. No base domain included!</p>
+      <p>Path to downlaod the responses content from the Buffy-server API. No base domain included!</p>
   </div>
 
 </div>
@@ -915,7 +915,7 @@
 
   <div class="doc doc-contents ">
   
-      <p>Statistics about the downlaod by Buffy server</p>
+      <p>Statistics about the downlaod by Buffy-server</p>
   </div>
 
 </div>
@@ -1041,7 +1041,7 @@
 
   <div class="doc doc-contents ">
   
-      <p>State of the reponses download on Buffy server side. 
+      <p>State of the reponses download on Buffy-server side. 
 'wait': The request is registered by the backend, but no actions have been initiated<br />
 'in_progress': The backend is running the download of the response<br />
 'ready': The response is cached and can be picked up by a client<br />

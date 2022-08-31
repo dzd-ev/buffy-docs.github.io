@@ -192,7 +192,7 @@
   
     <li class="md-nav__item">
       <a href="../BuffyPyClient-examples/" class="md-nav__link">
-        Examples
+        Examples and Recipes
       </a>
     </li>
   
@@ -771,7 +771,7 @@
   <div class="doc doc-contents first">
 
   
-      <p>Python client to abstract communication with the Buffy server REST API</p>
+      <p>Python client to abstract communication with the Buffy-server REST API</p>
 
 
         <details class="quote">
@@ -1478,7 +1478,7 @@
 <span class="normal"><a href="#__codelineno-0-738">738</a></span>
 <span class="normal"><a href="#__codelineno-0-739">739</a></span>
 <span class="normal"><a href="#__codelineno-0-740">740</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-39" name="__codelineno-0-39"></a><span class="k">class</span> <span class="nc">BuffyPyClient</span><span class="p">:</span>
-<a id="__codelineno-0-40" name="__codelineno-0-40"></a>    <span class="sd">&quot;&quot;&quot;Python client to abstract communication with the Buffy server REST API&quot;&quot;&quot;</span>
+<a id="__codelineno-0-40" name="__codelineno-0-40"></a>    <span class="sd">&quot;&quot;&quot;Python client to abstract communication with the Buffy-server REST API&quot;&quot;&quot;</span>
 <a id="__codelineno-0-41" name="__codelineno-0-41"></a>
 <a id="__codelineno-0-42" name="__codelineno-0-42"></a>    <span class="n">buffy_server_timeout_sec</span> <span class="o">=</span> <span class="mi">5</span>
 <a id="__codelineno-0-43" name="__codelineno-0-43"></a>
@@ -1517,7 +1517,7 @@
 <a id="__codelineno-0-76" name="__codelineno-0-76"></a>            <span class="bp">self</span><span class="o">.</span><span class="n">force_tag</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="kc">None</span>
 <a id="__codelineno-0-77" name="__codelineno-0-77"></a>            <span class="bp">self</span><span class="o">.</span><span class="n">fallback_to_older_version</span> <span class="o">=</span> <span class="kc">True</span>
 <a id="__codelineno-0-78" name="__codelineno-0-78"></a>            <span class="bp">self</span><span class="o">.</span><span class="n">_client</span><span class="o">.</span><span class="n">http_headers</span><span class="p">:</span> <span class="n">Dict</span> <span class="o">=</span> <span class="p">{}</span>
-<a id="__codelineno-0-79" name="__codelineno-0-79"></a>            <span class="sd">&quot;&quot;&quot;HTTP Auth fields send to the Buffy server API. This can be used e.g. if Buffy is behind a auth reverse proxy&quot;&quot;&quot;</span>
+<a id="__codelineno-0-79" name="__codelineno-0-79"></a>            <span class="sd">&quot;&quot;&quot;HTTP Auth fields send to the Buffy-server API. This can be used e.g. if Buffy is behind a auth reverse proxy&quot;&quot;&quot;</span>
 <a id="__codelineno-0-80" name="__codelineno-0-80"></a>
 <a id="__codelineno-0-81" name="__codelineno-0-81"></a>        <span class="nd">@property</span>
 <a id="__codelineno-0-82" name="__codelineno-0-82"></a>        <span class="k">def</span> <span class="nf">cache_configuration</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">RequestCacheConfiguration</span><span class="p">:</span>
@@ -1568,7 +1568,7 @@
 <a id="__codelineno-0-127" name="__codelineno-0-127"></a>            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_api_response</span><span class="p">:</span>
 <a id="__codelineno-0-128" name="__codelineno-0-128"></a>                <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_api_response</span><span class="o">.</span><span class="n">version</span>
 <a id="__codelineno-0-129" name="__codelineno-0-129"></a>            <span class="n">log</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span>
-<a id="__codelineno-0-130" name="__codelineno-0-130"></a>                <span class="s2">&quot;You tried to get a response version, before BuffyPyClient could ask the Buffy Server for the recommended version&quot;</span>
+<a id="__codelineno-0-130" name="__codelineno-0-130"></a>                <span class="s2">&quot;You tried to get a response version, before BuffyPyClient could ask the Buffy-server for the recommended version&quot;</span>
 <a id="__codelineno-0-131" name="__codelineno-0-131"></a>            <span class="p">)</span>
 <a id="__codelineno-0-132" name="__codelineno-0-132"></a>
 <a id="__codelineno-0-133" name="__codelineno-0-133"></a>        <span class="k">def</span> <span class="nf">order</span><span class="p">(</span>
@@ -1581,9 +1581,9 @@
 <a id="__codelineno-0-140" name="__codelineno-0-140"></a>            <span class="n">force_version</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
 <a id="__codelineno-0-141" name="__codelineno-0-141"></a>            <span class="n">force_tag</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
 <a id="__codelineno-0-142" name="__codelineno-0-142"></a>        <span class="p">):</span>
-<a id="__codelineno-0-143" name="__codelineno-0-143"></a>            <span class="sd">&quot;&quot;&quot;Send the request to the Buffy server.</span>
+<a id="__codelineno-0-143" name="__codelineno-0-143"></a>            <span class="sd">&quot;&quot;&quot;Send the request to the Buffy-server.</span>
 <a id="__codelineno-0-144" name="__codelineno-0-144"></a><span class="sd">            When calling [`Buffy.BuffyPyClient.create_request()`](/BuffyPyClient/#buffy.buffypyclient.buffypyclient.BuffyPyClient.create_request) `order` will be called automaticly.</span>
-<a id="__codelineno-0-145" name="__codelineno-0-145"></a><span class="sd">            If you want determine the moment when the Buffy server is reached manually, call `create_request()&#39; with `hold_request_order=True` and use this function to call the Buffy server whenever you are ready</span>
+<a id="__codelineno-0-145" name="__codelineno-0-145"></a><span class="sd">            If you want determine the moment when the Buffy-server is reached manually, call `create_request()&#39; with `hold_request_order=True` and use this function to call the Buffy-server whenever you are ready</span>
 <a id="__codelineno-0-146" name="__codelineno-0-146"></a>
 <a id="__codelineno-0-147" name="__codelineno-0-147"></a>
 <a id="__codelineno-0-148" name="__codelineno-0-148"></a><span class="sd">            Args:</span>
@@ -1656,7 +1656,7 @@
 <a id="__codelineno-0-215" name="__codelineno-0-215"></a>            <span class="bp">self</span><span class="o">.</span><span class="n">_wait_for_request_registration</span><span class="p">()</span>
 <a id="__codelineno-0-216" name="__codelineno-0-216"></a>
 <a id="__codelineno-0-217" name="__codelineno-0-217"></a>        <span class="k">def</span> <span class="nf">download_response_content</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">chunk_size</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">65536</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Iterator</span><span class="p">[</span><span class="nb">bytes</span><span class="p">]:</span>
-<a id="__codelineno-0-218" name="__codelineno-0-218"></a>            <span class="sd">&quot;&quot;&quot;Stream/Iterate through the response content delivered by the Buffy server.</span>
+<a id="__codelineno-0-218" name="__codelineno-0-218"></a>            <span class="sd">&quot;&quot;&quot;Stream/Iterate through the response content delivered by the Buffy-server.</span>
 <a id="__codelineno-0-219" name="__codelineno-0-219"></a>
 <a id="__codelineno-0-220" name="__codelineno-0-220"></a><span class="sd">            **example use**</span>
 <a id="__codelineno-0-221" name="__codelineno-0-221"></a><span class="sd">            ```python</span>
@@ -1703,7 +1703,7 @@
 <a id="__codelineno-0-262" name="__codelineno-0-262"></a>        <span class="k">def</span> <span class="nf">download_response_content_to</span><span class="p">(</span>
 <a id="__codelineno-0-263" name="__codelineno-0-263"></a>            <span class="bp">self</span><span class="p">,</span> <span class="n">target</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Path</span><span class="p">,</span> <span class="n">FileIO</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="nb">dir</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Path</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
 <a id="__codelineno-0-264" name="__codelineno-0-264"></a>        <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Path</span><span class="p">:</span>
-<a id="__codelineno-0-265" name="__codelineno-0-265"></a>            <span class="sd">&quot;&quot;&quot;Download the response content delivered by the Buffy server.</span>
+<a id="__codelineno-0-265" name="__codelineno-0-265"></a>            <span class="sd">&quot;&quot;&quot;Download the response content delivered by the Buffy-server.</span>
 <a id="__codelineno-0-266" name="__codelineno-0-266"></a>
 <a id="__codelineno-0-267" name="__codelineno-0-267"></a><span class="sd">            **example use**</span>
 <a id="__codelineno-0-268" name="__codelineno-0-268"></a><span class="sd">            ```python</span>
@@ -1819,7 +1819,7 @@
 <a id="__codelineno-0-378" name="__codelineno-0-378"></a>            <span class="k">if</span> <span class="ow">not</span> <span class="n">response_version</span><span class="p">:</span>
 <a id="__codelineno-0-379" name="__codelineno-0-379"></a>                <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">_api_response</span><span class="p">:</span>
 <a id="__codelineno-0-380" name="__codelineno-0-380"></a>                    <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
-<a id="__codelineno-0-381" name="__codelineno-0-381"></a>                        <span class="s2">&quot;BuffyPyClient can not pin any response version. No `response_version` provided and no response from Buffy server ordered yet.&quot;</span>
+<a id="__codelineno-0-381" name="__codelineno-0-381"></a>                        <span class="s2">&quot;BuffyPyClient can not pin any response version. No `response_version` provided and no response from Buffy-server ordered yet.&quot;</span>
 <a id="__codelineno-0-382" name="__codelineno-0-382"></a>                    <span class="p">)</span>
 <a id="__codelineno-0-383" name="__codelineno-0-383"></a>                <span class="n">response_version</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_api_response</span><span class="o">.</span><span class="n">version</span>
 <a id="__codelineno-0-384" name="__codelineno-0-384"></a>            <span class="n">pin</span> <span class="o">=</span> <span class="n">ResponsePinClaim</span><span class="p">(</span><span class="n">value</span><span class="o">=</span><span class="n">value</span><span class="p">,</span> <span class="n">duration_sec</span><span class="o">=</span><span class="n">duration_sec</span><span class="p">)</span>
@@ -1858,7 +1858,7 @@
 <a id="__codelineno-0-417" name="__codelineno-0-417"></a>            <span class="k">if</span> <span class="ow">not</span> <span class="n">response_version</span><span class="p">:</span>
 <a id="__codelineno-0-418" name="__codelineno-0-418"></a>                <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">_api_response</span><span class="p">:</span>
 <a id="__codelineno-0-419" name="__codelineno-0-419"></a>                    <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
-<a id="__codelineno-0-420" name="__codelineno-0-420"></a>                        <span class="s2">&quot;BuffyPyClient can not tag any response version. No `response_version` provided and no response from Buffy server ordered yet.&quot;</span>
+<a id="__codelineno-0-420" name="__codelineno-0-420"></a>                        <span class="s2">&quot;BuffyPyClient can not tag any response version. No `response_version` provided and no response from Buffy-server ordered yet.&quot;</span>
 <a id="__codelineno-0-421" name="__codelineno-0-421"></a>                    <span class="p">)</span>
 <a id="__codelineno-0-422" name="__codelineno-0-422"></a>                <span class="n">response_version</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_api_response</span><span class="o">.</span><span class="n">version</span>
 <a id="__codelineno-0-423" name="__codelineno-0-423"></a>            <span class="n">tag_claim</span> <span class="o">=</span> <span class="n">ResponseTagClaim</span><span class="p">(</span>
@@ -1962,7 +1962,7 @@
 <a id="__codelineno-0-521" name="__codelineno-0-521"></a>                    <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">0.3</span><span class="p">)</span>
 <a id="__codelineno-0-522" name="__codelineno-0-522"></a>
 <a id="__codelineno-0-523" name="__codelineno-0-523"></a>        <span class="k">def</span> <span class="nf">_find_response</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">override_prefere_version</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ApiResponse</span><span class="p">:</span>
-<a id="__codelineno-0-524" name="__codelineno-0-524"></a>            <span class="sd">&quot;&quot;&quot;Try to find a matching response stored and/or processed in Buffy server to serve the client</span>
+<a id="__codelineno-0-524" name="__codelineno-0-524"></a>            <span class="sd">&quot;&quot;&quot;Try to find a matching response stored and/or processed in Buffy-server to serve the client</span>
 <a id="__codelineno-0-525" name="__codelineno-0-525"></a>
 <a id="__codelineno-0-526" name="__codelineno-0-526"></a><span class="sd">            Todo: Simplify logic. Its a mess atm</span>
 <a id="__codelineno-0-527" name="__codelineno-0-527"></a>
@@ -1986,11 +1986,11 @@
 <a id="__codelineno-0-545" name="__codelineno-0-545"></a>                    <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_api_response</span>
 <a id="__codelineno-0-546" name="__codelineno-0-546"></a>
 <a id="__codelineno-0-547" name="__codelineno-0-547"></a>            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_use_local_download</span><span class="p">:</span>
-<a id="__codelineno-0-548" name="__codelineno-0-548"></a>                <span class="c1"># we could not reach the buffy server and started local download. nothing todo here.</span>
+<a id="__codelineno-0-548" name="__codelineno-0-548"></a>                <span class="c1"># we could not reach the Buffy-server and started local download. nothing todo here.</span>
 <a id="__codelineno-0-549" name="__codelineno-0-549"></a>                <span class="k">return</span> <span class="kc">None</span>
 <a id="__codelineno-0-550" name="__codelineno-0-550"></a>            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_api_request</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
 <a id="__codelineno-0-551" name="__codelineno-0-551"></a>                <span class="c1"># There was no request ordered (`BuffyPyClient.Request.order()`) until now.</span>
-<a id="__codelineno-0-552" name="__codelineno-0-552"></a>                <span class="c1"># We have no connection to the buffy server yet and therefore cant find a cached response</span>
+<a id="__codelineno-0-552" name="__codelineno-0-552"></a>                <span class="c1"># We have no connection to the Buffy-server yet and therefore cant find a cached response</span>
 <a id="__codelineno-0-553" name="__codelineno-0-553"></a>                <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
 <a id="__codelineno-0-554" name="__codelineno-0-554"></a>                    <span class="sa">f</span><span class="s2">&quot;Cant query matching response for Request &#39;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">_api_request_in</span><span class="o">.</span><span class="n">url</span><span class="si">}</span><span class="s2">&#39;. The request must be ordered with method `BuffyPyClient.Request.order()` first&quot;</span>
 <a id="__codelineno-0-555" name="__codelineno-0-555"></a>                <span class="p">)</span>
@@ -2154,12 +2154,12 @@
 <a id="__codelineno-0-713" name="__codelineno-0-713"></a><span class="sd">            http_query_params (Dict, optional): [HTTP query string](https://en.wikipedia.org/wiki/Query_string)</span>
 <a id="__codelineno-0-714" name="__codelineno-0-714"></a><span class="sd">            http_request_body (Optional[Dict], optional): [HTTP message body](https://en.wikipedia.org/wiki/HTTP_message_body)</span>
 <a id="__codelineno-0-715" name="__codelineno-0-715"></a><span class="sd">            http_header_fields (Dict, optional): [HTTP header fields](https://en.wikipedia.org/wiki/List_of_HTTP_header_fields)</span>
-<a id="__codelineno-0-716" name="__codelineno-0-716"></a><span class="sd">            info_description (str, optional): This is a documentation string for your request. Buffy server will save your request. \</span>
+<a id="__codelineno-0-716" name="__codelineno-0-716"></a><span class="sd">            info_description (str, optional): This is a documentation string for your request. Buffy-server will save your request. \</span>
 <a id="__codelineno-0-717" name="__codelineno-0-717"></a><span class="sd">                For later traceability it can help to give your request some metadata.</span>
 <a id="__codelineno-0-718" name="__codelineno-0-718"></a><span class="sd">            info_link (str, optional): Same as `info_description` but for external metadata</span>
-<a id="__codelineno-0-719" name="__codelineno-0-719"></a><span class="sd">            hold_request_order (bool, optional): The Buffy client will send the request to the buffy server instantly. \</span>
+<a id="__codelineno-0-719" name="__codelineno-0-719"></a><span class="sd">            hold_request_order (bool, optional): The Buffy client will send the request to the Buffy-server instantly. \</span>
 <a id="__codelineno-0-720" name="__codelineno-0-720"></a><span class="sd">                If for any reasons you need to delay the request, set `hold_request_order` to `True`</span>
-<a id="__codelineno-0-721" name="__codelineno-0-721"></a><span class="sd">            cache_configuration (RequestCacheConfiguration, optional): Buffy server can be configured on when to (re-)download  your request. \</span>
+<a id="__codelineno-0-721" name="__codelineno-0-721"></a><span class="sd">            cache_configuration (RequestCacheConfiguration, optional): Buffy-server can be configured on when to (re-)download  your request. \</span>
 <a id="__codelineno-0-722" name="__codelineno-0-722"></a><span class="sd">                An instance of `RequestCacheConfiguration` is needed</span>
 <a id="__codelineno-0-723" name="__codelineno-0-723"></a>
 <a id="__codelineno-0-724" name="__codelineno-0-724"></a><span class="sd">        Returns:</span>
@@ -2280,7 +2280,7 @@
           <td>
                 <code>str</code>
           </td>
-          <td><p>This is a documentation string for your request. Buffy server will save your request.                 For later traceability it can help to give your request some metadata.</p></td>
+          <td><p>This is a documentation string for your request. Buffy-server will save your request.                 For later traceability it can help to give your request some metadata.</p></td>
           <td>
                 <code>None</code>
           </td>
@@ -2300,7 +2300,7 @@
           <td>
                 <code>bool</code>
           </td>
-          <td><p>The Buffy client will send the request to the buffy server instantly.                 If for any reasons you need to delay the request, set <code>hold_request_order</code> to <code>True</code></p></td>
+          <td><p>The Buffy client will send the request to the Buffy-server instantly.                 If for any reasons you need to delay the request, set <code>hold_request_order</code> to <code>True</code></p></td>
           <td>
                 <code>False</code>
           </td>
@@ -2310,7 +2310,7 @@
           <td>
                 <code><a class="autorefs autorefs-internal" title="buffy.buffyserver.api.v1.models.RequestCacheConfiguration" href="#buffy.buffyserver.api.v1.models.RequestCacheConfiguration">RequestCacheConfiguration</a></code>
           </td>
-          <td><p>Buffy server can be configured on when to (re-)download  your request.                 An instance of <code>RequestCacheConfiguration</code> is needed</p></td>
+          <td><p>Buffy-server can be configured on when to (re-)download  your request.                 An instance of <code>RequestCacheConfiguration</code> is needed</p></td>
           <td>
                 <code>None</code>
           </td>
@@ -2424,12 +2424,12 @@
 <a id="__codelineno-0-713" name="__codelineno-0-713"></a><span class="sd">        http_query_params (Dict, optional): [HTTP query string](https://en.wikipedia.org/wiki/Query_string)</span>
 <a id="__codelineno-0-714" name="__codelineno-0-714"></a><span class="sd">        http_request_body (Optional[Dict], optional): [HTTP message body](https://en.wikipedia.org/wiki/HTTP_message_body)</span>
 <a id="__codelineno-0-715" name="__codelineno-0-715"></a><span class="sd">        http_header_fields (Dict, optional): [HTTP header fields](https://en.wikipedia.org/wiki/List_of_HTTP_header_fields)</span>
-<a id="__codelineno-0-716" name="__codelineno-0-716"></a><span class="sd">        info_description (str, optional): This is a documentation string for your request. Buffy server will save your request. \</span>
+<a id="__codelineno-0-716" name="__codelineno-0-716"></a><span class="sd">        info_description (str, optional): This is a documentation string for your request. Buffy-server will save your request. \</span>
 <a id="__codelineno-0-717" name="__codelineno-0-717"></a><span class="sd">            For later traceability it can help to give your request some metadata.</span>
 <a id="__codelineno-0-718" name="__codelineno-0-718"></a><span class="sd">        info_link (str, optional): Same as `info_description` but for external metadata</span>
-<a id="__codelineno-0-719" name="__codelineno-0-719"></a><span class="sd">        hold_request_order (bool, optional): The Buffy client will send the request to the buffy server instantly. \</span>
+<a id="__codelineno-0-719" name="__codelineno-0-719"></a><span class="sd">        hold_request_order (bool, optional): The Buffy client will send the request to the Buffy-server instantly. \</span>
 <a id="__codelineno-0-720" name="__codelineno-0-720"></a><span class="sd">            If for any reasons you need to delay the request, set `hold_request_order` to `True`</span>
-<a id="__codelineno-0-721" name="__codelineno-0-721"></a><span class="sd">        cache_configuration (RequestCacheConfiguration, optional): Buffy server can be configured on when to (re-)download  your request. \</span>
+<a id="__codelineno-0-721" name="__codelineno-0-721"></a><span class="sd">        cache_configuration (RequestCacheConfiguration, optional): Buffy-server can be configured on when to (re-)download  your request. \</span>
 <a id="__codelineno-0-722" name="__codelineno-0-722"></a><span class="sd">            An instance of `RequestCacheConfiguration` is needed</span>
 <a id="__codelineno-0-723" name="__codelineno-0-723"></a>
 <a id="__codelineno-0-724" name="__codelineno-0-724"></a><span class="sd">    Returns:</span>
@@ -3130,7 +3130,7 @@
 <a id="__codelineno-0-76" name="__codelineno-0-76"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">force_tag</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="kc">None</span>
 <a id="__codelineno-0-77" name="__codelineno-0-77"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">fallback_to_older_version</span> <span class="o">=</span> <span class="kc">True</span>
 <a id="__codelineno-0-78" name="__codelineno-0-78"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">_client</span><span class="o">.</span><span class="n">http_headers</span><span class="p">:</span> <span class="n">Dict</span> <span class="o">=</span> <span class="p">{}</span>
-<a id="__codelineno-0-79" name="__codelineno-0-79"></a>        <span class="sd">&quot;&quot;&quot;HTTP Auth fields send to the Buffy server API. This can be used e.g. if Buffy is behind a auth reverse proxy&quot;&quot;&quot;</span>
+<a id="__codelineno-0-79" name="__codelineno-0-79"></a>        <span class="sd">&quot;&quot;&quot;HTTP Auth fields send to the Buffy-server API. This can be used e.g. if Buffy is behind a auth reverse proxy&quot;&quot;&quot;</span>
 <a id="__codelineno-0-80" name="__codelineno-0-80"></a>
 <a id="__codelineno-0-81" name="__codelineno-0-81"></a>    <span class="nd">@property</span>
 <a id="__codelineno-0-82" name="__codelineno-0-82"></a>    <span class="k">def</span> <span class="nf">cache_configuration</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">RequestCacheConfiguration</span><span class="p">:</span>
@@ -3181,7 +3181,7 @@
 <a id="__codelineno-0-127" name="__codelineno-0-127"></a>        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_api_response</span><span class="p">:</span>
 <a id="__codelineno-0-128" name="__codelineno-0-128"></a>            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_api_response</span><span class="o">.</span><span class="n">version</span>
 <a id="__codelineno-0-129" name="__codelineno-0-129"></a>        <span class="n">log</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span>
-<a id="__codelineno-0-130" name="__codelineno-0-130"></a>            <span class="s2">&quot;You tried to get a response version, before BuffyPyClient could ask the Buffy Server for the recommended version&quot;</span>
+<a id="__codelineno-0-130" name="__codelineno-0-130"></a>            <span class="s2">&quot;You tried to get a response version, before BuffyPyClient could ask the Buffy-server for the recommended version&quot;</span>
 <a id="__codelineno-0-131" name="__codelineno-0-131"></a>        <span class="p">)</span>
 <a id="__codelineno-0-132" name="__codelineno-0-132"></a>
 <a id="__codelineno-0-133" name="__codelineno-0-133"></a>    <span class="k">def</span> <span class="nf">order</span><span class="p">(</span>
@@ -3194,9 +3194,9 @@
 <a id="__codelineno-0-140" name="__codelineno-0-140"></a>        <span class="n">force_version</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
 <a id="__codelineno-0-141" name="__codelineno-0-141"></a>        <span class="n">force_tag</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
 <a id="__codelineno-0-142" name="__codelineno-0-142"></a>    <span class="p">):</span>
-<a id="__codelineno-0-143" name="__codelineno-0-143"></a>        <span class="sd">&quot;&quot;&quot;Send the request to the Buffy server.</span>
+<a id="__codelineno-0-143" name="__codelineno-0-143"></a>        <span class="sd">&quot;&quot;&quot;Send the request to the Buffy-server.</span>
 <a id="__codelineno-0-144" name="__codelineno-0-144"></a><span class="sd">        When calling [`Buffy.BuffyPyClient.create_request()`](/BuffyPyClient/#buffy.buffypyclient.buffypyclient.BuffyPyClient.create_request) `order` will be called automaticly.</span>
-<a id="__codelineno-0-145" name="__codelineno-0-145"></a><span class="sd">        If you want determine the moment when the Buffy server is reached manually, call `create_request()&#39; with `hold_request_order=True` and use this function to call the Buffy server whenever you are ready</span>
+<a id="__codelineno-0-145" name="__codelineno-0-145"></a><span class="sd">        If you want determine the moment when the Buffy-server is reached manually, call `create_request()&#39; with `hold_request_order=True` and use this function to call the Buffy-server whenever you are ready</span>
 <a id="__codelineno-0-146" name="__codelineno-0-146"></a>
 <a id="__codelineno-0-147" name="__codelineno-0-147"></a>
 <a id="__codelineno-0-148" name="__codelineno-0-148"></a><span class="sd">        Args:</span>
@@ -3269,7 +3269,7 @@
 <a id="__codelineno-0-215" name="__codelineno-0-215"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">_wait_for_request_registration</span><span class="p">()</span>
 <a id="__codelineno-0-216" name="__codelineno-0-216"></a>
 <a id="__codelineno-0-217" name="__codelineno-0-217"></a>    <span class="k">def</span> <span class="nf">download_response_content</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">chunk_size</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">65536</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Iterator</span><span class="p">[</span><span class="nb">bytes</span><span class="p">]:</span>
-<a id="__codelineno-0-218" name="__codelineno-0-218"></a>        <span class="sd">&quot;&quot;&quot;Stream/Iterate through the response content delivered by the Buffy server.</span>
+<a id="__codelineno-0-218" name="__codelineno-0-218"></a>        <span class="sd">&quot;&quot;&quot;Stream/Iterate through the response content delivered by the Buffy-server.</span>
 <a id="__codelineno-0-219" name="__codelineno-0-219"></a>
 <a id="__codelineno-0-220" name="__codelineno-0-220"></a><span class="sd">        **example use**</span>
 <a id="__codelineno-0-221" name="__codelineno-0-221"></a><span class="sd">        ```python</span>
@@ -3316,7 +3316,7 @@
 <a id="__codelineno-0-262" name="__codelineno-0-262"></a>    <span class="k">def</span> <span class="nf">download_response_content_to</span><span class="p">(</span>
 <a id="__codelineno-0-263" name="__codelineno-0-263"></a>        <span class="bp">self</span><span class="p">,</span> <span class="n">target</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Path</span><span class="p">,</span> <span class="n">FileIO</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="nb">dir</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Path</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
 <a id="__codelineno-0-264" name="__codelineno-0-264"></a>    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Path</span><span class="p">:</span>
-<a id="__codelineno-0-265" name="__codelineno-0-265"></a>        <span class="sd">&quot;&quot;&quot;Download the response content delivered by the Buffy server.</span>
+<a id="__codelineno-0-265" name="__codelineno-0-265"></a>        <span class="sd">&quot;&quot;&quot;Download the response content delivered by the Buffy-server.</span>
 <a id="__codelineno-0-266" name="__codelineno-0-266"></a>
 <a id="__codelineno-0-267" name="__codelineno-0-267"></a><span class="sd">        **example use**</span>
 <a id="__codelineno-0-268" name="__codelineno-0-268"></a><span class="sd">        ```python</span>
@@ -3432,7 +3432,7 @@
 <a id="__codelineno-0-378" name="__codelineno-0-378"></a>        <span class="k">if</span> <span class="ow">not</span> <span class="n">response_version</span><span class="p">:</span>
 <a id="__codelineno-0-379" name="__codelineno-0-379"></a>            <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">_api_response</span><span class="p">:</span>
 <a id="__codelineno-0-380" name="__codelineno-0-380"></a>                <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
-<a id="__codelineno-0-381" name="__codelineno-0-381"></a>                    <span class="s2">&quot;BuffyPyClient can not pin any response version. No `response_version` provided and no response from Buffy server ordered yet.&quot;</span>
+<a id="__codelineno-0-381" name="__codelineno-0-381"></a>                    <span class="s2">&quot;BuffyPyClient can not pin any response version. No `response_version` provided and no response from Buffy-server ordered yet.&quot;</span>
 <a id="__codelineno-0-382" name="__codelineno-0-382"></a>                <span class="p">)</span>
 <a id="__codelineno-0-383" name="__codelineno-0-383"></a>            <span class="n">response_version</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_api_response</span><span class="o">.</span><span class="n">version</span>
 <a id="__codelineno-0-384" name="__codelineno-0-384"></a>        <span class="n">pin</span> <span class="o">=</span> <span class="n">ResponsePinClaim</span><span class="p">(</span><span class="n">value</span><span class="o">=</span><span class="n">value</span><span class="p">,</span> <span class="n">duration_sec</span><span class="o">=</span><span class="n">duration_sec</span><span class="p">)</span>
@@ -3471,7 +3471,7 @@
 <a id="__codelineno-0-417" name="__codelineno-0-417"></a>        <span class="k">if</span> <span class="ow">not</span> <span class="n">response_version</span><span class="p">:</span>
 <a id="__codelineno-0-418" name="__codelineno-0-418"></a>            <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">_api_response</span><span class="p">:</span>
 <a id="__codelineno-0-419" name="__codelineno-0-419"></a>                <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
-<a id="__codelineno-0-420" name="__codelineno-0-420"></a>                    <span class="s2">&quot;BuffyPyClient can not tag any response version. No `response_version` provided and no response from Buffy server ordered yet.&quot;</span>
+<a id="__codelineno-0-420" name="__codelineno-0-420"></a>                    <span class="s2">&quot;BuffyPyClient can not tag any response version. No `response_version` provided and no response from Buffy-server ordered yet.&quot;</span>
 <a id="__codelineno-0-421" name="__codelineno-0-421"></a>                <span class="p">)</span>
 <a id="__codelineno-0-422" name="__codelineno-0-422"></a>            <span class="n">response_version</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_api_response</span><span class="o">.</span><span class="n">version</span>
 <a id="__codelineno-0-423" name="__codelineno-0-423"></a>        <span class="n">tag_claim</span> <span class="o">=</span> <span class="n">ResponseTagClaim</span><span class="p">(</span>
@@ -3575,7 +3575,7 @@
 <a id="__codelineno-0-521" name="__codelineno-0-521"></a>                <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">0.3</span><span class="p">)</span>
 <a id="__codelineno-0-522" name="__codelineno-0-522"></a>
 <a id="__codelineno-0-523" name="__codelineno-0-523"></a>    <span class="k">def</span> <span class="nf">_find_response</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">override_prefere_version</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ApiResponse</span><span class="p">:</span>
-<a id="__codelineno-0-524" name="__codelineno-0-524"></a>        <span class="sd">&quot;&quot;&quot;Try to find a matching response stored and/or processed in Buffy server to serve the client</span>
+<a id="__codelineno-0-524" name="__codelineno-0-524"></a>        <span class="sd">&quot;&quot;&quot;Try to find a matching response stored and/or processed in Buffy-server to serve the client</span>
 <a id="__codelineno-0-525" name="__codelineno-0-525"></a>
 <a id="__codelineno-0-526" name="__codelineno-0-526"></a><span class="sd">        Todo: Simplify logic. Its a mess atm</span>
 <a id="__codelineno-0-527" name="__codelineno-0-527"></a>
@@ -3599,11 +3599,11 @@
 <a id="__codelineno-0-545" name="__codelineno-0-545"></a>                <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_api_response</span>
 <a id="__codelineno-0-546" name="__codelineno-0-546"></a>
 <a id="__codelineno-0-547" name="__codelineno-0-547"></a>        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_use_local_download</span><span class="p">:</span>
-<a id="__codelineno-0-548" name="__codelineno-0-548"></a>            <span class="c1"># we could not reach the buffy server and started local download. nothing todo here.</span>
+<a id="__codelineno-0-548" name="__codelineno-0-548"></a>            <span class="c1"># we could not reach the Buffy-server and started local download. nothing todo here.</span>
 <a id="__codelineno-0-549" name="__codelineno-0-549"></a>            <span class="k">return</span> <span class="kc">None</span>
 <a id="__codelineno-0-550" name="__codelineno-0-550"></a>        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_api_request</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
 <a id="__codelineno-0-551" name="__codelineno-0-551"></a>            <span class="c1"># There was no request ordered (`BuffyPyClient.Request.order()`) until now.</span>
-<a id="__codelineno-0-552" name="__codelineno-0-552"></a>            <span class="c1"># We have no connection to the buffy server yet and therefore cant find a cached response</span>
+<a id="__codelineno-0-552" name="__codelineno-0-552"></a>            <span class="c1"># We have no connection to the Buffy-server yet and therefore cant find a cached response</span>
 <a id="__codelineno-0-553" name="__codelineno-0-553"></a>            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
 <a id="__codelineno-0-554" name="__codelineno-0-554"></a>                <span class="sa">f</span><span class="s2">&quot;Cant query matching response for Request &#39;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">_api_request_in</span><span class="o">.</span><span class="n">url</span><span class="si">}</span><span class="s2">&#39;. The request must be ordered with method `BuffyPyClient.Request.order()` first&quot;</span>
 <a id="__codelineno-0-555" name="__codelineno-0-555"></a>            <span class="p">)</span>
@@ -3732,7 +3732,7 @@
 
   <div class="doc doc-contents ">
   
-      <p>Stream/Iterate through the response content delivered by the Buffy server.</p>
+      <p>Stream/Iterate through the response content delivered by the Buffy-server.</p>
 <p><strong>example use</strong>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="kn">from</span> <span class="nn">buffy.buffypyclient</span> <span class="kn">import</span> <span class="n">BuffyPyClient</span>
 <a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="n">c</span> <span class="o">=</span> <span class="n">BuffyPyClient</span><span class="p">()</span>
@@ -3824,7 +3824,7 @@
 <span class="normal"><a href="#__codelineno-0-258">258</a></span>
 <span class="normal"><a href="#__codelineno-0-259">259</a></span>
 <span class="normal"><a href="#__codelineno-0-260">260</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-217" name="__codelineno-0-217"></a><span class="k">def</span> <span class="nf">download_response_content</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">chunk_size</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">65536</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Iterator</span><span class="p">[</span><span class="nb">bytes</span><span class="p">]:</span>
-<a id="__codelineno-0-218" name="__codelineno-0-218"></a>    <span class="sd">&quot;&quot;&quot;Stream/Iterate through the response content delivered by the Buffy server.</span>
+<a id="__codelineno-0-218" name="__codelineno-0-218"></a>    <span class="sd">&quot;&quot;&quot;Stream/Iterate through the response content delivered by the Buffy-server.</span>
 <a id="__codelineno-0-219" name="__codelineno-0-219"></a>
 <a id="__codelineno-0-220" name="__codelineno-0-220"></a><span class="sd">    **example use**</span>
 <a id="__codelineno-0-221" name="__codelineno-0-221"></a><span class="sd">    ```python</span>
@@ -3885,7 +3885,7 @@
 
   <div class="doc doc-contents ">
   
-      <p>Download the response content delivered by the Buffy server.</p>
+      <p>Download the response content delivered by the Buffy-server.</p>
 <p><strong>example use</strong>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="kn">from</span> <span class="nn">buffy.buffypyclient</span> <span class="kn">import</span> <span class="n">BuffyPyClient</span>
 <a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="n">c</span> <span class="o">=</span> <span class="n">BuffyPyClient</span><span class="p">()</span>
@@ -3992,7 +3992,7 @@ but will fallback to <code>download</code>. Defaults to None.</p></td>
 <span class="normal"><a href="#__codelineno-0-301">301</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-262" name="__codelineno-0-262"></a><span class="k">def</span> <span class="nf">download_response_content_to</span><span class="p">(</span>
 <a id="__codelineno-0-263" name="__codelineno-0-263"></a>    <span class="bp">self</span><span class="p">,</span> <span class="n">target</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Path</span><span class="p">,</span> <span class="n">FileIO</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="nb">dir</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Path</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
 <a id="__codelineno-0-264" name="__codelineno-0-264"></a><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Path</span><span class="p">:</span>
-<a id="__codelineno-0-265" name="__codelineno-0-265"></a>    <span class="sd">&quot;&quot;&quot;Download the response content delivered by the Buffy server.</span>
+<a id="__codelineno-0-265" name="__codelineno-0-265"></a>    <span class="sd">&quot;&quot;&quot;Download the response content delivered by the Buffy-server.</span>
 <a id="__codelineno-0-266" name="__codelineno-0-266"></a>
 <a id="__codelineno-0-267" name="__codelineno-0-267"></a><span class="sd">    **example use**</span>
 <a id="__codelineno-0-268" name="__codelineno-0-268"></a><span class="sd">    ```python</span>
@@ -4300,9 +4300,9 @@ This is based on HTTP headers like                 <a href="https://developer.mo
 
   <div class="doc doc-contents ">
   
-      <p>Send the request to the Buffy server.
+      <p>Send the request to the Buffy-server.
 When calling <a href="/BuffyPyClient/#buffy.buffypyclient.buffypyclient.BuffyPyClient.create_request"><code>Buffy.BuffyPyClient.create_request()</code></a> <code>order</code> will be called automaticly.
-If you want determine the moment when the Buffy server is reached manually, call <code>create_request()' with</code>hold_request_order=True` and use this function to call the Buffy server whenever you are ready</p>
+If you want determine the moment when the Buffy-server is reached manually, call <code>create_request()' with</code>hold_request_order=True` and use this function to call the Buffy-server whenever you are ready</p>
 
   <p><strong>Parameters:</strong></p>
   <table>
@@ -4506,9 +4506,9 @@ If you want determine the moment when the Buffy server is reached manually, call
 <a id="__codelineno-0-140" name="__codelineno-0-140"></a>    <span class="n">force_version</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
 <a id="__codelineno-0-141" name="__codelineno-0-141"></a>    <span class="n">force_tag</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
 <a id="__codelineno-0-142" name="__codelineno-0-142"></a><span class="p">):</span>
-<a id="__codelineno-0-143" name="__codelineno-0-143"></a>    <span class="sd">&quot;&quot;&quot;Send the request to the Buffy server.</span>
+<a id="__codelineno-0-143" name="__codelineno-0-143"></a>    <span class="sd">&quot;&quot;&quot;Send the request to the Buffy-server.</span>
 <a id="__codelineno-0-144" name="__codelineno-0-144"></a><span class="sd">    When calling [`Buffy.BuffyPyClient.create_request()`](/BuffyPyClient/#buffy.buffypyclient.buffypyclient.BuffyPyClient.create_request) `order` will be called automaticly.</span>
-<a id="__codelineno-0-145" name="__codelineno-0-145"></a><span class="sd">    If you want determine the moment when the Buffy server is reached manually, call `create_request()&#39; with `hold_request_order=True` and use this function to call the Buffy server whenever you are ready</span>
+<a id="__codelineno-0-145" name="__codelineno-0-145"></a><span class="sd">    If you want determine the moment when the Buffy-server is reached manually, call `create_request()&#39; with `hold_request_order=True` and use this function to call the Buffy-server whenever you are ready</span>
 <a id="__codelineno-0-146" name="__codelineno-0-146"></a>
 <a id="__codelineno-0-147" name="__codelineno-0-147"></a>
 <a id="__codelineno-0-148" name="__codelineno-0-148"></a><span class="sd">    Args:</span>
@@ -4711,7 +4711,7 @@ To unpin a response set <code>value=False</code></p>
 <a id="__codelineno-0-378" name="__codelineno-0-378"></a>    <span class="k">if</span> <span class="ow">not</span> <span class="n">response_version</span><span class="p">:</span>
 <a id="__codelineno-0-379" name="__codelineno-0-379"></a>        <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">_api_response</span><span class="p">:</span>
 <a id="__codelineno-0-380" name="__codelineno-0-380"></a>            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
-<a id="__codelineno-0-381" name="__codelineno-0-381"></a>                <span class="s2">&quot;BuffyPyClient can not pin any response version. No `response_version` provided and no response from Buffy server ordered yet.&quot;</span>
+<a id="__codelineno-0-381" name="__codelineno-0-381"></a>                <span class="s2">&quot;BuffyPyClient can not pin any response version. No `response_version` provided and no response from Buffy-server ordered yet.&quot;</span>
 <a id="__codelineno-0-382" name="__codelineno-0-382"></a>            <span class="p">)</span>
 <a id="__codelineno-0-383" name="__codelineno-0-383"></a>        <span class="n">response_version</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_api_response</span><span class="o">.</span><span class="n">version</span>
 <a id="__codelineno-0-384" name="__codelineno-0-384"></a>    <span class="n">pin</span> <span class="o">=</span> <span class="n">ResponsePinClaim</span><span class="p">(</span><span class="n">value</span><span class="o">=</span><span class="n">value</span><span class="p">,</span> <span class="n">duration_sec</span><span class="o">=</span><span class="n">duration_sec</span><span class="p">)</span>
@@ -4903,7 +4903,7 @@ You can attach user defined tags to cached responses. This way you can organize 
 <a id="__codelineno-0-417" name="__codelineno-0-417"></a>    <span class="k">if</span> <span class="ow">not</span> <span class="n">response_version</span><span class="p">:</span>
 <a id="__codelineno-0-418" name="__codelineno-0-418"></a>        <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">_api_response</span><span class="p">:</span>
 <a id="__codelineno-0-419" name="__codelineno-0-419"></a>            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
-<a id="__codelineno-0-420" name="__codelineno-0-420"></a>                <span class="s2">&quot;BuffyPyClient can not tag any response version. No `response_version` provided and no response from Buffy server ordered yet.&quot;</span>
+<a id="__codelineno-0-420" name="__codelineno-0-420"></a>                <span class="s2">&quot;BuffyPyClient can not tag any response version. No `response_version` provided and no response from Buffy-server ordered yet.&quot;</span>
 <a id="__codelineno-0-421" name="__codelineno-0-421"></a>            <span class="p">)</span>
 <a id="__codelineno-0-422" name="__codelineno-0-422"></a>        <span class="n">response_version</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_api_response</span><span class="o">.</span><span class="n">version</span>
 <a id="__codelineno-0-423" name="__codelineno-0-423"></a>    <span class="n">tag_claim</span> <span class="o">=</span> <span class="n">ResponseTagClaim</span><span class="p">(</span>
@@ -4948,7 +4948,7 @@ You can attach user defined tags to cached responses. This way you can organize 
         Bases: <code><span title="pydantic.BaseModel">BaseModel</span></code></p>
 
   
-      <p>The request cache configuration can be attached to a request to give Buffy server instruction how and when to cache a request.
+      <p>The request cache configuration can be attached to a request to give Buffy-server instruction how and when to cache a request.
 At the heart of the configuration is a <a href="BuffyReCachingStrategies">ReCachingStrategy</a>. the other option is how many versions of a request-response should be cached.</p>
 <p><strong>HINT</strong>: This is pydantic model. Every <code>class-attribute</code> is also a <code>parameter</code></p>
 <p><strong>example usage</strong>
@@ -4956,7 +4956,7 @@ At the heart of the configuration is a <a href="BuffyReCachingStrategies">ReCach
 <a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="kn">from</span> <span class="nn">buffy.buffypyclient</span> <span class="kn">import</span> <span class="n">BuffyPyClient</span>
 <a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="n">c</span> <span class="o">=</span> <span class="n">BuffyPyClient</span><span class="p">()</span>
 <a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>
-<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="c1"># Define a strategy. Buffy server has to re-cache the target url every 3601 seconds.</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="c1"># Define a strategy. Buffy-server has to re-cache the target url every 3601 seconds.</span>
 <a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="n">strategy</span> <span class="o">=</span> <span class="n">ReCachingStrategy</span><span class="o">.</span><span class="n">age</span><span class="p">(</span><span class="n">seconds</span><span class="o">=</span><span class="mi">3601</span><span class="p">)</span>
 <a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="c1"># Lets pack the strategy in a RequestCacheConfiguration config</span>
 <a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="n">config</span> <span class="o">=</span> <span class="n">RequestCacheConfiguration</span><span class="p">(</span><span class="n">recaching_strategy</span><span class="o">=</span><span class="n">strategy</span><span class="p">,</span> <span class="n">max_cached_unpinned_versions</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
@@ -5003,7 +5003,7 @@ At the heart of the configuration is a <a href="BuffyReCachingStrategies">ReCach
 <span class="normal"><a href="#__codelineno-0-52">52</a></span>
 <span class="normal"><a href="#__codelineno-0-53">53</a></span>
 <span class="normal"><a href="#__codelineno-0-54">54</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-19" name="__codelineno-0-19"></a><span class="k">class</span> <span class="nc">RequestCacheConfiguration</span><span class="p">(</span><span class="n">BaseModel</span><span class="p">):</span>
-<a id="__codelineno-0-20" name="__codelineno-0-20"></a>    <span class="sd">&quot;&quot;&quot;The request cache configuration can be attached to a request to give Buffy server instruction how and when to cache a request.</span>
+<a id="__codelineno-0-20" name="__codelineno-0-20"></a>    <span class="sd">&quot;&quot;&quot;The request cache configuration can be attached to a request to give Buffy-server instruction how and when to cache a request.</span>
 <a id="__codelineno-0-21" name="__codelineno-0-21"></a><span class="sd">    At the heart of the configuration is a [ReCachingStrategy](BuffyReCachingStrategies). the other option is how many versions of a request-response should be cached.</span>
 <a id="__codelineno-0-22" name="__codelineno-0-22"></a>
 <a id="__codelineno-0-23" name="__codelineno-0-23"></a><span class="sd">    **HINT**: This is pydantic model. Every `class-attribute` is also a `parameter`</span>
@@ -5014,7 +5014,7 @@ At the heart of the configuration is a <a href="BuffyReCachingStrategies">ReCach
 <a id="__codelineno-0-28" name="__codelineno-0-28"></a><span class="sd">    from buffy.buffypyclient import BuffyPyClient</span>
 <a id="__codelineno-0-29" name="__codelineno-0-29"></a><span class="sd">    c = BuffyPyClient()</span>
 <a id="__codelineno-0-30" name="__codelineno-0-30"></a>
-<a id="__codelineno-0-31" name="__codelineno-0-31"></a><span class="sd">    # Define a strategy. Buffy server has to re-cache the target url every 3601 seconds.</span>
+<a id="__codelineno-0-31" name="__codelineno-0-31"></a><span class="sd">    # Define a strategy. Buffy-server has to re-cache the target url every 3601 seconds.</span>
 <a id="__codelineno-0-32" name="__codelineno-0-32"></a><span class="sd">    strategy = ReCachingStrategy.age(seconds=3601)</span>
 <a id="__codelineno-0-33" name="__codelineno-0-33"></a><span class="sd">    # Lets pack the strategy in a RequestCacheConfiguration config</span>
 <a id="__codelineno-0-34" name="__codelineno-0-34"></a><span class="sd">    config = RequestCacheConfiguration(recaching_strategy=strategy, max_cached_unpinned_versions=3)</span>
@@ -5035,9 +5035,9 @@ At the heart of the configuration is a <a href="BuffyReCachingStrategies">ReCach
 <a id="__codelineno-0-49" name="__codelineno-0-49"></a>    <span class="p">)</span>
 <a id="__codelineno-0-50" name="__codelineno-0-50"></a>    <span class="sd">&quot;&quot;&quot;A [strategy](/BuffyReCachingStrategies) instructs buffy how to cache request-responses. (e.b. by age of the cached file, or regulary by a cron job,...)&quot;&quot;&quot;</span>
 <a id="__codelineno-0-51" name="__codelineno-0-51"></a>    <span class="n">max_cached_unpinned_versions</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">2</span>
-<a id="__codelineno-0-52" name="__codelineno-0-52"></a>    <span class="sd">&quot;&quot;&quot;When more than `max_cached_unpinned_versions` request-responses that are not pinned are cached by the Buffy server, any older cached version will be deleted.&quot;&quot;&quot;</span>
+<a id="__codelineno-0-52" name="__codelineno-0-52"></a>    <span class="sd">&quot;&quot;&quot;When more than `max_cached_unpinned_versions` request-responses that are not pinned are cached by the Buffy-server, any older cached version will be deleted.&quot;&quot;&quot;</span>
 <a id="__codelineno-0-53" name="__codelineno-0-53"></a>    <span class="n">max_cached_pinned_versions</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">10</span>
-<a id="__codelineno-0-54" name="__codelineno-0-54"></a>    <span class="sd">&quot;&quot;&quot;When more than `max_cached_pinned_versions` request-responses are cached by the Buffy server, any older cached version will be deleted.&quot;&quot;&quot;</span>
+<a id="__codelineno-0-54" name="__codelineno-0-54"></a>    <span class="sd">&quot;&quot;&quot;When more than `max_cached_pinned_versions` request-responses are cached by the Buffy-server, any older cached version will be deleted.&quot;&quot;&quot;</span>
 </code></pre></div></td></tr></table></div>
         </details>
 
@@ -5067,7 +5067,7 @@ At the heart of the configuration is a <a href="BuffyReCachingStrategies">ReCach
 
   <div class="doc doc-contents ">
   
-      <p>When more than <code>max_cached_pinned_versions</code> request-responses are cached by the Buffy server, any older cached version will be deleted.</p>
+      <p>When more than <code>max_cached_pinned_versions</code> request-responses are cached by the Buffy-server, any older cached version will be deleted.</p>
   </div>
 
 </div>
@@ -5088,7 +5088,7 @@ At the heart of the configuration is a <a href="BuffyReCachingStrategies">ReCach
 
   <div class="doc doc-contents ">
   
-      <p>When more than <code>max_cached_unpinned_versions</code> request-responses that are not pinned are cached by the Buffy server, any older cached version will be deleted.</p>
+      <p>When more than <code>max_cached_unpinned_versions</code> request-responses that are not pinned are cached by the Buffy-server, any older cached version will be deleted.</p>
   </div>
 
 </div>
@@ -5141,7 +5141,7 @@ At the heart of the configuration is a <a href="BuffyReCachingStrategies">ReCach
     <nav class="md-footer__inner md-grid" aria-label="Footer" >
       
         
-        <a href="../BuffyPyClient-examples/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Examples" rel="prev">
+        <a href="../BuffyPyClient-examples/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Examples and Recipes" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
           </div>
@@ -5150,7 +5150,7 @@ At the heart of the configuration is a <a href="BuffyReCachingStrategies">ReCach
               <span class="md-footer__direction">
                 Previous
               </span>
-              Examples
+              Examples and Recipes
             </div>
           </div>
         </a>

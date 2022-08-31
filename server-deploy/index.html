@@ -190,7 +190,7 @@
   
     <li class="md-nav__item">
       <a href="../BuffyPyClient-examples/" class="md-nav__link">
-        Examples
+        Examples and Recipes
       </a>
     </li>
   
@@ -429,6 +429,13 @@
           <li class="md-nav__item">
   <a href="#authentication-in-the-buffypyclient" class="md-nav__link">
     Authentication in the BuffyPyClient
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#redis" class="md-nav__link">
+    Redis
   </a>
   
 </li>
@@ -766,6 +773,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#redis" class="md-nav__link">
+    Redis
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -787,7 +801,7 @@
 
   <h1>Deploy</h1>
 
-<p>There are multiple options to start your own Buffy server:</p>
+<p>There are multiple options to start your own Buffy-server:</p>
 <h2 id="via-docker-compose">Via Docker-compose<a class="headerlink" href="#via-docker-compose" title="Permanent link">&para;</a></h2>
 <hr />
 <h3 id="requirements">Requirements<a class="headerlink" href="#requirements" title="Permanent link">&para;</a></h3>
@@ -802,12 +816,12 @@
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>wget -O docker-compose.yaml https://git.connect.dzd-ev.de/dzdpythonmodules/buffy/-/raw/main/docker-compose.yaml?inline<span class="o">=</span><span class="nb">false</span>
 </code></pre></div>
 <ul>
-<li>Start the Buffy server with docker compose</li>
+<li>Start the Buffy-server with docker compose</li>
 </ul>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>docker-compose up -d
 </code></pre></div>
 <h3 id="usage">Usage<a class="headerlink" href="#usage" title="Permanent link">&para;</a></h3>
-<p>Now your Buffy server is available at <code>http://localhost:8008</code></p>
+<p>Now your Buffy-server is available at <code>http://localhost:8008</code></p>
 <h2 id="via-docker-image">Via Docker image<a class="headerlink" href="#via-docker-image" title="Permanent link">&para;</a></h2>
 <hr />
 <h3 id="requirements_1">Requirements<a class="headerlink" href="#requirements_1" title="Permanent link">&para;</a></h3>
@@ -924,7 +938,7 @@ For details on the format see https://redis.readthedocs.io/en/latest/connections
 <div class="highlight"><pre><span></span><code><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a><span class="kn">from</span> <span class="nn">buffy.buffypyclient</span> <span class="kn">import</span> <span class="n">BuffyPyClient</span>
 <a id="__codelineno-22-2" name="__codelineno-22-2" href="#__codelineno-22-2"></a><span class="kn">from</span> <span class="nn">requests.auth</span> <span class="kn">import</span> <span class="n">HTTPBasicAuth</span>
 <a id="__codelineno-22-3" name="__codelineno-22-3" href="#__codelineno-22-3"></a>
-<a id="__codelineno-22-4" name="__codelineno-22-4" href="#__codelineno-22-4"></a><span class="c1"># connect to buffy server with the credentials</span>
+<a id="__codelineno-22-4" name="__codelineno-22-4" href="#__codelineno-22-4"></a><span class="c1"># connect to Buffy-server with the credentials</span>
 <a id="__codelineno-22-5" name="__codelineno-22-5" href="#__codelineno-22-5"></a><span class="n">c</span> <span class="o">=</span> <span class="n">BuffyPyClient</span><span class="p">(</span>
 <a id="__codelineno-22-6" name="__codelineno-22-6" href="#__codelineno-22-6"></a>    <span class="n">host</span><span class="o">=</span><span class="s2">&quot;localhost&quot;</span><span class="p">,</span>
 <a id="__codelineno-22-7" name="__codelineno-22-7" href="#__codelineno-22-7"></a>    <span class="n">port</span><span class="o">=</span><span class="mi">8008</span><span class="p">,</span>
@@ -943,6 +957,24 @@ For details on the format see https://redis.readthedocs.io/en/latest/connections
 <a id="__codelineno-22-20" name="__codelineno-22-20" href="#__codelineno-22-20"></a>    <span class="n">owl_file</span> <span class="o">+=</span> <span class="n">chunk</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s2">&quot;utf-8&quot;</span><span class="p">)</span>
 <a id="__codelineno-22-21" name="__codelineno-22-21" href="#__codelineno-22-21"></a><span class="nb">print</span><span class="p">(</span><span class="n">owl_file</span><span class="p">)</span>
 </code></pre></div>
+<h3 id="redis">Redis<a class="headerlink" href="#redis" title="Permanent link">&para;</a></h3>
+<p>At the Moment Redis is the only supported Backend database. This is likely too change in a future version.<br />
+Redis is easy for prototyping - thats why it is in Buffy-server atm - and great as a cache, but not best in class in being a persistent database (Redis is not ACID afaik).<br />
+To keep your Buffy-server persistent you need to start your Redis instance with the right parameters.</p>
+<p>One solution is to create snapshots in an intervall. With docker it would look like this:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a><span class="l l-Scalar l-Scalar-Plain">docker run -p 6379:6379 -v redis_data:/data redis redis-server --save 12 1 --loglevel warning</span><span class="w"></span>
+</code></pre></div>
+<p>or via docker-compose</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a><span class="nt">version</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;3.7&quot;</span><span class="w"></span>
+<a id="__codelineno-24-2" name="__codelineno-24-2" href="#__codelineno-24-2"></a><span class="nt">services</span><span class="p">:</span><span class="w"></span>
+<a id="__codelineno-24-3" name="__codelineno-24-3" href="#__codelineno-24-3"></a><span class="w">  </span><span class="nt">redis</span><span class="p">:</span><span class="w"></span>
+<a id="__codelineno-24-4" name="__codelineno-24-4" href="#__codelineno-24-4"></a><span class="w">    </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">redis</span><span class="w"></span>
+<a id="__codelineno-24-5" name="__codelineno-24-5" href="#__codelineno-24-5"></a><span class="w">    </span><span class="nt">command</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">redis-server --save 12 1 --loglevel warning</span><span class="w"></span>
+<a id="__codelineno-24-6" name="__codelineno-24-6" href="#__codelineno-24-6"></a><span class="w">    </span><span class="nt">volumes</span><span class="p">:</span><span class="w"></span>
+<a id="__codelineno-24-7" name="__codelineno-24-7" href="#__codelineno-24-7"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">redis_data:/data</span><span class="w"></span>
+</code></pre></div>
+<p>This would create a snapshot every 12 seconds and load the last snapshot on a reboot.</p>
+<p>For all the details on Redis persistents with all the opitions, look into <a href="https://redis.io/docs/manual/persistence/">the offical docs</a></p>
 
 
 
