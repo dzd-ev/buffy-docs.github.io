@@ -9,7 +9,7 @@
       
       
       <link rel="icon" href="../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.3.1, mkdocs-material-8.4.2">
+      <meta name="generator" content="mkdocs-1.3.1, mkdocs-material-8.5.0">
     
     
       
@@ -17,13 +17,14 @@
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.69437709.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.2e8b5541.min.css">
       
         
         <link rel="stylesheet" href="../assets/stylesheets/palette.cbb835fc.min.css">
         
       
       
+
     
     
     
@@ -42,6 +43,7 @@
     
       
 
+    
     
     
   </head>
@@ -535,10 +537,11 @@
               </div>
             
           
-          <div class="md-content" data-md-component="content">
-            <article class="md-content__inner md-typeset">
-              
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
                 
+                  
 
 
   <h1>Examples and Recipes</h1>
@@ -609,8 +612,9 @@ So next quarter, when running our code again, the data will allready be availabl
 <a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a>
 <a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a><span class="n">req</span><span class="o">.</span><span class="n">download_response_content_to</span><span class="p">(</span><span class="s2">&quot;mydata/mailmap&quot;</span><span class="p">)</span>
 <a id="__codelineno-1-16" name="__codelineno-1-16" href="#__codelineno-1-16"></a>
-<a id="__codelineno-1-17" name="__codelineno-1-17" href="#__codelineno-1-17"></a><span class="c1"># Lets pin the just downloaded version and in return we also get the current version name, if we want to recall it later.</span>
-<a id="__codelineno-1-18" name="__codelineno-1-18" href="#__codelineno-1-18"></a><span class="n">version_name</span><span class="p">:</span><span class="nb">str</span> <span class="o">=</span> <span class="n">req</span><span class="o">.</span><span class="n">pin</span><span class="p">()</span>
+<a id="__codelineno-1-17" name="__codelineno-1-17" href="#__codelineno-1-17"></a><span class="c1"># Lets pin the just downloaded version</span>
+<a id="__codelineno-1-18" name="__codelineno-1-18" href="#__codelineno-1-18"></a><span class="c1"># in return we also get the current version name</span>
+<a id="__codelineno-1-19" name="__codelineno-1-19" href="#__codelineno-1-19"></a><span class="n">version_name</span><span class="p">:</span><span class="nb">str</span> <span class="o">=</span> <span class="n">req</span><span class="o">.</span><span class="n">pin</span><span class="p">()</span>
 </code></pre></div>
 <h2 id="tagging-a-certain-version">Tagging a certain version<a class="headerlink" href="#tagging-a-certain-version" title="Permanent link">&para;</a></h2>
 <p>To make it easier to find certain version you can "tag" them. A tag just a short string you can attach to one or more versions and query it later to recall these versions.</p>
@@ -630,8 +634,9 @@ So next quarter, when running our code again, the data will allready be availabl
 <a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a>
 <a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a><span class="n">req</span><span class="o">.</span><span class="n">download_response_content_to</span><span class="p">(</span><span class="s2">&quot;mydata/mailmap&quot;</span><span class="p">)</span>
 <a id="__codelineno-2-16" name="__codelineno-2-16" href="#__codelineno-2-16"></a>
-<a id="__codelineno-2-17" name="__codelineno-2-17" href="#__codelineno-2-17"></a><span class="c1"># Lets pin the just downloaded version and in return we also get the current version name, if we want to recall it later.</span>
-<a id="__codelineno-2-18" name="__codelineno-2-18" href="#__codelineno-2-18"></a><span class="n">version_name</span><span class="p">:</span><span class="nb">str</span> <span class="o">=</span> <span class="n">req</span><span class="o">.</span><span class="n">tag</span><span class="p">(</span><span class="s2">&quot;my-best-version&quot;</span><span class="p">)</span>
+<a id="__codelineno-2-17" name="__codelineno-2-17" href="#__codelineno-2-17"></a><span class="c1"># Lets pin the just downloaded version</span>
+<a id="__codelineno-2-18" name="__codelineno-2-18" href="#__codelineno-2-18"></a><span class="c1"># in return we get the current version name</span>
+<a id="__codelineno-2-19" name="__codelineno-2-19" href="#__codelineno-2-19"></a><span class="n">version_name</span><span class="p">:</span><span class="nb">str</span> <span class="o">=</span> <span class="n">req</span><span class="o">.</span><span class="n">tag</span><span class="p">(</span><span class="s2">&quot;my-best-version&quot;</span><span class="p">)</span>
 </code></pre></div>
 <h3 id="recall-a-tagged-version">Recall a tagged version<a class="headerlink" href="#recall-a-tagged-version" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="kn">import</span> <span class="nn">json</span>
@@ -646,19 +651,23 @@ So next quarter, when running our code again, the data will allready be availabl
 <a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a>    <span class="n">hold_request_order</span><span class="o">=</span><span class="kc">True</span>
 <a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a><span class="p">)</span>
 <a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a><span class="c1"># We now define which tag we prefere. </span>
-<a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a><span class="c1"># alternative you can also provide the param `force_tag` which raise an error if no version with this tag can be found</span>
-<a id="__codelineno-3-14" name="__codelineno-3-14" href="#__codelineno-3-14"></a><span class="n">req</span><span class="o">.</span><span class="n">order</span><span class="p">(</span><span class="n">prefer_tag</span><span class="o">=</span><span class="s2">&quot;my-best-version&quot;</span><span class="p">)</span>
-<a id="__codelineno-3-15" name="__codelineno-3-15" href="#__codelineno-3-15"></a><span class="c1"># Lets pin the just downloaded version and in return we also get the current version name, if we want to recall it later.</span>
-<a id="__codelineno-3-16" name="__codelineno-3-16" href="#__codelineno-3-16"></a><span class="n">req</span><span class="o">.</span><span class="n">download_response_content_to</span><span class="p">(</span><span class="s2">&quot;mydata/mailmap&quot;</span><span class="p">)</span>
+<a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a><span class="c1"># alternative you can also provide the param `force_tag` </span>
+<a id="__codelineno-3-14" name="__codelineno-3-14" href="#__codelineno-3-14"></a><span class="c1"># `force_tag` raises an error if no version with this tag can be found</span>
+<a id="__codelineno-3-15" name="__codelineno-3-15" href="#__codelineno-3-15"></a><span class="n">req</span><span class="o">.</span><span class="n">order</span><span class="p">(</span><span class="n">prefer_tag</span><span class="o">=</span><span class="s2">&quot;my-best-version&quot;</span><span class="p">)</span>
+<a id="__codelineno-3-16" name="__codelineno-3-16" href="#__codelineno-3-16"></a><span class="c1"># Lets pin the just downloaded version</span>
+<a id="__codelineno-3-17" name="__codelineno-3-17" href="#__codelineno-3-17"></a><span class="c1"># In return we also get the current version name, if we want to recall it later.</span>
+<a id="__codelineno-3-18" name="__codelineno-3-18" href="#__codelineno-3-18"></a><span class="n">req</span><span class="o">.</span><span class="n">download_response_content_to</span><span class="p">(</span><span class="s2">&quot;mydata/mailmap&quot;</span><span class="p">)</span>
 </code></pre></div>
 
 
 
 
-              
-            </article>
-            
-          </div>
+
+                
+              </article>
+            </div>
+          
+          
         </div>
         
       </main>
@@ -725,7 +734,7 @@ So next quarter, when running our code again, the data will allready be availabl
     <script id="__config" type="application/json">{"base": "..", "features": [], "search": "../assets/javascripts/workers/search.ecf98df9.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
     
     
-      <script src="../assets/javascripts/bundle.9c69f0bc.min.js"></script>
+      <script src="../assets/javascripts/bundle.48f2be22.min.js"></script>
       
     
   </body>
